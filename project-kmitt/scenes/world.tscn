@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=6 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="PackedScene" uid="uid://dtyqnuwpjb2cv" path="res://blender_files/project_kmitt.blend" id="1_nnsk1"]
+[ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
 
 [sub_resource type="Environment" id="Environment_nnsk1"]
 background_color = Color(0.49803922, 0.5921569, 0.73333335, 1)
@@ -20,10 +21,9 @@ glow_normalized = true
 glow_bloom = 0.1
 glow_blend_mode = 1
 fog_enabled = true
-fog_light_color = Color(0.49803922, 0.5921569, 0.73333335, 1)
+fog_light_color = Color(0.5425756, 0.6315804, 0.7697038, 1)
 fog_light_energy = 0.33
-fog_sun_scatter = 0.2
-fog_density = 0.0075
+fog_sun_scatter = 0.1
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
 dof_blur_far_enabled = true
@@ -31,6 +31,11 @@ dof_blur_far_distance = 64.0
 dof_blur_far_transition = 32.0
 dof_blur_near_enabled = true
 dof_blur_amount = 0.03
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
+size = Vector2(512, 512)
+subdivide_width = 32
+subdivide_depth = 16
 
 [node name="world" type="Node3D"]
 
@@ -40,3 +45,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017189741, 0, -0.5412545)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nnsk1")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.25881916, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.25881916, -36.65175, -41.29775, -59.352882)
+mesh = SubResource("PlaneMesh_4wyf3")
+surface_material_override/0 = ExtResource("2_rwgxs")
