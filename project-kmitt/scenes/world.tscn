@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=4 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="PackedScene" uid="uid://dtyqnuwpjb2cv" path="res://blender_files/project_kmitt.blend" id="1_nnsk1"]
 
@@ -25,6 +25,13 @@ fog_light_energy = 0.33
 fog_sun_scatter = 0.2
 fog_density = 0.0075
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 64.0
+dof_blur_far_transition = 32.0
+dof_blur_near_enabled = true
+dof_blur_amount = 0.03
+
 [node name="world" type="Node3D"]
 
 [node name="project_kmitt" parent="." instance=ExtResource("1_nnsk1")]
@@ -32,3 +39,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017189741, 0, -0.5412545)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_nnsk1")
+camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
