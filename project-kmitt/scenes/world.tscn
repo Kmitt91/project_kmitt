@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnblwgp06efmv"]
+
+[ext_resource type="PackedScene" uid="uid://dtyqnuwpjb2cv" path="res://blender_files/project_kmitt.blend" id="1_nnsk1"]
+
+[sub_resource type="Environment" id="Environment_nnsk1"]
+tonemap_mode = 4
+sdfgi_enabled = true
+sdfgi_min_cell_size = 0.25
+
+[node name="world" type="Node3D"]
+
+[node name="project_kmitt" parent="." instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017189741, 0, -0.5412545)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nnsk1")
