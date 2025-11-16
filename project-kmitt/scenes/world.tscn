@@ -3,9 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://dtyqnuwpjb2cv" path="res://blender_files/project_kmitt.blend" id="1_nnsk1"]
 
 [sub_resource type="Environment" id="Environment_nnsk1"]
+background_color = Color(0.49803922, 0.5921569, 0.73333335, 1)
+ambient_light_color = Color(0.2320126, 0.303178, 0.41011444, 1)
 tonemap_mode = 4
+ssao_enabled = true
+ssao_radius = 1.5
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+ssil_enabled = true
+ssil_radius = 8.0
+ssil_intensity = 1.5
 sdfgi_enabled = true
+sdfgi_use_occlusion = true
 sdfgi_min_cell_size = 0.25
+glow_normalized = true
+glow_bloom = 0.1
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.49803922, 0.5921569, 0.73333335, 1)
+fog_light_energy = 0.33
+fog_sun_scatter = 0.2
+fog_density = 0.0075
 
 [node name="world" type="Node3D"]
 
