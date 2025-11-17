@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bppgqom30usdr" path="res://materials/textures/rock_material/rock_material_rough.png" id="4_5xjph"]
 
 [resource]
+albedo_color = Color(0.8992584, 0.8992584, 0.8992584, 1)
 albedo_texture = ExtResource("1_dhe7h")
 roughness_texture = ExtResource("4_5xjph")
 normal_enabled = true

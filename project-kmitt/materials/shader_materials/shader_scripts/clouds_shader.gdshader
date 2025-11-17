@@ -1,3 +1,5 @@
+//Shader written by me "Kmitt91"
+
 shader_type spatial;
 render_mode unshaded, shadows_disabled;
 

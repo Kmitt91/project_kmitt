@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cebrd0yqpntpr"]
+
+[ext_resource type="Shader" uid="uid://c4xwncxm1jjcj" path="res://materials/shader_materials/shader_scripts/sky_shader.gdshader" id="1_eeo0d"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k0juu"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_71j4m"]
+noise = SubResource("FastNoiseLite_k0juu")
+seamless = true
+
+[resource]
+shader = ExtResource("1_eeo0d")
+shader_parameter/sun_color = Color(0.8039216, 0.6627451, 0.44313726, 1)
+shader_parameter/sun_energy = 25.0
+shader_parameter/cloud_color = Color(0.34334412, 0.46253085, 0.5904508, 1)
+shader_parameter/cloud_density = 5.0
+shader_parameter/cloud_depth = 2.0
+shader_parameter/cloud_sag = 1.2
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_71j4m")
+shader_parameter/noise_tiling = Vector2(1, 0.8)
+shader_parameter/wind_speed = Vector2(0.01, 0.1)
+shader_parameter/exposure = 1.0

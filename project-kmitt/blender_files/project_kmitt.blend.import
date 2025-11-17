@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtyqnuwpjb2cv"
+uid="uid://bbr51mbefbh5g"
 path="res://.godot/imported/project_kmitt.blend-9069c895661913d21abacd93d92d8c18.scn"
 
 [deps]
@@ -29,7 +29,7 @@ meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
-animation/fps=24.0
+animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
