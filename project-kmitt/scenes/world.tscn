@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=8 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://bbr51mbefbh5g" path="res://blender_files/project_kmitt.blend" id="3_4wyf3"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -14,24 +15,25 @@ ambient_light_color = Color(0.8039216, 0.6627451, 0.44313726, 1)
 ambient_light_sky_contribution = 0.2
 ambient_light_energy = 0.5
 tonemap_mode = 4
-ssao_enabled = true
 ssao_radius = 1.5
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 1.0
-ssil_enabled = true
 ssil_radius = 8.0
 ssil_intensity = 1.5
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
-sdfgi_min_cell_size = 0.25
 glow_normalized = true
 glow_bloom = 0.1
 glow_blend_mode = 1
 fog_enabled = true
+fog_mode = 1
 fog_light_color = Color(0.5425756, 0.6315804, 0.7697038, 1)
-fog_light_energy = 0.2
 fog_sun_scatter = 0.5
-fog_sky_affect = 0.5
+fog_density = 0.66
+fog_aerial_perspective = 0.5
+fog_depth_curve = 8.0
+fog_depth_end = 128.0
+adjustment_enabled = true
+adjustment_saturation = 1.5
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
 dof_blur_far_enabled = true
@@ -53,8 +55,7 @@ camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.720565, -0.32427514, -0.612888, 0.64899325, 0.62660277, 0.43148205, 0.24411842, -0.70867103, 0.6619604, -0.017189741, 5.5175576, -0.5412545)
-light_color = Color(0.8039216, 0.6627451, 0.44313726, 1)
-light_energy = 0.75
+light_color = Color(0.8, 0.49639997, 0.007999993, 1)
 shadow_enabled = true
 directional_shadow_mode = 1
 directional_shadow_split_1 = 0.2
@@ -64,3 +65,5 @@ directional_shadow_max_distance = 160.0
 transform = Transform3D(-0.25881916, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.25881916, -36.65175, -41.29775, -59.352882)
 mesh = SubResource("PlaneMesh_4wyf3")
 surface_material_override/0 = ExtResource("2_rwgxs")
+
+[node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
