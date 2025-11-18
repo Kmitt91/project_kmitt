@@ -1,0 +1,23 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=4 format=3 uid="uid://rrk268gf4c14"]
+
+[ext_resource type="Texture2D" uid="uid://dep4i8iom6xx6" path="res://materials/textures/gradients/fire_gradient.tres" id="1_71bfn"]
+
+[sub_resource type="Curve" id="Curve_qfnet"]
+_data = [Vector2(0, 0.516854), 0.0, 1.8426964, 0, 0, Vector2(1, 0.5617978), -1.1454602, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i7141"]
+curve = SubResource("Curve_qfnet")
+
+[resource]
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+spread = 180.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.5
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 29.999983
+gravity = Vector3(0, 4, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_i7141")
+color_ramp = ExtResource("1_71bfn")

@@ -1,4 +1,5 @@
 //shader contains parts of tentabrobpy's "Simple Overcast" from Godot Shaders: https://godotshaders.com/shader/simple-overcast/  -> CC0 1.0 Universal
+//rest wiritten by me Kmitt91 ;)
 
 shader_type sky;
 

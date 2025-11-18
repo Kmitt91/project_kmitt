@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cun4qebk0hcjl"]
+
+[ext_resource type="Shader" uid="uid://ehacgxslikbm" path="res://materials/shader_materials/shader_scripts/particle_scroll_shader.gdshader" id="1_2bc8b"]
+[ext_resource type="Texture2D" uid="uid://beadjk5ak3ngd" path="res://materials/textures/circle.png" id="2_ltl44"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ltl44"]
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46it3"]
+noise = SubResource("FastNoiseLite_ltl44")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2bc8b")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/pattern_texture = SubResource("NoiseTexture2D_46it3")
+shader_parameter/mask_texture = ExtResource("2_ltl44")
+shader_parameter/emission_strength = 8.0
+shader_parameter/speed = 1.0

@@ -3,13 +3,13 @@
 shader_type particles;
 render_mode disable_velocity;
 
-//added code by me Kmitt91
+//added vars by me Kmitt91
 uniform sampler2D noise_tex : hint_default_white, repeat_enable;
 uniform float noise_scale = 1.5;
+uniform float flatness = 0.7;
 
 uniform vec3 direction = vec3(1.0, 0.0, 0.0);
-uniform float spread = 45.0;
-uniform float flatness = 0.0;
+uniform float spread = 0.0;
 uniform float inherit_emitter_velocity_ratio = 0.0;
 uniform float initial_linear_velocity_min = 1.0;
 uniform float initial_linear_velocity_max = 1.0;
@@ -238,6 +238,7 @@ void start() {
 	if (RESTART_POSITION) {
 		TRANSFORM[3].xyz = calculate_initial_position(alt_seed);
 		
+		// here I added the noise texture and place particles on the white values, black is empty
 		vec2 particles_pos = TRANSFORM[3].xz;
 		vec2 texture_noise = vec2(textureSize(noise_tex, 0));
 		vec2 uv = (particles_pos / texture_noise) + vec2(0.5);
@@ -246,6 +247,7 @@ void start() {
 		TRANSFORM[3].x *= noise;
 		TRANSFORM[3].z *= noise;
 		
+		// if not set inactive remaining particles are drawn in the origin
 		if (noise == 0.0) {
 			ACTIVE = false;
 		}
@@ -347,7 +349,7 @@ void process() {
 	float base_angle = dynamic_params.angle;
 	base_angle += CUSTOM.y * LIFETIME * dynamic_params.angular_velocity;
 	CUSTOM.x = base_angle * degree_to_rad;
-   COLOR = params.color;
+	COLOR = params.color;
 	TRANSFORM[0].xyz = normalize(TRANSFORM[0].xyz);
 	TRANSFORM[1].xyz = normalize(TRANSFORM[1].xyz);
 	TRANSFORM[2].xyz = normalize(TRANSFORM[2].xyz);
@@ -357,7 +359,7 @@ void process() {
 //	params.scale *= length(final_velocity)/100.0;
 
 	TRANSFORM[0].xyz *= sign(params.scale.x) * max(abs(params.scale.x), 0.001);
-	TRANSFORM[1].xyz *= sign(params.scale.y) * max(abs(params.scale.y), 0.001) * 0.75;
+	TRANSFORM[1].xyz *= sign(params.scale.y) * max(abs(params.scale.y), 0.001) * flatness; //basically I strech the shape in y-axis
 	TRANSFORM[2].xyz *= sign(params.scale.z) * max(abs(params.scale.z), 0.001);
 	
 	// 

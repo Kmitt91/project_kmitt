@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=14 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bbr51mbefbh5g" path="res://blender_files/project_kmitt.blend" id="3_4wyf3"]
 [ext_resource type="Material" uid="uid://bkuy3r1ocqeq6" path="res://materials/shader_materials/grass_shader.tres" id="4_qfnet"]
-[ext_resource type="Material" uid="uid://bqxy30110hsps" path="res://materials/shader_materials/grass_parrticle_shader.tres" id="5_qfnet"]
+[ext_resource type="Material" uid="uid://bqxy30110hsps" path="res://materials/shader_materials/particle_materials/grass_parrticle_shader.tres" id="5_qfnet"]
 [ext_resource type="ArrayMesh" uid="uid://1sf7j1mjyw2s" path="res://blender_files/grass_multiple.obj" id="6_i7141"]
+[ext_resource type="Material" uid="uid://rrk268gf4c14" path="res://materials/shader_materials/particle_materials/fire_particle_material.tres" id="7_4mrxx"]
+[ext_resource type="Material" uid="uid://cun4qebk0hcjl" path="res://materials/shader_materials/fire_vfx_shader.tres" id="8_7r4gi"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -44,16 +46,23 @@ adjustment_enabled = true
 adjustment_saturation = 1.5
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
+auto_exposure_enabled = true
+auto_exposure_scale = 0.33
+auto_exposure_speed = 3.0
 dof_blur_far_enabled = true
 dof_blur_far_distance = 64.0
 dof_blur_far_transition = 32.0
 dof_blur_near_enabled = true
 dof_blur_amount = 0.03
+auto_exposure_min_sensitivity = 60.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
 size = Vector2(512, 512)
 subdivide_width = 32
 subdivide_depth = 16
+
+[sub_resource type="QuadMesh" id="QuadMesh_qfnet"]
+material = ExtResource("8_7r4gi")
 
 [node name="world" type="Node3D"]
 
@@ -127,3 +136,76 @@ visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
 local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(0.93311685, 0, 0.35957342, 0, 1, 0, -0.35957342, 0, 0.93311685, -6.0143437, 1.0034208, -19.70807)
+size = Vector3(6.716, 22.45996, 19.405)
+box_projection = true
+interior = true
+enable_shadows = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ReflectionProbe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09412813, 2.6690903, 0.6021862)
+light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
+light_energy = 0.5
+omni_range = 2.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2418003, -0.20000029, 0.046821594)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="ReflectionProbe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10007572, 2.6690903, 5.6670074)
+light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
+light_energy = 0.5
+omni_range = 2.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2418003, -0.20000029, 0.046821594)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="ReflectionProbe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1443243, 2.6690903, -4.451191)
+light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
+light_energy = 0.5
+omni_range = 2.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="ReflectionProbe/OmniLight3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2418003, -0.20000029, 0.046821594)
+amount = 32
+lifetime = 0.5
+fixed_fps = 24
+process_material = ExtResource("7_4mrxx")
+draw_pass_1 = SubResource("QuadMesh_qfnet")

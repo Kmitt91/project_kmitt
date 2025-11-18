@@ -1,0 +1,59 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bqxy30110hsps"]
+
+[ext_resource type="Shader" uid="uid://6n5y1af6lo5g" path="res://materials/shader_materials/shader_scripts/grass_particle_shader.gdshader" id="1_r0tvk"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r0tvk"]
+frequency = 0.167
+offset = Vector3(31.2, 3.5, 0)
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mc2ps"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_r0tvk")
+seamless = true
+
+[resource]
+shader = ExtResource("1_r0tvk")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_mc2ps")
+shader_parameter/noise_scale = 1.5
+shader_parameter/flatness = 0.75
+shader_parameter/direction = Vector3(1, 0, 0)
+shader_parameter/spread = 0.0
+shader_parameter/inherit_emitter_velocity_ratio = 0.0
+shader_parameter/initial_linear_velocity_min = 1.0
+shader_parameter/initial_linear_velocity_max = 1.0
+shader_parameter/directional_velocity_min = 0.0
+shader_parameter/directional_velocity_max = 0.0
+shader_parameter/angular_velocity_min = 0.0
+shader_parameter/angular_velocity_max = 0.0
+shader_parameter/orbit_velocity_min = 0.0
+shader_parameter/orbit_velocity_max = 0.0
+shader_parameter/radial_velocity_min = 0.0
+shader_parameter/radial_velocity_max = 0.0
+shader_parameter/linear_accel_min = 0.0
+shader_parameter/linear_accel_max = 0.0
+shader_parameter/radial_accel_min = 0.0
+shader_parameter/radial_accel_max = 0.0
+shader_parameter/tangent_accel_min = 0.0
+shader_parameter/tangent_accel_max = 0.0
+shader_parameter/damping_min = 0.0
+shader_parameter/damping_max = 0.0
+shader_parameter/initial_angle_min = 0.0
+shader_parameter/initial_angle_max = 360.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 2.0
+shader_parameter/hue_variation_min = -0.01
+shader_parameter/hue_variation_max = 0.01
+shader_parameter/anim_speed_min = 0.0
+shader_parameter/anim_speed_max = 0.0
+shader_parameter/anim_offset_min = 0.0
+shader_parameter/anim_offset_max = 0.0
+shader_parameter/lifetime_randomness = 0.0
+shader_parameter/emission_shape_offset = Vector3(0, 0, 0)
+shader_parameter/emission_shape_scale = Vector3(1, 1, 1)
+shader_parameter/velocity_pivot = Vector3(0, 0, 0)
+shader_parameter/emission_box_extents = Vector3(1.25, 0, 8)
+shader_parameter/color_a = Color(1, 1, 1, 1)
+shader_parameter/color_b = Color(1, 0, 1, 1)
+shader_parameter/gravity = Vector3(0, 0, 0)

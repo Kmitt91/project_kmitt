@@ -1,20 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bkuy3r1ocqeq6"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bkuy3r1ocqeq6"]
 
 [ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_hie8n"]
+[ext_resource type="Texture2D" uid="uid://c73rfnyu4xkys" path="res://materials/textures/gradients/grass_gradient.tres" id="2_dpx7a"]
 [ext_resource type="Texture2D" uid="uid://cyxy1mry5ucmn" path="res://materials/textures/grass_multiple_low.png" id="2_qa1q6"]
-
-[sub_resource type="Gradient" id="Gradient_qa1q6"]
-offsets = PackedFloat32Array(0, 0.2, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.90588236, 0.8235294, 0, 1, 1, 0.53333336, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_dpx7a"]
-gradient = SubResource("Gradient_qa1q6")
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_hie8n")
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/color_ramp = SubResource("GradientTexture1D_dpx7a")
+shader_parameter/color_ramp = ExtResource("2_dpx7a")
 shader_parameter/mask_texture = ExtResource("2_qa1q6")
 shader_parameter/value = 1.0
 shader_parameter/speed = 1.0
