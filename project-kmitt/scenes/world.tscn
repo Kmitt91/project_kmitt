@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=11 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bbr51mbefbh5g" path="res://blender_files/project_kmitt.blend" id="3_4wyf3"]
+[ext_resource type="Material" uid="uid://bkuy3r1ocqeq6" path="res://materials/shader_materials/grass_shader.tres" id="4_qfnet"]
+[ext_resource type="Material" uid="uid://bqxy30110hsps" path="res://materials/shader_materials/grass_parrticle_shader.tres" id="5_qfnet"]
+[ext_resource type="ArrayMesh" uid="uid://1sf7j1mjyw2s" path="res://blender_files/grass_multiple.obj" id="6_i7141"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -13,14 +16,17 @@ sky = SubResource("Sky_i7141")
 ambient_light_source = 3
 ambient_light_color = Color(0.8039216, 0.6627451, 0.44313726, 1)
 ambient_light_sky_contribution = 0.2
-ambient_light_energy = 0.5
+ambient_light_energy = 0.2
 tonemap_mode = 4
+ssao_enabled = true
 ssao_radius = 1.5
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 1.0
+ssil_enabled = true
 ssil_radius = 8.0
 ssil_intensity = 1.5
 sdfgi_use_occlusion = true
+glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.1
 glow_blend_mode = 1
@@ -30,8 +36,10 @@ fog_light_color = Color(0.5425756, 0.6315804, 0.7697038, 1)
 fog_sun_scatter = 0.5
 fog_density = 0.66
 fog_aerial_perspective = 0.5
+fog_height = -70.0
+fog_height_density = 0.08
 fog_depth_curve = 8.0
-fog_depth_end = 128.0
+fog_depth_end = 120.0
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
@@ -57,9 +65,9 @@ camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 transform = Transform3D(0.720565, -0.32427514, -0.612888, 0.64899325, 0.62660277, 0.43148205, 0.24411842, -0.70867103, 0.6619604, -0.017189741, 5.5175576, -0.5412545)
 light_color = Color(0.8, 0.49639997, 0.007999993, 1)
 shadow_enabled = true
-directional_shadow_mode = 1
+shadow_blur = 2.0
 directional_shadow_split_1 = 0.2
-directional_shadow_max_distance = 160.0
+directional_shadow_max_distance = 150.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.25881916, 0, -0.96592593, 0, 1, 0, 0.96592593, 0, -0.25881916, -36.65175, -41.29775, -59.352882)
@@ -67,3 +75,55 @@ mesh = SubResource("PlaneMesh_4wyf3")
 surface_material_override/0 = ExtResource("2_rwgxs")
 
 [node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.9989209, 0, -0.046443954, 0, 1, 0, 0.046443954, 0, 0.9989209, -1.0113819, 0, 16.881317)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.9839006, 0, 0.17871633, 0, 1, 0, -0.17871633, 0, 0.9839006, -1.3446338, 0, 0.29031134)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.99892086, 0, 0.046444032, 0, 1, 0, -0.046444032, 0, -0.99892086, -10.876146, 0, -54.644684)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="."]
+transform = Transform3D(-0.9839006, 0, -0.17871624, 0, 1, 0, 0.17871624, 0, -0.9839006, -10.542896, 0, -38.053677)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
