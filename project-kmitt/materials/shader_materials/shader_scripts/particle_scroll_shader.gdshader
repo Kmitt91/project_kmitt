@@ -1,3 +1,5 @@
+//Written by me Kmitt91, btw. this is by far the most useful vfx shader there is, nearly all my Effects use this simple shader;)
+
 shader_type spatial;
 render_mode blend_mix, cull_back, unshaded, shadows_disabled, depth_prepass_alpha, depth_draw_opaque;
 

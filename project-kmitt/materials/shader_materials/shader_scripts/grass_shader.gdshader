@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode cull_disabled, depth_prepass_alpha, depth_draw_opaque, diffuse_toon;
+render_mode cull_disabled, diffuse_toon, specular_disabled;
 
 uniform vec4 color : source_color;
 uniform sampler2D color_ramp : hint_default_white;
@@ -19,13 +19,13 @@ vec3 wind(mat4 matrix, vec3 vertex){
 	float diff = (maxStrength - minStrength) * (maxStrength - minStrength);
 	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength);
 	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, vertex.y);
-	
+
 	return vec3(wind * normalize(vec2(1.0)).x, 0.0, wind * normalize(vec2(1.0)).y);
 }
 
 
 void vertex() {
-	
+
 	VERTEX += wind(MODEL_MATRIX, VERTEX);
 }
 
@@ -35,19 +35,18 @@ void fragment() {
 	//if (!FRONT_FACING){
 		//NORMAL = -NORMAL;
 	//}
-	
+
 	vec3 col = texture(color_ramp, vec2(1.0 - UV.y, 0.0)).rgb;
 	vec4 mask = texture(mask_texture, UV + vec2(0.0, 0.01));
-	
+
 	ALBEDO = value * col * mask.rgb * color.rgb * COLOR.rgb;
 	ALPHA *= mask.a;
-	
+
+	//get distance to camera
 	vec3 world_camera = (INV_VIEW_MATRIX * vec4(vec3(0.0), 1.0)).xyz;
 	vec4 a = INV_VIEW_MATRIX * vec4(VERTEX, 1.0);
 	float world_distance = distance(a.xyz, world_camera);
-	
-	ALPHA_SCISSOR_THRESHOLD = mix(0.5, 0.2, smoothstep(1.0, 30.0, world_distance));
+
+	ALPHA_SCISSOR_THRESHOLD = mix(0.5, 0.3, smoothstep(1.0, 30.0, world_distance));
 	//EMISSION = ALBEDO * 0.04;
 }
-
-

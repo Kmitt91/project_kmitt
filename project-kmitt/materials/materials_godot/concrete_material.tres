@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dro7xx2y1qvw2" path="res://materials/textures/concrete_material/concrete_material_rough.png" id="3_t2s6h"]
 
 [resource]
+albedo_color = Color(0.7919991, 0.79199916, 0.7919991, 1)
 albedo_texture = ExtResource("1_mrqji")
 roughness_texture = ExtResource("3_t2s6h")
 normal_enabled = true
