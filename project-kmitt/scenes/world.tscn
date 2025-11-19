@@ -173,24 +173,36 @@ transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.
 size = Vector3(5, 1, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal4" type="Decal" parent="PLANTS"]
 transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.99888116, 0.09550461, 0, 14.957092)
 size = Vector3(5, 1, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal2" type="Decal" parent="PLANTS"]
 transform = Transform3D(0.9992138, 0, 0.03863093, 0, 1, 0, -0.03863093, 0, 0.9992138, 0.061250407, 0, 6.727292)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal3" type="Decal" parent="PLANTS"]
 transform = Transform3D(0.9917728, 0, 0.12770054, 0, 1, 0, -0.12770054, 0, 0.9917728, -1.3110087, 0, -3.3847148)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="PLANTS"]
 transform = Transform3D(-0.99892086, 0, 0.046444032, 0, 1, 0, -0.046444032, 0, -0.99892086, -10.876146, 0, -54.644684)
@@ -249,24 +261,36 @@ transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0
 size = Vector3(5, 1, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal6" type="Decal" parent="PLANTS"]
 transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0.9988813, -12.107813, 0, -52.60169)
 size = Vector3(5, 1, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal7" type="Decal" parent="PLANTS"]
 transform = Transform3D(-0.99921393, 0, -0.038630843, 0, 1, 0, 0.038630843, 0, -0.99921393, -12.073559, 0, -44.371887)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="Decal8" type="Decal" parent="PLANTS"]
 transform = Transform3D(-0.9917728, 0, -0.12770046, 0, 1, 0, 0.12770046, 0, -0.9917728, -10.701301, 0, -34.25988)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
 modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(0.93311685, 0, 0.35957342, 0, 1, 0, -0.35957342, 0, 0.93311685, -6.0143437, 1.0034208, -19.70807)
