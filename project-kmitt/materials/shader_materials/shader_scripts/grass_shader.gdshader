@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode cull_disabled, diffuse_toon, specular_disabled;
+render_mode blend_mix, cull_disabled, diffuse_toon, specular_disabled;
 
 uniform vec4 color : source_color;
 uniform sampler2D color_ramp : hint_default_white;
@@ -31,6 +31,7 @@ void vertex() {
 
 void fragment() {
 	//float side = FRONT_FACING ? 1.0 : -1.0;
+	NORMAL = vec3(1.0);
 	//NORMAL = NORMAL * side;
 	//if (!FRONT_FACING){
 		//NORMAL = -NORMAL;

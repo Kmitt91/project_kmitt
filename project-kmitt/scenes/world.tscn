@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=22 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dajtamoplaco1" path="res://materials/textures/flowers_low.png" id="8_q5onr"]
 [ext_resource type="ArrayMesh" uid="uid://p5ibd8yoifmt" path="res://blender_files/flower.obj" id="9_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dnug31wrwfe6n" path="res://materials/textures/decal_vertical.png" id="10_q5onr"]
+[ext_resource type="PackedScene" uid="uid://ohcj0p4k8o8w" path="res://scenes/tree.tscn" id="11_jhx03"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -116,10 +117,17 @@ surface_material_override/0 = ExtResource("2_rwgxs")
 
 [node name="PLANTS" type="Node3D" parent="."]
 
-[node name="GPUParticles3D_GRASS" type="GPUParticles3D" parent="PLANTS"]
+[node name="GRASS(particles)" type="Node3D" parent="PLANTS"]
+
+[node name="R" type="Node3D" parent="PLANTS/GRASS(particles)"]
+
+[node name="GPUParticles3D_GRASS" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R"]
 transform = Transform3D(0.9989209, 0, -0.046443954, 0, 1, 0, 0.046443954, 0, 0.9989209, -1.0113819, 0, 16.881317)
 material_override = ExtResource("4_qfnet")
 cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
 amount = 250
 fixed_fps = 1
 interpolate = false
@@ -129,10 +137,11 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
 
-[node name="GPUParticles3D_FLOWER" type="GPUParticles3D" parent="PLANTS/GPUParticles3D_GRASS"]
+[node name="GPUParticles3D_FLOWER" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R/GPUParticles3D_GRASS"]
 transform = Transform3D(0.99999994, 0, 3.7252903e-09, 0, 1.5, 0, -3.7252903e-09, 0, 0.99999994, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_dss4m")
 cast_shadow = 0
+visibility_range_end = 28.0
 amount = 32
 fixed_fps = 1
 interpolate = false
@@ -142,10 +151,13 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("9_jhx03")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="PLANTS"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R"]
 transform = Transform3D(0.9839006, 0, 0.17871633, 0, 1, 0, -0.17871633, 0, 0.9839006, -1.3446338, 0, 0.29031134)
 material_override = ExtResource("4_qfnet")
 cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
 amount = 250
 fixed_fps = 1
 interpolate = false
@@ -155,10 +167,11 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
 
-[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="PLANTS/GPUParticles3D2"]
+[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R/GPUParticles3D2"]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_dss4m")
 cast_shadow = 0
+visibility_range_end = 28.0
 amount = 32
 fixed_fps = 1
 interpolate = false
@@ -168,7 +181,191 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("9_jhx03")
 
-[node name="Decal" type="Decal" parent="PLANTS"]
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R"]
+transform = Transform3D(-0.99892086, 0, 0.046444032, 0, 1, 0, -0.046444032, 0, -0.99892086, -10.876146, 0, -54.644684)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER3" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R/GPUParticles3D3"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 28.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R"]
+transform = Transform3D(-0.9839006, 0, -0.17871624, 0, 1, 0, 0.17871624, 0, -0.9839006, -10.542896, 0, -38.053677)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 42.0
+visibility_range_end_margin = 4.0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER4" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/R/GPUParticles3D4"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 32.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="L" type="Node3D" parent="PLANTS/GRASS(particles)"]
+
+[node name="GPUParticles3D_GRASS2" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L"]
+transform = Transform3D(0.7719907, 0, -0.6356337, 0, 1, 0, 0.6356337, 0, 0.7719907, -72.04447, -13.993841, -50.473015)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L/GPUParticles3D_GRASS2"]
+transform = Transform3D(0.99999994, 0, 3.7252903e-09, 0, 1.5, 0, -3.7252903e-09, 0, 0.99999994, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 28.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L"]
+transform = Transform3D(0.8948565, 0, -0.4463541, 0, 1, 0, 0.4463541, 0, 0.8948565, -62.37174, -13.993841, -63.956734)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L/GPUParticles3D5"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 28.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="GPUParticles3D6" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L"]
+transform = Transform3D(-0.77199084, 0, 0.6356339, 0, 1, 0, -0.6356339, 0, -0.77199084, -37.09222, -13.993841, -113.6523)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 32.0
+visibility_range_end_margin = 4.0
+visibility_range_fade_mode = 1
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER3" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L/GPUParticles3D6"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 28.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="GPUParticles3D7" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L"]
+transform = Transform3D(-0.89485645, 0, 0.44635418, 0, 1, 0, -0.44635418, 0, -0.89485645, -46.764973, -13.993841, -100.16858)
+material_override = ExtResource("4_qfnet")
+cast_shadow = 0
+visibility_range_end = 42.0
+visibility_range_end_margin = 4.0
+amount = 250
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("6_i7141")
+
+[node name="GPUParticles3D_FLOWER4" type="GPUParticles3D" parent="PLANTS/GRASS(particles)/L/GPUParticles3D7"]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dss4m")
+cast_shadow = 0
+visibility_range_end = 32.0
+amount = 32
+fixed_fps = 1
+interpolate = false
+fract_delta = false
+visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
+local_coords = true
+process_material = ExtResource("5_qfnet")
+draw_pass_1 = ExtResource("9_jhx03")
+
+[node name="MOSS(decals)" type="Node3D" parent="PLANTS"]
+
+[node name="R" type="Node3D" parent="PLANTS/MOSS(decals)"]
+
+[node name="Decal" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.99888116, -0.4949146, 0, 21.72578)
 size = Vector3(5, 1, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
@@ -177,7 +374,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal4" type="Decal" parent="PLANTS"]
+[node name="Decal4" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.99888116, 0.09550461, 0, 14.957092)
 size = Vector3(5, 1, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
@@ -186,7 +383,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal2" type="Decal" parent="PLANTS"]
+[node name="Decal2" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(0.9992138, 0, 0.03863093, 0, 1, 0, -0.03863093, 0, 0.9992138, 0.061250407, 0, 6.727292)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
@@ -195,7 +392,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal3" type="Decal" parent="PLANTS"]
+[node name="Decal3" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(0.9917728, 0, 0.12770054, 0, 1, 0, -0.12770054, 0, 0.9917728, -1.3110087, 0, -3.3847148)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
@@ -204,59 +401,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="GPUParticles3D3" type="GPUParticles3D" parent="PLANTS"]
-transform = Transform3D(-0.99892086, 0, 0.046444032, 0, 1, 0, -0.046444032, 0, -0.99892086, -10.876146, 0, -54.644684)
-material_override = ExtResource("4_qfnet")
-cast_shadow = 0
-amount = 250
-fixed_fps = 1
-interpolate = false
-fract_delta = false
-visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
-local_coords = true
-process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("6_i7141")
-
-[node name="GPUParticles3D_FLOWER3" type="GPUParticles3D" parent="PLANTS/GPUParticles3D3"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_dss4m")
-cast_shadow = 0
-amount = 32
-fixed_fps = 1
-interpolate = false
-fract_delta = false
-visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
-local_coords = true
-process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
-
-[node name="GPUParticles3D4" type="GPUParticles3D" parent="PLANTS"]
-transform = Transform3D(-0.9839006, 0, -0.17871624, 0, 1, 0, 0.17871624, 0, -0.9839006, -10.542896, 0, -38.053677)
-material_override = ExtResource("4_qfnet")
-cast_shadow = 0
-amount = 250
-fixed_fps = 1
-interpolate = false
-fract_delta = false
-visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
-local_coords = true
-process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("6_i7141")
-
-[node name="GPUParticles3D_FLOWER4" type="GPUParticles3D" parent="PLANTS/GPUParticles3D4"]
-transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
-material_override = SubResource("ShaderMaterial_dss4m")
-cast_shadow = 0
-amount = 32
-fixed_fps = 1
-interpolate = false
-fract_delta = false
-visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
-local_coords = true
-process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
-
-[node name="Decal5" type="Decal" parent="PLANTS"]
+[node name="Decal5" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0.9988813, -11.517392, 0, -59.370377)
 size = Vector3(5, 1, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
@@ -265,7 +410,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal6" type="Decal" parent="PLANTS"]
+[node name="Decal6" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0.9988813, -12.107813, 0, -52.60169)
 size = Vector3(5, 1, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
@@ -274,7 +419,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal7" type="Decal" parent="PLANTS"]
+[node name="Decal7" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(-0.99921393, 0, -0.038630843, 0, 1, 0, 0.038630843, 0, -0.99921393, -12.073559, 0, -44.371887)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
@@ -283,7 +428,7 @@ distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
-[node name="Decal8" type="Decal" parent="PLANTS"]
+[node name="Decal8" type="Decal" parent="PLANTS/MOSS(decals)/R"]
 transform = Transform3D(-0.9917728, 0, -0.12770046, 0, 1, 0, 0.12770046, 0, -0.9917728, -10.701301, 0, -34.25988)
 size = Vector3(5, 1, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
@@ -291,6 +436,115 @@ modulate = Color(1, 0.80784315, 0, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
+
+[node name="L" type="Node3D" parent="PLANTS/MOSS(decals)"]
+
+[node name="Decal9" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(-0.7744395, 0, 0.6325853, 0, 1, 0, -0.6325853, 0, -0.7744395, -34.664513, -14.106839, -117.522026)
+size = Vector3(5, 1, 12.466064)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal10" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(-0.7744395, 0, 0.6325853, 0, 1, 0, -0.6325853, 0, -0.7744395, -39.17249, -14.106839, -112.438515)
+size = Vector3(5, 1, 7.608963)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal11" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(-0.82540625, 0, 0.56446904, 0, 1, 0, -0.56446904, 0, -0.82540625, -44.049603, -14.106839, -105.80945)
+size = Vector3(5, 1, 15.869202)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal12" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(-0.8725129, 0, 0.48851004, 0, 1, 0, -0.48851004, 0, -0.8725129, -48.973995, -14.106839, -96.871544)
+size = Vector3(5, 1, 15.869202)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal13" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(0.7744396, 0, -0.63258547, 0, 1, 0, 0.63258547, 0, 0.7744396, -74.14325, -14.106839, -45.83163)
+size = Vector3(5, 1, 12.466064)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal14" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(0.7744396, 0, -0.63258547, 0, 1, 0, 0.63258547, 0, 0.7744396, -69.63527, -14.106839, -50.91512)
+size = Vector3(5, 1, 7.608963)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal15" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(0.8254065, 0, -0.5644691, 0, 1, 0, 0.5644691, 0, 0.8254065, -64.75815, -14.106839, -57.544197)
+size = Vector3(5, 1, 15.869202)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="Decal16" type="Decal" parent="PLANTS/MOSS(decals)/L"]
+transform = Transform3D(0.8725128, 0, -0.48851013, 0, 1, 0, 0.48851013, 0, 0.8725128, -59.833775, -14.106839, -66.48209)
+size = Vector3(5, 1, 15.869202)
+texture_albedo = ExtResource("10_q5onr")
+modulate = Color(1, 0.80784315, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 32.0
+distance_fade_length = 8.0
+
+[node name="TREES" type="Node3D" parent="PLANTS"]
+
+[node name="tree" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(-0.09232432, -0.46681538, 0.8795222, 0.6885905, 0.6081021, 0.39503855, -0.7192494, 0.642102, 0.2653019, 6.225598, 15.383782, -11.6213875)
+
+[node name="tree2" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.76212776, -0.49676186, -0.41519764, 0.43622744, 0.8678867, -0.23765123, 0.4784008, 0, 0.8781416, 6.736038, 3.0773993, 24.654564)
+
+[node name="tree3" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.08511097, -0.8305283, 0.55043477, 0.72740996, 0.42932227, 0.53531086, -0.6809048, 0.3548307, 0.64067435, 12.160845, 12.084836, -5.223073)
+
+[node name="tree5" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.08511097, -0.8305283, 0.55043477, 0.72740996, 0.42932227, 0.53531086, -0.6809048, 0.3548307, 0.64067435, 0.22698021, 12.084836, -55.927475)
+
+[node name="tree7" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.42557853, -0.705827, -0.56629574, 0.021986008, 0.6336757, -0.7732865, 0.9046546, 0.31664392, 0.28519726, -6.811962, 1.0495946, -58.19208)
+
+[node name="tree8" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(-0.16474272, -1.311112, 0.7098213, 1.1313962, 0.35515362, 0.91859114, -0.9709806, 0.63628, 0.9499186, -1.7817287, -0.2854569, -87.77366)
+
+[node name="tree9" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(1.5251949, -1.2871794, 0.13019118, 1.2221258, 1.4994832, 0.5078962, -0.4244865, -0.3077654, 1.9300497, 7.7414927, 13.157558, -68.11267)
+
+[node name="tree6" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(-0.41265827, -0.89390534, -0.17506084, -0.90940434, 0.41526422, 0.023225995, 0.051934812, 0.16878542, -0.9842833, -3.6801133, 1.075151, -38.83705)
+
+[node name="tree4" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.08511097, -0.8305283, 0.55043477, 0.10078177, 0.5567821, 0.82452214, -0.9912617, -0.01470238, 0.13109013, 10.545359, 1.4663086, 6.8758945)
+
+[node name="tree11" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.8724172, -0.44783777, 0.19577958, 0.26075038, 0.76525396, 0.5885544, -0.41339815, -0.4624151, 0.78439426, -0.7044506, -6.6755524, 23.800112)
+
+[node name="tree12" parent="PLANTS/TREES" instance=ExtResource("11_jhx03")]
+transform = Transform3D(0.4913578, -0.6299717, 0.6014175, 0.43822193, 0.775572, 0.45436817, -0.75268173, 0.040296778, 0.6571506, 1.2859049, -6.4090357, 5.5938845)
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform3D(0.93311685, 0, 0.35957342, 0, 1, 0, -0.35957342, 0, 0.93311685, -6.0143437, 1.0034208, -19.70807)
