@@ -41,22 +41,22 @@ _subresources={
 "materials": {
 "brick": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/materials_godot/brick_material.tres",
+"use_external/fallback_path": "res://materials/base_materials/brick_material.tres",
 "use_external/path": "uid://1wv0k8msasr8"
 },
 "concrete": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/materials_godot/concrete_material.tres",
+"use_external/fallback_path": "res://materials/base_materials/concrete_material.tres",
 "use_external/path": "uid://bj72vd45nc53i"
 },
 "metal": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/materials_godot/metal_material.tres",
+"use_external/fallback_path": "res://materials/base_materials/metal_material.tres",
 "use_external/path": "uid://b2k2q1711heb2"
 },
 "rock": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/materials_godot/rock_material.tres",
+"use_external/fallback_path": "res://materials/base_materials/rock_material.tres",
 "use_external/path": "uid://bxldx4koce4wf"
 }
 }

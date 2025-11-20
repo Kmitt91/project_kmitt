@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ohcj0p4k8o8w"]
 
 [ext_resource type="PackedScene" uid="uid://x1mxi2pgtrab" path="res://blender_files/tree.glb" id="1_avsvi"]
-[ext_resource type="Material" uid="uid://bxldx4koce4wf" path="res://materials/materials_godot/rock_material.tres" id="2_viusy"]
+[ext_resource type="Material" uid="uid://bxldx4koce4wf" path="res://materials/base_materials/rock_material.tres" id="2_viusy"]
 [ext_resource type="Material" uid="uid://bpo0dbtulj180" path="res://materials/shader_materials/leaves_shader.tres" id="2_vplca"]
 
 [node name="tree" type="Node3D"]

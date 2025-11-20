@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://dkrhry7slrjay"]
+
+[ext_resource type="Shader" uid="uid://cdew4skc5rd8l" path="res://materials/shader_materials/shader_scripts/overlay_shader.gdshader" id="1_c0lmt"]
+[ext_resource type="Texture2D" uid="uid://dl5wf6y7wslrd" path="res://materials/textures/moss_material/moss_material_albedo.png" id="2_ri4nl"]
+[ext_resource type="Texture2D" uid="uid://vho1t2v1f6th" path="res://materials/textures/moss_material/moss_material_normal.png" id="3_5kx4h"]
+
+[sub_resource type="Gradient" id="Gradient_awqbq"]
+offsets = PackedFloat32Array(0.25748503, 0.35928145)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_13sx3"]
+offset = Vector3(64.45, 141.05, 0)
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ms07t"]
+noise = SubResource("FastNoiseLite_13sx3")
+color_ramp = SubResource("Gradient_awqbq")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_c0lmt")
+shader_parameter/noise_texture_overlay = SubResource("NoiseTexture2D_ms07t")
+shader_parameter/albedo_texture = ExtResource("2_ri4nl")
+shader_parameter/texture_normal = ExtResource("3_5kx4h")
+shader_parameter/color_modulate = Color(0.9999997, 0.9626822, 0.8754609, 1)
+shader_parameter/normal_strength = 2.0
+shader_parameter/value = 1.0
+shader_parameter/uv1_blend_sharpness = 2.0
+shader_parameter/uv1_scale = 0.01

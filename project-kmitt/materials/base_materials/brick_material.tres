@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://1wv0k8msasr8"]
+
+[ext_resource type="Texture2D" uid="uid://ds8642jv68ll3" path="res://materials/textures/brick_material/brick_material_albedo.png" id="1_261mr"]
+[ext_resource type="Texture2D" uid="uid://dyyk6fxqtoegb" path="res://materials/textures/brick_material/brick_material_normal.png" id="2_awqbq"]
+[ext_resource type="Texture2D" uid="uid://ccwq07ue1kgqo" path="res://materials/textures/brick_material/brick_material_rough.png" id="3_d3n2b"]
+
+[resource]
+albedo_color = Color(0.83045745, 0.84330857, 0.8308086, 1)
+albedo_texture = ExtResource("1_261mr")
+roughness_texture = ExtResource("3_d3n2b")
+normal_enabled = true
+normal_texture = ExtResource("2_awqbq")

@@ -1,8 +1,18 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bkuy3r1ocqeq6"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bkuy3r1ocqeq6"]
 
 [ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_hie8n"]
 [ext_resource type="Texture2D" uid="uid://c73rfnyu4xkys" path="res://materials/textures/gradients/grass_gradient.tres" id="2_dpx7a"]
 [ext_resource type="Texture2D" uid="uid://cyxy1mry5ucmn" path="res://materials/textures/grass_multiple_low.png" id="2_qa1q6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dpx7a"]
+frequency = 0.006
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x2h7l"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_dpx7a")
+seamless = true
 
 [resource]
 render_priority = 0
@@ -10,7 +20,9 @@ shader = ExtResource("1_hie8n")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/color_ramp = ExtResource("2_dpx7a")
 shader_parameter/mask_texture = ExtResource("2_qa1q6")
-shader_parameter/value = 1.6
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_x2h7l")
+shader_parameter/roughness_value = 1.6
+shader_parameter/value = 1.0
 shader_parameter/speed = 1.0
 shader_parameter/minStrength = 0.2000000095
 shader_parameter/maxStrength = 0.400000019

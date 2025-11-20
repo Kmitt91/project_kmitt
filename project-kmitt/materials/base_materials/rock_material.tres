@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bxldx4koce4wf"]
+
+[ext_resource type="Texture2D" uid="uid://cap0xrolf7pni" path="res://materials/textures/rock_material/rock_material_albedo.png" id="1_ctd4m"]
+[ext_resource type="Material" uid="uid://dkrhry7slrjay" path="res://materials/shader_materials/moss_overlay_shader.tres" id="2_dhe7h"]
+[ext_resource type="Texture2D" uid="uid://dqu7k3mxloyd7" path="res://materials/textures/rock_material/rock_material_normal.png" id="3_c34qn"]
+[ext_resource type="Texture2D" uid="uid://bppgqom30usdr" path="res://materials/textures/rock_material/rock_material_rough.png" id="4_5xjph"]
+
+[resource]
+next_pass = ExtResource("2_dhe7h")
+albedo_texture = ExtResource("1_ctd4m")
+roughness_texture = ExtResource("4_5xjph")
+normal_enabled = true
+normal_texture = ExtResource("3_c34qn")

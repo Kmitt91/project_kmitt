@@ -24,7 +24,7 @@ void fragment(){
 	vec4 grad_col = texture(gradient, UV);
 	vec4 noise = texture(noise_tex, UV2 * frequency  * 2.0 + TIME * time_factor);
 
-	ALBEDO = value * grad_col.rgb * albedo_tex.rgb * color.rgb;// * (noise.r + 0.5);
+	ALBEDO = value * grad_col.rgb * albedo_tex.rgb * color.rgb;
 
 	ALPHA *= albedo_tex.a;
 
