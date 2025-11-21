@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=23 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
@@ -13,6 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://p5ibd8yoifmt" path="res://blender_files/flower.obj" id="9_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dnug31wrwfe6n" path="res://materials/textures/decal_vertical.png" id="10_q5onr"]
 [ext_resource type="PackedScene" uid="uid://ohcj0p4k8o8w" path="res://scenes/tree.tscn" id="11_jhx03"]
+[ext_resource type="PackedScene" uid="uid://cap1a5jvp3vyp" path="res://scenes/godot_knight.tscn" id="14_o8fc1"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -57,7 +58,6 @@ auto_exposure_speed = 3.0
 dof_blur_far_enabled = true
 dof_blur_far_distance = 64.0
 dof_blur_far_transition = 32.0
-dof_blur_near_enabled = true
 dof_blur_amount = 0.03
 auto_exposure_min_sensitivity = 60.0
 
@@ -109,7 +109,7 @@ shadow_enabled = true
 shadow_blur = 2.0
 directional_shadow_max_distance = 128.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CLOUDS" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.2566014, -0.13063002, -0.95764905, -0.03380955, 0.99143106, -0.1261789, 0.9659258, 3.5645273e-09, -0.25881913, -36.652, -37.335873, -59.353)
 mesh = SubResource("PlaneMesh_4wyf3")
 surface_material_override/0 = ExtResource("2_rwgxs")
@@ -689,3 +689,6 @@ lifetime = 0.5
 fixed_fps = 24
 process_material = ExtResource("7_4mrxx")
 draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="godot_knight" parent="." instance=ExtResource("14_o8fc1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.3135748, 0, 17.924084)
