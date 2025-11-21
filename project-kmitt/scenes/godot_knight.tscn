@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cap1a5jvp3vyp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_36j3m"]
+radius = 0.25
+height = 1.7
+
+[node name="godot_knight" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_36j3m")

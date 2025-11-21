@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bkr1njnqf0c8b"]
+
+[ext_resource type="Shader" uid="uid://djtmak386nldu" path="res://materials/shader_materials/shader_scripts/glow_shader.gdshader" id="1_m8yr8"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_m8yr8")
+shader_parameter/color = Color(0.09019608, 0.73333335, 0.99607843, 1)
+shader_parameter/emission_strength = 32.0
