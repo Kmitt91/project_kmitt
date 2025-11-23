@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg3vkg355nxqv"]
+
+[ext_resource type="Script" uid="uid://bwti2dbcskuoi" path="res://godot_knight/player_components/gd_script/camera_system.gd" id="1_130cg"]
+
+[node name="camera_system" type="Node3D"]
+script = ExtResource("1_130cg")
+
+[node name="h" type="Node3D" parent="."]
+
+[node name="v" type="Node3D" parent="h"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="ClippedCamera" type="Camera3D" parent="h/v"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.5)
+current = true
+fov = 65.0
+far = 999.0
+
+[node name="CameraCollider" type="RayCast3D" parent="h/v"]
+target_position = Vector3(0, 0, -2.5)
+
+[node name="CameraTimer" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
