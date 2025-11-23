@@ -59,6 +59,23 @@ _subresources={
 "use_external/fallback_path": "res://materials/base_materials/rock_material.tres",
 "use_external/path": "uid://bxldx4koce4wf"
 }
+},
+"nodes": {
+"PATH:path": {
+"generate/physics": true
+},
+"PATH:path/tower2_001": {
+"generate/physics": true
+},
+"PATH:path/tower2_002": {
+"generate/physics": true
+},
+"PATH:path/tower2_003": {
+"generate/physics": true
+},
+"PATH:path/tower2_004": {
+"generate/physics": true
+}
 }
 }
 blender/nodes/visible=1

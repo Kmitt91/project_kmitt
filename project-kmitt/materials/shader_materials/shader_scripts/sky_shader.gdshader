@@ -48,7 +48,7 @@ void sky() {
 
 	vec3 wind = vec3(wind_speed.x, 0.0, wind_speed.y) * TIME * 0.1;
 	vec3 tiling = vec3(noise_tiling.x, 1.0, noise_tiling.y) * 0.2;
-	vec3 cloud_pos = EYEDIR * t * tiling + wind;
+	vec3 cloud_pos = EYEDIR * t * tiling - wind;
 
 	// Parallax mapping
 	float height = sample_height(cloud_pos.xz);

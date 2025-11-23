@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddhtmc7e7dhay"]
+
+[ext_resource type="Script" uid="uid://0w8j1u3k4sly" path="res://godot_knight/player_components/gd_script/jump_system.gd" id="1_qlwen"]
+
+[node name="jump_system" type="Node"]
+script = ExtResource("1_qlwen")
+
+[node name="TimerGravity" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="TimerGravity" to="." method="_on_timer_gravity_timeout"]

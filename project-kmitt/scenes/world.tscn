@@ -60,13 +60,13 @@ dof_blur_far_transition = 32.0
 dof_blur_amount = 0.03
 auto_exposure_min_sensitivity = 60.0
 
+[sub_resource type="QuadMesh" id="QuadMesh_qfnet"]
+material = ExtResource("8_7r4gi")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_4wyf3"]
 size = Vector2(512, 512)
 subdivide_width = 32
 subdivide_depth = 16
-
-[sub_resource type="QuadMesh" id="QuadMesh_qfnet"]
-material = ExtResource("8_7r4gi")
 
 [node name="world" type="Node3D"]
 
@@ -74,17 +74,22 @@ material = ExtResource("8_7r4gi")
 environment = SubResource("Environment_nnsk1")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.92718387, 0.04054178, -0.37240642, 0, 0.99412644, 0.10822493, 0.3746067, 0.1003444, -0.92173797, -0.470002, 3, -22.79)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.720565, 0.3242752, 0.612888, 0.64899325, 0.62660277, 0.43148202, -0.24411836, 0.70867103, -0.6619605, 0.017189788, 5.5175576, 0.5412545)
+light_color = Color(0.9999986, 0.7913388, 0.5649461, 1)
+light_energy = 0.75
+shadow_enabled = true
+shadow_blur = 2.0
+directional_shadow_max_distance = 128.0
+
 [node name="godot_knight" parent="." instance=ExtResource("14_o8fc1")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021, 0, -18.74066)
 
 [node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="CLOUDS" type="MeshInstance3D" parent="project_kmitt"]
-transform = Transform3D(-0.2566014, -0.13063002, -0.95764905, -0.03380955, 0.99143106, -0.1261789, 0.9659258, 3.5645273e-09, -0.25881913, -36.652, -37.335873, -59.353)
-mesh = SubResource("PlaneMesh_4wyf3")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("2_rwgxs")
 
 [node name="PLANTS" type="Node3D" parent="project_kmitt"]
 
@@ -517,19 +522,9 @@ transform = Transform3D(-0.3261509, -1.1005541, 0.9656118, 1.0174624, 0.5409925,
 [node name="tree13" parent="project_kmitt/PLANTS/TREES" instance=ExtResource("11_jhx03")]
 transform = Transform3D(-0.43486798, -1.4674053, 1.2874827, 1.3566165, 0.7213232, 1.2803454, -1.4037385, 1.1517007, 0.838513, 2.874053, -18.147572, 28.347553)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="project_kmitt"]
-transform = Transform3D(0.720565, -0.32427514, -0.61288804, 0.64899325, 0.62660277, 0.43148205, 0.24411842, -0.70867103, 0.6619604, -0.017189741, 5.5175576, -0.5412545)
-light_color = Color(0.9999986, 0.7913388, 0.5649461, 1)
-light_energy = 0.75
-shadow_enabled = true
-shadow_blur = 2.0
-directional_shadow_max_distance = 128.0
-
-[node name="Camera3D" type="Camera3D" parent="project_kmitt"]
-transform = Transform3D(0.92718387, -0.040541768, 0.37240633, 0, 0.99412644, 0.10822493, -0.37460658, -0.1003444, 0.921738, 0.47, 3, 22.79)
-
 [node name="ReflectionProbe" type="ReflectionProbe" parent="project_kmitt"]
 transform = Transform3D(0.93311685, 0, 0.35957342, 0, 1, 0, -0.35957342, 0, 0.93311685, -6.0143437, 1.0034208, -19.70807)
+update_mode = 1
 size = Vector3(6.716, 22.45996, 19.405)
 box_projection = true
 interior = true
@@ -539,7 +534,7 @@ enable_shadows = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09412813, 2.6690903, 0.6021862)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
 light_specular = 1.0
-omni_range = 4.4
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe/OmniLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -561,7 +556,7 @@ draw_pass_1 = SubResource("QuadMesh_qfnet")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10007572, 2.6690903, 5.6670065)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
 light_specular = 1.0
-omni_range = 4.4
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe/OmniLight3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -583,7 +578,7 @@ draw_pass_1 = SubResource("QuadMesh_qfnet")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14432478, 2.6690903, -4.451193)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
 light_specular = 1.0
-omni_range = 4.4
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe/OmniLight3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -611,7 +606,7 @@ enable_shadows = true
 [node name="OmniLight3D" type="OmniLight3D" parent="project_kmitt/ReflectionProbe2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42443848, 2.6690903, 0.61346436)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
-omni_range = 3.0
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe2/OmniLight3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -632,7 +627,7 @@ draw_pass_1 = SubResource("QuadMesh_qfnet")
 [node name="OmniLight3D2" type="OmniLight3D" parent="project_kmitt/ReflectionProbe2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4304123, 2.6690903, 5.678299)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
-omni_range = 3.0
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe2/OmniLight3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -653,7 +648,7 @@ draw_pass_1 = SubResource("QuadMesh_qfnet")
 [node name="OmniLight3D3" type="OmniLight3D" parent="project_kmitt/ReflectionProbe2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47465515, 2.6690903, -4.4398956)
 light_color = Color(0.7372549, 0.31764707, 0.67058825, 1)
-omni_range = 3.0
+omni_range = 4.0
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="project_kmitt/ReflectionProbe2/OmniLight3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4759297, -0.20000029, -0.004211426)
@@ -670,3 +665,8 @@ lifetime = 0.5
 fixed_fps = 24
 process_material = ExtResource("7_4mrxx")
 draw_pass_1 = SubResource("QuadMesh_qfnet")
+
+[node name="CLOUDS" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2566013, 0.13063002, 0.95764905, -0.03380955, 0.99143106, -0.1261789, -0.9659258, -1.4984566e-08, 0.25881904, 36.652004, -37.335873, 59.352997)
+mesh = SubResource("PlaneMesh_4wyf3")
+surface_material_override/0 = ExtResource("2_rwgxs")

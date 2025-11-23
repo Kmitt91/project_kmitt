@@ -2,6 +2,8 @@ extends Node3D
 
 @export var player : CharacterBody3D
 @export var drag_camera : bool = true
+@export var camera_speed : float = 80.0
+
 @onready var camera : Camera3D = $h/v/ClippedCamera
 
 ### camera variables ###
@@ -11,7 +13,6 @@ var camera_x_rot : float = 0.0
 const CAMERA_ACCELERATION : float = 5.0
 const CAM_X_MIN : float = -55.0
 const CAM_X_MAX : float = 65.0
-var camera_speed : float = 80.0
 
 
 ### READY ###
@@ -46,8 +47,8 @@ func _input(event):
 			var cam_speed : float = 0.0012 * (2.0 * (camera_speed / 100.0))
 			rotate_camera(event.relative * cam_speed)
 	#tutorial_prompt()
-	elif event.is_action_pressed("F3"):
-		drag_camera = !drag_camera
+	#elif event.is_action_pressed("F3"):
+		#drag_camera = !drag_camera
 	
 
 #region ### CAMERA HANDLING + FIX ###
