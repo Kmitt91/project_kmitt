@@ -92,6 +92,9 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021,
 [node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
+[node name="world_collision" parent="project_kmitt" instance=ExtResource("13_o8fc1")]
+visible = false
+
 [node name="PLANTS" type="Node3D" parent="project_kmitt"]
 
 [node name="GRASS(particles)" type="Node3D" parent="project_kmitt/PLANTS"]
@@ -666,9 +669,6 @@ lifetime = 0.5
 fixed_fps = 24
 process_material = ExtResource("7_4mrxx")
 draw_pass_1 = SubResource("QuadMesh_qfnet")
-
-[node name="world_collision" parent="project_kmitt" instance=ExtResource("13_o8fc1")]
-visible = false
 
 [node name="CLOUDS" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2566013, 0.13063002, 0.95764905, -0.03380955, 0.99143106, -0.1261789, -0.9659258, -1.4984566e-08, 0.25881904, 36.652004, -37.335873, 59.352997)

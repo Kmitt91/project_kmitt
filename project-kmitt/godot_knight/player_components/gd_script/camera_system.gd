@@ -47,7 +47,7 @@ func _input(event):
 			var cam_speed : float = 0.0012 * (2.0 * (camera_speed / 100.0))
 			rotate_camera(event.relative * cam_speed)
 	#tutorial_prompt()
-	#elif event.is_action_pressed("F3"):
+	#elif event.is_action_pressed("L3"):
 		#drag_camera = !drag_camera
 	
 
@@ -56,10 +56,10 @@ func _input(event):
 func camera_drag(delta):
 	#camera drag for jump and roll
 	if drag_camera:
-		if player.roll:
-			self.global_position = cam_h_global_pos
-		elif player.jump:
+		if player.jump:
 			self.global_position.y = cam_h_global_pos.y 
+		#elif player.roll:
+			#self.global_position = cam_h_global_pos
 		else:
 			cam_h_global_pos = player.global_position
 		

@@ -5,6 +5,7 @@ extends CharacterBody3D
 #@onready var left_hand : Node3D = $The_One_Reborn/The_One_Reborn_Armature/Skeleton3D/LeftHand/LHandScale
 #@onready var right_hand : Node3D = $The_One_Reborn/The_One_Reborn_Armature/Skeleton3D/RightHand/RHandScale
 @onready var greatshield : Node3D = $godot_knight/Godot_Knight_Armature/Skeleton3D/DEF_Shoulder_L_001/greatshield
+@onready var hurtbox_collision = $HurtboxArea3D/CollisionShape3D
 
 #define current state
 @export var intro : bool = false
@@ -41,5 +42,5 @@ var targets_arr = []
 var targeting : bool = false
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
