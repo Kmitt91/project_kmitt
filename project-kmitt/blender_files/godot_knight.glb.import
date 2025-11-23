@@ -16489,20 +16489,35 @@ _subresources={
 }
 },
 "materials": {
+"cherker": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/base_materials/fabric_material.tres",
+"use_external/path": "uid://chipw7ht2cov7"
+},
+"dark_blue": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/base_materials/fabric_material.tres",
+"use_external/path": "uid://chipw7ht2cov7"
+},
 "fabric": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://materials/shader_materials/fabric_shader.tres",
 "use_external/path": "uid://np478h7xd3a3"
 },
-"glow": {
+"face": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/shader_materials/glow_blue.tres",
-"use_external/path": "uid://bkr1njnqf0c8b"
+"use_external/fallback_path": "res://materials/base_materials/face_material.tres",
+"use_external/path": "uid://blih8yyisskxa"
 },
-"silver": {
+"mask": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://materials/base_materials/steel_material.tres",
-"use_external/path": "uid://ckaj2bbnf0nph"
+"use_external/fallback_path": "res://materials/shader_materials/mask_shader.tres",
+"use_external/path": "uid://dunmxi2lxrtqg"
+},
+"metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/shader_materials/steel_shader.tres",
+"use_external/path": "uid://uknn7xnu6jvp"
 }
 }
 }

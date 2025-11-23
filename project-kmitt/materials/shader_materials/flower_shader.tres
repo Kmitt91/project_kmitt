@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c74hxkbic02fw"]
+
+[ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_dv1my"]
+[ext_resource type="Texture2D" uid="uid://dajtamoplaco1" path="res://materials/textures/flowers_low.png" id="2_u7mqu"]
+
+[sub_resource type="Gradient" id="Gradient_o8fc1"]
+offsets = PackedFloat32Array(0.5466667, 0.67333335)
+colors = PackedColorArray(1, 1, 1, 1, 0.33649498, 0.00057140825, 0.9321246, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xo05s"]
+gradient = SubResource("Gradient_o8fc1")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dv1my")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_ramp = SubResource("GradientTexture1D_xo05s")
+shader_parameter/mask_texture = ExtResource("2_u7mqu")
+shader_parameter/roughness_value = 1.0
+shader_parameter/value = 3.0
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.10000000475
+shader_parameter/maxStrength = 0.30000001425
+shader_parameter/interval = 3.5
+shader_parameter/detail = 2.0
+shader_parameter/distortion = 0.0

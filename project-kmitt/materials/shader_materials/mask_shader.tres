@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dunmxi2lxrtqg"]
+
+[ext_resource type="Shader" uid="uid://7eblbn7tsif1" path="res://materials/shader_materials/shader_scripts/mask_shader.gdshader" id="1_bvj7y"]
+[ext_resource type="Texture2D" uid="uid://cm8ony8iax4ce" path="res://materials/textures/mask.png" id="2_6554b"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0p8gc"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mxq27"]
+noise = SubResource("FastNoiseLite_0p8gc")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bvj7y")
+shader_parameter/mask_color = Color(0.90359825, 0.90359825, 0.9035982, 1)
+shader_parameter/emission_color = Color(0, 0.57669896, 0.9428735, 1)
+shader_parameter/mask = ExtResource("2_6554b")
+shader_parameter/noise = SubResource("NoiseTexture2D_mxq27")
+shader_parameter/emission_strength = 24.0
+shader_parameter/speed = 0.03

@@ -6,4 +6,4 @@
 render_priority = 0
 shader = ExtResource("1_m8yr8")
 shader_parameter/color = Color(0, 0.42745098, 1, 1)
-shader_parameter/emission_strength = 8.0
+shader_parameter/emission_strength = 4.0

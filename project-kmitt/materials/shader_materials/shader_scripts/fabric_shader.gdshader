@@ -20,7 +20,6 @@ uniform float speed = 0.3;
 
 
 void vertex() {
-
 	vec2 scaled_uv = UV * vec2(0.3);
 	float noise = texture(noise_texture, scaled_uv + vec2(TIME * speed, 0.0)).r;
 //	float noise = texture(noise_texture, scaled_uv + vec2(1.0, 0.0),4.0).r;
@@ -29,6 +28,7 @@ void vertex() {
 	displacement *= UV.y;
 
 	VERTEX += vec3(displacement, 0.0, 0.5 * -displacement);
+
 }
 
 

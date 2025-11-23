@@ -27,14 +27,14 @@ vec3 wind(mat4 matrix, vec3 vertex){
 
 
 void vertex() {
-
 	VERTEX += wind(MODEL_MATRIX, VERTEX);
+	
 }
 
 void fragment() {
 	//float side = FRONT_FACING ? 1.0 : -1.0;
-	NORMAL = vec3(1.0, 1.0, 1.0);
 	//NORMAL = NORMAL * side;
+	NORMAL = vec3(1.0);
 	//if (!FRONT_FACING){
 		//NORMAL = -NORMAL;
 	//}
@@ -44,7 +44,7 @@ void fragment() {
 	float noise = texture(noise_texture, UV + TIME * speed * 0.1).r;
 
 	ALBEDO = value * col * mask.rgb * color.rgb * COLOR.rgb;
-	ROUGHNESS = clamp(roughness_value * col.r * noise, 0.0, 1.0);
+	//ROUGHNESS = clamp(roughness_value * col.r * noise, 0.0, 1.0);
 	ALPHA *= mask.a;
 
 	//get distance to camera

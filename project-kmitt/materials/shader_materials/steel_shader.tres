@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://uknn7xnu6jvp"]
+
+[ext_resource type="Shader" uid="uid://blleaa8c378ve" path="res://materials/shader_materials/shader_scripts/steel_shader.gdshader" id="1_1hqdh"]
+[ext_resource type="Texture2D" uid="uid://bm5npy03shorx" path="res://materials/textures/metal_material/steel_material_albedo.png" id="2_6kxr1"]
+[ext_resource type="Texture2D" uid="uid://00a3bqcjvxwc" path="res://materials/textures/metal_material/metal_material_normal.png" id="3_cmbq8"]
+[ext_resource type="Texture2D" uid="uid://d2flf08kxatm6" path="res://materials/textures/metal_material/metal_material_rough.png" id="4_fe1sb"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2aciw"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y3qmh"]
+noise = SubResource("FastNoiseLite_2aciw")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1hqdh")
+shader_parameter/normal_scale = 4.0
+shader_parameter/reflection_value = 1.0
+shader_parameter/color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+shader_parameter/albedo_tex = ExtResource("2_6kxr1")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_y3qmh")
+shader_parameter/normal_tex = ExtResource("3_cmbq8")
+shader_parameter/roughness_tex = ExtResource("4_fe1sb")
