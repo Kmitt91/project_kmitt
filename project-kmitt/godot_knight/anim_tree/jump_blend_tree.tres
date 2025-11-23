@@ -1,0 +1,46 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=8 format=3 uid="uid://do21dwo6g15v7"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8snvx"]
+animation = &"JUMP-loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4dep7"]
+animation = &"JUMP-loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s3kt7"]
+animation = &"JUMP_UP"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fx65s"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t1wha"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hlyb0"]
+states/JUMP-loop/node = SubResource("AnimationNodeAnimation_4dep7")
+states/JUMP-loop/position = Vector2(531, 107)
+states/JUMP_UP/node = SubResource("AnimationNodeAnimation_s3kt7")
+states/JUMP_UP/position = Vector2(358, 107)
+states/Start/position = Vector2(225, 105)
+transitions = ["Start", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_fx65s"), "JUMP_UP", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_t1wha")]
+graph_offset = Vector2(-69, -51)
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_7l8b1"]
+input_0/name = "JUMP_UP"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "JUMP"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[resource]
+graph_offset = Vector2(-749, -85)
+nodes/Transition/node = SubResource("AnimationNodeTransition_7l8b1")
+nodes/Transition/position = Vector2(60, 140)
+nodes/JUMP/node = SubResource("AnimationNodeAnimation_8snvx")
+nodes/JUMP/position = Vector2(-180, 300)
+nodes/JUMP_UP/node = SubResource("AnimationNodeStateMachine_hlyb0")
+nodes/JUMP_UP/position = Vector2(-240, 80)
+node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"JUMP_UP", &"Transition", 1, &"JUMP"]

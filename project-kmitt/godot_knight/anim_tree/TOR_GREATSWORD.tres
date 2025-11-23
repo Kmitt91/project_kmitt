@@ -1,9 +1,7 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=30 format=3 uid="uid://besmjtk7myemu"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=46 format=3 uid="uid://besmjtk7myemu"]
 
-[ext_resource type="AnimationNodeBlendTree" path="res://The_One_Reborn/TOR_Scenes/TOR_Anim/anim_tree/JUMP_blend_tree.tres" id="1_1obue"]
-[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://dvshr80ti5y7l" path="res://godot_knight/anim_tree/strafe_blendspace2d.tres" id="1_m4hhh"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_ru3f1"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="2_wjwwt"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="1_f3pgx"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_b4m04"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://m125pwim3gv1" path="res://godot_knight/anim_tree/stagger_blend_tree.tres" id="5_ep8mm"]
 
 [sub_resource type="AnimationNodeAnimation" id="46"]
@@ -22,6 +20,51 @@ animation = &"Knife_ATTACK2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vv71m"]
 animation = &"BLOCK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k05yi"]
+animation = &"JUMP-loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvqar"]
+animation = &"JUMP-loop"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0wxe7"]
+animation = &"JUMP_UP"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mvo22"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wqdbs"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_82ebh"]
+states/JUMP-loop/node = SubResource("AnimationNodeAnimation_cvqar")
+states/JUMP-loop/position = Vector2(526, 124)
+states/JUMP_UP/node = SubResource("AnimationNodeAnimation_0wxe7")
+states/JUMP_UP/position = Vector2(350, 95)
+transitions = ["Start", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_mvo22"), "JUMP_UP", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_wqdbs")]
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_rrknt"]
+xfade_time = 0.1
+input_0/name = "JUMP_UP"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "JUMP"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_nkypc"]
+graph_offset = Vector2(-892.955, 16.7905)
+nodes/output/position = Vector2(220, 140)
+nodes/JUMP/node = SubResource("AnimationNodeAnimation_k05yi")
+nodes/JUMP/position = Vector2(-400, 260)
+nodes/JUMP_UP/node = SubResource("AnimationNodeStateMachine_82ebh")
+nodes/JUMP_UP/position = Vector2(-400, 120)
+nodes/jump_trans/node = SubResource("AnimationNodeTransition_rrknt")
+nodes/jump_trans/position = Vector2(0, 140)
+node_connections = [&"output", 0, &"jump_trans", &"jump_trans", 0, &"JUMP_UP", &"jump_trans", 1, &"JUMP"]
 
 [sub_resource type="AnimationNodeOneShot" id="59"]
 fadein_time = 0.2
@@ -44,6 +87,56 @@ fadeout_time = 0.2
 
 [sub_resource type="AnimationNodeAnimation" id="72"]
 animation = &"ROLL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhgjb"]
+animation = &"Doubleblade_IDLE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_00yp4"]
+animation = &"Longsword_WALK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vk7nm"]
+animation = &"STRAFE_B_walk"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ups1"]
+animation = &"Longsword_RUN"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjnox"]
+animation = &"STRAFE_B_run"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7110"]
+animation = &"STRAFE_R_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7yv6o"]
+animation = &"STRAFE_R_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ejcxr"]
+animation = &"STRAFE_L_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gxk3e"]
+animation = &"STRAFE_L_run"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8nxki"]
+resource_local_to_scene = true
+blend_point_0/node = SubResource("AnimationNodeAnimation_mhgjb")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_00yp4")
+blend_point_1/pos = Vector2(0, 0.5)
+blend_point_2/node = SubResource("AnimationNodeAnimation_vk7nm")
+blend_point_2/pos = Vector2(0, -0.5)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4ups1")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_rjnox")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_a7110")
+blend_point_5/pos = Vector2(0.5, 0)
+blend_point_6/node = SubResource("AnimationNodeAnimation_7yv6o")
+blend_point_6/pos = Vector2(1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_ejcxr")
+blend_point_7/pos = Vector2(-0.5, 0)
+blend_point_8/node = SubResource("AnimationNodeAnimation_gxk3e")
+blend_point_8/pos = Vector2(-1, 0)
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ojuef"]
 filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001"]
@@ -91,7 +184,7 @@ animation = &"Greatsword_WALK"
 [sub_resource type="AnimationNodeBlend2" id="252"]
 
 [resource]
-graph_offset = Vector2(531, -4)
+graph_offset = Vector2(-1192, -143)
 nodes/output/position = Vector2(1660, 120)
 nodes/1/node = SubResource("46")
 nodes/1/position = Vector2(-280, 340)
@@ -105,7 +198,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_k4tyy")
 nodes/Animation/position = Vector2(820, 340)
 nodes/BLOCK/node = SubResource("AnimationNodeAnimation_vv71m")
 nodes/BLOCK/position = Vector2(-800, 280)
-nodes/BlendTree/node = ExtResource("1_1obue")
+nodes/BlendTree/node = SubResource("AnimationNodeBlendTree_nkypc")
 nodes/BlendTree/position = Vector2(1815, 430)
 nodes/Greatsword_atk1/node = SubResource("59")
 nodes/Greatsword_atk1/position = Vector2(-60, 140)
@@ -119,11 +212,11 @@ nodes/OneShot/node = SubResource("AnimationNodeOneShot_msntc")
 nodes/OneShot/position = Vector2(2060, 240)
 nodes/ROLL/node = SubResource("72")
 nodes/ROLL/position = Vector2(1360, 320)
-nodes/STRAFE/node = ExtResource("1_m4hhh")
+nodes/STRAFE/node = SubResource("AnimationNodeBlendSpace2D_8nxki")
 nodes/STRAFE/position = Vector2(-1160, 240)
 nodes/action/node = SubResource("AnimationNodeOneShot_ojuef")
 nodes/action/position = Vector2(700, 140)
-nodes/action_anim/node = ExtResource("2_wjwwt")
+nodes/action_anim/node = ExtResource("1_f3pgx")
 nodes/action_anim/position = Vector2(540, 340)
 nodes/block/node = SubResource("AnimationNodeBlend2_djqmh")
 nodes/block/position = Vector2(-640, 140)
@@ -133,7 +226,7 @@ nodes/idle_move/node = SubResource("79")
 nodes/idle_move/position = Vector2(-1140, -120)
 nodes/magic/node = SubResource("71")
 nodes/magic/position = Vector2(460, 140)
-nodes/magic_anim/node = ExtResource("2_ru3f1")
+nodes/magic_anim/node = ExtResource("2_b4m04")
 nodes/magic_anim/position = Vector2(300, 340)
 nodes/roll/node = SubResource("77")
 nodes/roll/position = Vector2(1500, 120)

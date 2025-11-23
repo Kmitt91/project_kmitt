@@ -1,8 +1,7 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=26 format=3 uid="uid://8yfvitwmwyib"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=35 format=3 uid="uid://8yfvitwmwyib"]
 
-[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://dvshr80ti5y7l" path="res://godot_knight/anim_tree/strafe_blendspace2d.tres" id="1_os3gu"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_ff6tw"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="2_gsfm1"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="1_4bf7l"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_wlpu2"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://m125pwim3gv1" path="res://godot_knight/anim_tree/stagger_blend_tree.tres" id="4_aq84g"]
 
 [sub_resource type="AnimationNodeAnimation" id="279"]
@@ -21,6 +20,56 @@ animation = &"BLOCK"
 
 [sub_resource type="AnimationNodeAnimation" id="274"]
 animation = &"ROLL"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhgjb"]
+animation = &"Doubleblade_IDLE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_00yp4"]
+animation = &"Longsword_WALK"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vk7nm"]
+animation = &"STRAFE_B_walk"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ups1"]
+animation = &"Longsword_RUN"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjnox"]
+animation = &"STRAFE_B_run"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7110"]
+animation = &"STRAFE_R_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7yv6o"]
+animation = &"STRAFE_R_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ejcxr"]
+animation = &"STRAFE_L_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gxk3e"]
+animation = &"STRAFE_L_run"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8nxki"]
+resource_local_to_scene = true
+blend_point_0/node = SubResource("AnimationNodeAnimation_mhgjb")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_00yp4")
+blend_point_1/pos = Vector2(0, 0.5)
+blend_point_2/node = SubResource("AnimationNodeAnimation_vk7nm")
+blend_point_2/pos = Vector2(0, -0.5)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4ups1")
+blend_point_3/pos = Vector2(0, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_rjnox")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_a7110")
+blend_point_5/pos = Vector2(0.5, 0)
+blend_point_6/node = SubResource("AnimationNodeAnimation_7yv6o")
+blend_point_6/pos = Vector2(1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_ejcxr")
+blend_point_7/pos = Vector2(-0.5, 0)
+blend_point_8/node = SubResource("AnimationNodeAnimation_gxk3e")
+blend_point_8/pos = Vector2(-1, 0)
 
 [sub_resource type="AnimationNodeOneShot" id="275"]
 fadein_time = 0.2
@@ -88,7 +137,7 @@ nodes/BLOCK/node = SubResource("AnimationNodeAnimation_5h8au")
 nodes/BLOCK/position = Vector2(-1080, 180)
 nodes/ROLL/node = SubResource("274")
 nodes/ROLL/position = Vector2(740, 220)
-nodes/STRAFE/node = ExtResource("1_os3gu")
+nodes/STRAFE/node = SubResource("AnimationNodeBlendSpace2D_8nxki")
 nodes/STRAFE/position = Vector2(-1340, 100)
 nodes/Sword_atk1/node = SubResource("275")
 nodes/Sword_atk1/position = Vector2(-280, 20)
@@ -98,7 +147,7 @@ nodes/Sword_atk3/node = SubResource("277")
 nodes/Sword_atk3/position = Vector2(-80, 20)
 nodes/action/node = SubResource("AnimationNodeOneShot_jicqm")
 nodes/action/position = Vector2(460, 20)
-nodes/action_anim/node = ExtResource("2_gsfm1")
+nodes/action_anim/node = ExtResource("1_4bf7l")
 nodes/action_anim/position = Vector2(300, 200)
 nodes/block/node = SubResource("AnimationNodeBlend2_328a6")
 nodes/block/position = Vector2(-900, -20)
@@ -108,7 +157,7 @@ nodes/idle_move/node = SubResource("265")
 nodes/idle_move/position = Vector2(-1380, -180)
 nodes/magic/node = SubResource("350")
 nodes/magic/position = Vector2(240, 20)
-nodes/magic_anim/node = ExtResource("2_ff6tw")
+nodes/magic_anim/node = ExtResource("2_wlpu2")
 nodes/magic_anim/position = Vector2(60, 200)
 nodes/roll/node = SubResource("278")
 nodes/roll/position = Vector2(880, 20)

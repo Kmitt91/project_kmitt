@@ -1,51 +1,48 @@
 [gd_resource type="AnimationNodeBlendSpace2D" load_steps=10 format=3 uid="uid://dvshr80ti5y7l"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhgjb"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3c7j"]
 animation = &"Doubleblade_IDLE"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_00yp4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sby8"]
 animation = &"Longsword_WALK"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vk7nm"]
-animation = &"STRAFE_B_walk"
-play_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ups1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_esw4w"]
 animation = &"Longsword_RUN"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjnox"]
-animation = &"STRAFE_B_run"
-play_mode = 1
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hrp7y"]
+animation = &"STRAFE_B_walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7110"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_en6fx"]
+animation = &"STRAFE_B_run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_koowx"]
 animation = &"STRAFE_R_walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7yv6o"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q3trg"]
 animation = &"STRAFE_R_run"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ejcxr"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2t3ag"]
 animation = &"STRAFE_L_walk"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gxk3e"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tckbu"]
 animation = &"STRAFE_L_run"
 
 [resource]
-resource_local_to_scene = true
-blend_point_0/node = SubResource("AnimationNodeAnimation_mhgjb")
+blend_point_0/node = SubResource("AnimationNodeAnimation_i3c7j")
 blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_00yp4")
+blend_point_1/node = SubResource("AnimationNodeAnimation_1sby8")
 blend_point_1/pos = Vector2(0, 0.5)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vk7nm")
-blend_point_2/pos = Vector2(0, -0.5)
-blend_point_3/node = SubResource("AnimationNodeAnimation_4ups1")
-blend_point_3/pos = Vector2(0, 1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_rjnox")
+blend_point_2/node = SubResource("AnimationNodeAnimation_esw4w")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_hrp7y")
+blend_point_3/pos = Vector2(0, -0.5)
+blend_point_4/node = SubResource("AnimationNodeAnimation_en6fx")
 blend_point_4/pos = Vector2(0, -1)
-blend_point_5/node = SubResource("AnimationNodeAnimation_a7110")
+blend_point_5/node = SubResource("AnimationNodeAnimation_koowx")
 blend_point_5/pos = Vector2(0.5, 0)
-blend_point_6/node = SubResource("AnimationNodeAnimation_7yv6o")
+blend_point_6/node = SubResource("AnimationNodeAnimation_q3trg")
 blend_point_6/pos = Vector2(1, 0)
-blend_point_7/node = SubResource("AnimationNodeAnimation_ejcxr")
+blend_point_7/node = SubResource("AnimationNodeAnimation_2t3ag")
 blend_point_7/pos = Vector2(-0.5, 0)
-blend_point_8/node = SubResource("AnimationNodeAnimation_gxk3e")
+blend_point_8/node = SubResource("AnimationNodeAnimation_tckbu")
 blend_point_8/pos = Vector2(-1, 0)
