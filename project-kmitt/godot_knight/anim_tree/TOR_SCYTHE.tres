@@ -1,5 +1,6 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=35 format=3 uid="uid://b7c3xpyeufwr2"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=26 format=3 uid="uid://b7c3xpyeufwr2"]
 
+[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://dvshr80ti5y7l" path="res://godot_knight/anim_tree/strafe_blendspace2d.tres" id="1_1kysn"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="1_lg36w"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_1kysn"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://m125pwim3gv1" path="res://godot_knight/anim_tree/stagger_blend_tree.tres" id="4_fk7sn"]
@@ -20,56 +21,6 @@ animation = &"BLOCK"
 
 [sub_resource type="AnimationNodeAnimation" id="118"]
 animation = &"ROLL"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mhgjb"]
-animation = &"Doubleblade_IDLE"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_00yp4"]
-animation = &"Longsword_WALK"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vk7nm"]
-animation = &"STRAFE_B_walk"
-play_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4ups1"]
-animation = &"Longsword_RUN"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjnox"]
-animation = &"STRAFE_B_run"
-play_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7110"]
-animation = &"STRAFE_R_walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7yv6o"]
-animation = &"STRAFE_R_run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ejcxr"]
-animation = &"STRAFE_L_walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gxk3e"]
-animation = &"STRAFE_L_run"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8nxki"]
-resource_local_to_scene = true
-blend_point_0/node = SubResource("AnimationNodeAnimation_mhgjb")
-blend_point_0/pos = Vector2(0, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_00yp4")
-blend_point_1/pos = Vector2(0, 0.5)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vk7nm")
-blend_point_2/pos = Vector2(0, -0.5)
-blend_point_3/node = SubResource("AnimationNodeAnimation_4ups1")
-blend_point_3/pos = Vector2(0, 1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_rjnox")
-blend_point_4/pos = Vector2(0, -1)
-blend_point_5/node = SubResource("AnimationNodeAnimation_a7110")
-blend_point_5/pos = Vector2(0.5, 0)
-blend_point_6/node = SubResource("AnimationNodeAnimation_7yv6o")
-blend_point_6/pos = Vector2(1, 0)
-blend_point_7/node = SubResource("AnimationNodeAnimation_ejcxr")
-blend_point_7/pos = Vector2(-0.5, 0)
-blend_point_8/node = SubResource("AnimationNodeAnimation_gxk3e")
-blend_point_8/pos = Vector2(-1, 0)
 
 [sub_resource type="AnimationNodeOneShot" id="119"]
 fadein_time = 0.2
@@ -129,7 +80,7 @@ animation = &"Scythe_WALK"
 [sub_resource type="AnimationNodeBlend2" id="257"]
 
 [resource]
-graph_offset = Vector2(484, -45)
+graph_offset = Vector2(-1189, 56)
 nodes/output/position = Vector2(1160, 140)
 nodes/1/node = SubResource("95")
 nodes/1/position = Vector2(-320, 340)
@@ -143,8 +94,8 @@ nodes/BLOCK/node = SubResource("AnimationNodeAnimation_h8n7c")
 nodes/BLOCK/position = Vector2(-820, 260)
 nodes/ROLL/node = SubResource("118")
 nodes/ROLL/position = Vector2(880, 340)
-nodes/STRAFE/node = SubResource("AnimationNodeBlendSpace2D_8nxki")
-nodes/STRAFE/position = Vector2(-1080, 180)
+nodes/walk_run/node = SubResource("257")
+nodes/walk_run/position = Vector2(-1300, -80)
 nodes/Scythe_atk1/node = SubResource("119")
 nodes/Scythe_atk1/position = Vector2(-160, 140)
 nodes/Scythe_atk2/node = SubResource("120")
@@ -179,6 +130,6 @@ nodes/strafe_blend/node = SubResource("AnimationNodeBlend2_fhggd")
 nodes/strafe_blend/position = Vector2(-880, 0)
 nodes/walk/node = SubResource("248")
 nodes/walk/position = Vector2(-1560, -80)
-nodes/walk_run/node = SubResource("257")
-nodes/walk_run/position = Vector2(-1300, -80)
-node_connections = [&"output", 0, &"roll", &"11", 0, &"sprint", &"Scythe_atk1", 0, &"Scythe_atk2", &"Scythe_atk1", 1, &"1", &"Scythe_atk2", 0, &"block", &"Scythe_atk2", 1, &"2", &"Scythe_atk3", 0, &"Scythe_atk1", &"Scythe_atk3", 1, &"3", &"action", 0, &"magic", &"action", 1, &"action_anim", &"block", 0, &"strafe_blend", &"block", 1, &"BLOCK", &"idle_move", 0, &"11", &"idle_move", 1, &"walk_run", &"idle_move", 2, &"idle", &"magic", 0, &"Scythe_atk3", &"magic", 1, &"magic_anim", &"roll", 0, &"stagger", &"roll", 1, &"ROLL", &"stagger", 0, &"action", &"stagger", 1, &"stagger_blend", &"strafe_blend", 0, &"idle_move", &"strafe_blend", 1, &"STRAFE", &"walk_run", 0, &"walk", &"walk_run", 1, &"run"]
+nodes/STRAFE/node = ExtResource("1_1kysn")
+nodes/STRAFE/position = Vector2(-1120, 240)
+node_connections = [&"output", 0, &"roll", &"11", 0, &"sprint", &"walk_run", 0, &"walk", &"walk_run", 1, &"run", &"Scythe_atk1", 0, &"Scythe_atk2", &"Scythe_atk1", 1, &"1", &"Scythe_atk2", 0, &"block", &"Scythe_atk2", 1, &"2", &"Scythe_atk3", 0, &"Scythe_atk1", &"Scythe_atk3", 1, &"3", &"action", 0, &"magic", &"action", 1, &"action_anim", &"block", 0, &"strafe_blend", &"block", 1, &"BLOCK", &"idle_move", 0, &"11", &"idle_move", 1, &"walk_run", &"idle_move", 2, &"idle", &"magic", 0, &"Scythe_atk3", &"magic", 1, &"magic_anim", &"roll", 0, &"stagger", &"roll", 1, &"ROLL", &"stagger", 0, &"action", &"stagger", 1, &"stagger_blend", &"strafe_blend", 0, &"idle_move", &"strafe_blend", 1, &"STRAFE"]

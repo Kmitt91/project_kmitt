@@ -96,12 +96,12 @@ animation = &"NoWeapon_SPRINT"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_sxdqu"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fs510"]
-animation = &"Longsword_WALK"
+animation = &"NoWeapon_WALK"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8snvx"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4dep7"]
-graph_offset = Vector2(-286.87482, 417.50183)
+graph_offset = Vector2(-1387.8057, 4.7287903)
 nodes/output/position = Vector2(1120, 1000)
 nodes/sprint/node = SubResource("AnimationNodeAnimation_xb1ib")
 nodes/sprint/position = Vector2(-1000, -120)
@@ -162,10 +162,6 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k0l4w"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_107ig"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iwyai"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wk4s8"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_on4ed"]
@@ -177,36 +173,55 @@ switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oy8yh"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4t74v"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8fmi8"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fplxt"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7lqoo"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rma5b"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_np8f8"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wddw3"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nt24h"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2x4w0"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8snvx"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4dep7"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fx65s"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t1wha"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hlyb0"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7l8b1"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aw44i"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nkypc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_llg3s"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_leg3q"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uijd1"]
+xfade_time = 0.1
 
 [resource]
 states/A_POSE/node = SubResource("AnimationNodeAnimation_f568n")
@@ -219,19 +234,19 @@ states/End/position = Vector2(-11, 117)
 states/Greatsword/node = ExtResource("4_5s5a2")
 states/Greatsword/position = Vector2(-314, 142)
 states/JUMP-loop/node = SubResource("AnimationNodeAnimation_fx65s")
-states/JUMP-loop/position = Vector2(-17, 547)
+states/JUMP-loop/position = Vector2(-155, 638)
 states/JUMP_DOWN/node = SubResource("AnimationNodeAnimation_t1wha")
 states/JUMP_DOWN/position = Vector2(-17, 638)
 states/JUMP_UP/node = SubResource("AnimationNodeAnimation_jip1r")
-states/JUMP_UP/position = Vector2(-150, 547)
+states/JUMP_UP/position = Vector2(-155, 546)
 states/LADDER/node = SubResource("AnimationNodeBlendTree_l3oyl")
 states/LADDER/position = Vector2(259, 320)
 states/Scythe/node = ExtResource("7_2ucfq")
 states/Scythe/position = Vector2(-314, 308)
 states/Start/position = Vector2(109, 117)
 states/Sword/node = ExtResource("1_1tvfd")
-states/Sword/position = Vector2(-314, 390)
+states/Sword/position = Vector2(-314, 402)
 states/state_explore/node = SubResource("AnimationNodeBlendTree_4dep7")
 states/state_explore/position = Vector2(43, 320)
-transitions = ["Start", "A_POSE", SubResource("AnimationNodeStateMachineTransition_s3kt7"), "A_POSE", "state_explore", SubResource("AnimationNodeStateMachineTransition_6ai4s"), "state_explore", "DEATH", SubResource("AnimationNodeStateMachineTransition_yqkrf"), "DEATH", "End", SubResource("AnimationNodeStateMachineTransition_nas7p"), "state_explore", "LADDER", SubResource("AnimationNodeStateMachineTransition_b15or"), "LADDER", "state_explore", SubResource("AnimationNodeStateMachineTransition_s22g8"), "Greatsword", "state_explore", SubResource("AnimationNodeStateMachineTransition_xqbbq"), "Doubleblade", "state_explore", SubResource("AnimationNodeStateMachineTransition_l3oyl"), "Scythe", "state_explore", SubResource("AnimationNodeStateMachineTransition_k0l4w"), "Sword", "state_explore", SubResource("AnimationNodeStateMachineTransition_107ig"), "state_explore", "Sword", SubResource("AnimationNodeStateMachineTransition_iwyai"), "state_explore", "Scythe", SubResource("AnimationNodeStateMachineTransition_wk4s8"), "state_explore", "Doubleblade", SubResource("AnimationNodeStateMachineTransition_on4ed"), "state_explore", "Greatsword", SubResource("AnimationNodeStateMachineTransition_erhd2"), "JUMP_UP", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_nl2qs"), "state_explore", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_oy8yh"), "Sword", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_4t74v"), "Scythe", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_8fmi8"), "Doubleblade", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_fplxt"), "Greatsword", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_7lqoo"), "state_explore", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_rma5b"), "Sword", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_np8f8"), "Scythe", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_wddw3"), "Doubleblade", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_nt24h"), "Greatsword", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_2x4w0"), "JUMP-loop", "JUMP_DOWN", SubResource("AnimationNodeStateMachineTransition_8snvx"), "JUMP_DOWN", "state_explore", SubResource("AnimationNodeStateMachineTransition_4dep7"), "JUMP_DOWN", "Sword", SubResource("AnimationNodeStateMachineTransition_fx65s"), "JUMP_DOWN", "Scythe", SubResource("AnimationNodeStateMachineTransition_t1wha"), "JUMP_DOWN", "Doubleblade", SubResource("AnimationNodeStateMachineTransition_hlyb0"), "JUMP_DOWN", "Greatsword", SubResource("AnimationNodeStateMachineTransition_7l8b1")]
-graph_offset = Vector2(-708, 31)
+transitions = ["Start", "A_POSE", SubResource("AnimationNodeStateMachineTransition_s3kt7"), "A_POSE", "state_explore", SubResource("AnimationNodeStateMachineTransition_6ai4s"), "state_explore", "DEATH", SubResource("AnimationNodeStateMachineTransition_yqkrf"), "DEATH", "End", SubResource("AnimationNodeStateMachineTransition_nas7p"), "state_explore", "LADDER", SubResource("AnimationNodeStateMachineTransition_b15or"), "LADDER", "state_explore", SubResource("AnimationNodeStateMachineTransition_s22g8"), "Greatsword", "state_explore", SubResource("AnimationNodeStateMachineTransition_xqbbq"), "Doubleblade", "state_explore", SubResource("AnimationNodeStateMachineTransition_l3oyl"), "Scythe", "state_explore", SubResource("AnimationNodeStateMachineTransition_k0l4w"), "state_explore", "Scythe", SubResource("AnimationNodeStateMachineTransition_wk4s8"), "state_explore", "Doubleblade", SubResource("AnimationNodeStateMachineTransition_on4ed"), "state_explore", "Greatsword", SubResource("AnimationNodeStateMachineTransition_erhd2"), "JUMP_UP", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_nl2qs"), "state_explore", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_oy8yh"), "Scythe", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_8fmi8"), "Doubleblade", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_fplxt"), "Greatsword", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_7lqoo"), "state_explore", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_rma5b"), "Scythe", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_wddw3"), "Doubleblade", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_nt24h"), "Greatsword", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_2x4w0"), "JUMP-loop", "JUMP_DOWN", SubResource("AnimationNodeStateMachineTransition_8snvx"), "JUMP_DOWN", "state_explore", SubResource("AnimationNodeStateMachineTransition_4dep7"), "JUMP_DOWN", "Scythe", SubResource("AnimationNodeStateMachineTransition_t1wha"), "JUMP_DOWN", "Doubleblade", SubResource("AnimationNodeStateMachineTransition_hlyb0"), "JUMP_DOWN", "Greatsword", SubResource("AnimationNodeStateMachineTransition_7l8b1"), "state_explore", "Sword", SubResource("AnimationNodeStateMachineTransition_aw44i"), "Sword", "state_explore", SubResource("AnimationNodeStateMachineTransition_nkypc"), "Sword", "JUMP_UP", SubResource("AnimationNodeStateMachineTransition_llg3s"), "Sword", "JUMP-loop", SubResource("AnimationNodeStateMachineTransition_leg3q"), "JUMP_DOWN", "Sword", SubResource("AnimationNodeStateMachineTransition_uijd1")]
+graph_offset = Vector2(-807, -91)

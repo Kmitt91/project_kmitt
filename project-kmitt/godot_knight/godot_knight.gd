@@ -9,13 +9,13 @@ extends CharacterBody3D
 
 #define current state
 @export var intro : bool = false
-@export var state = EXPLORE
+@export var state : String = SWORD
 #states
-const EXPLORE = "state_explore"
-const GREATSWORD = "Greatsword"
-const SWORD = "Sword"
-const SCYTHE = "Scythe"
-const DOUBLEBLADE = "Doubleblade"
+var EXPLORE : String = "state_explore"
+var GREATSWORD : String = "Greatsword"
+var SWORD : String = "Sword"
+var SCYTHE : String = "Scythe"
+var DOUBLEBLADE : String = "Doubleblade"
 #ladder
 var LADDER : bool = false
 
@@ -41,6 +41,9 @@ var target = null
 var targets_arr = []
 var targeting : bool = false
 
+var blocking : bool = false
+var magic : bool = false
+var attack : bool = false
 
 func _physics_process(_delta):
 	move_and_slide()

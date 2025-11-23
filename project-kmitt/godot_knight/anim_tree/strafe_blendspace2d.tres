@@ -4,10 +4,10 @@
 animation = &"Doubleblade_IDLE"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sby8"]
-animation = &"Longsword_WALK"
+animation = &"Sword_WALK"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_esw4w"]
-animation = &"Longsword_RUN"
+animation = &"Sword_RUN"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hrp7y"]
 animation = &"STRAFE_B_walk"

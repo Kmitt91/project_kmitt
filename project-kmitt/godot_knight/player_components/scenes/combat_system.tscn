@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1itihlyf4cdt"]
+
+[ext_resource type="Script" uid="uid://by7la7je3448u" path="res://godot_knight/player_components/gd_script/combat_system.gd" id="1_ee746"]
+
+[node name="combat_system" type="Node"]
+script = ExtResource("1_ee746")
+
+[node name="TimerAttack1" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerAttack2" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerAttack3" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TimerAttack1" to="." method="_on_timer_attack_1_timeout"]
+[connection signal="timeout" from="TimerAttack2" to="." method="_on_timer_attack_2_timeout"]
+[connection signal="timeout" from="TimerAttack3" to="." method="_on_timer_attack_3_timeout"]
