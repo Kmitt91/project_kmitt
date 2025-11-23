@@ -12,6 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="ClippedCamera" type="Camera3D" parent="h/v"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.5)
+cull_mask = 1048573
 current = true
 fov = 65.0
 far = 999.0

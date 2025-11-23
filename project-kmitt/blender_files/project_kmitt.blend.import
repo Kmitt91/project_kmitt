@@ -61,20 +61,140 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:Cube_079": {
+"physics/shape_type": 1
+},
+"PATH:Cube_084": {
+"physics/shape_type": 1
+},
+"PATH:Cube_085": {
+"physics/shape_type": 1
+},
+"PATH:Cube_086": {
+"physics/shape_type": 1
+},
+"PATH:Cube_087": {
+"physics/shape_type": 1
+},
+"PATH:Cube_095": {
+"physics/shape_type": 1
+},
+"PATH:Cube_103": {
+"physics/shape_type": 1
+},
+"PATH:Cube_109": {
+"physics/shape_type": 1
+},
+"PATH:Cube_110": {
+"physics/shape_type": 1
+},
+"PATH:Cube_111": {
+"physics/shape_type": 1
+},
+"PATH:Cube_125": {
+"physics/shape_type": 1
+},
+"PATH:Cube_134": {
+"physics/shape_type": 0
+},
+"PATH:Cube_140": {
+"physics/shape_type": 1
+},
+"PATH:Cube_141": {
+"physics/shape_type": 1
+},
+"PATH:Cube_142": {
+"physics/shape_type": 1
+},
+"PATH:Cube_143": {
+"physics/shape_type": 1
+},
+"PATH:Cube_160": {
+"physics/shape_type": 1
+},
+"PATH:Cube_176": {
+"physics/shape_type": 1
+},
+"PATH:Cube_180": {
+"physics/shape_type": 1
+},
+"PATH:Cube_181": {
+"physics/shape_type": 1
+},
+"PATH:Cube_182": {
+"physics/shape_type": 1
+},
+"PATH:Cube_183": {
+"physics/shape_type": 1
+},
+"PATH:Cube_184": {
+"physics/shape_type": 1
+},
+"PATH:Cube_185": {
+"physics/shape_type": 1
+},
+"PATH:Cube_186": {
+"physics/shape_type": 1
+},
+"PATH:Cube_187": {
+"physics/shape_type": 1
+},
+"PATH:Cube_188": {
+"physics/shape_type": 1
+},
+"PATH:Cube_191": {
+"physics/shape_type": 1
+},
+"PATH:Cube_198": {
+"physics/shape_type": 1
+},
+"PATH:bridge_003": {
+"physics/shape_type": 0
+},
+"PATH:bridge_col_b": {
+"mesh_instance/layers": 2
+},
+"PATH:bridge_col_b_001": {
+"mesh_instance/layers": 2
+},
+"PATH:od": {
+"physics/shape_type": 1
+},
+"PATH:od_002": {
+"physics/shape_type": 1
+},
 "PATH:path": {
-"generate/physics": true
+"physics/shape_type": 1
 },
-"PATH:path/tower2_001": {
-"generate/physics": true
+"PATH:path_005": {
+"physics/shape_type": 1
 },
-"PATH:path/tower2_002": {
-"generate/physics": true
+"PATH:path_010/path_011": {
+"physics/shape_type": 0
 },
-"PATH:path/tower2_003": {
-"generate/physics": true
+"PATH:shrine_Cube_001": {
+"physics/shape_type": 0
 },
-"PATH:path/tower2_004": {
-"generate/physics": true
+"PATH:shrine_Cube_002": {
+"physics/shape_type": 1
+},
+"PATH:stairs_001": {
+"physics/shape_type": 0
+},
+"PATH:stairs_002": {
+"physics/shape_type": 0
+},
+"PATH:tower1": {
+"physics/shape_type": 1
+},
+"PATH:tower1_001": {
+"physics/shape_type": 0
+},
+"PATH:tower1_003": {
+"physics/shape_type": 0
+},
+"PATH:tower_dome": {
+"physics/shape_type": 0
 }
 }
 }

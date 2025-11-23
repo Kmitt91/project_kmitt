@@ -15,4 +15,7 @@ surface_material_override/0 = ExtResource("2_viusy")
 [node name="tree_leaves" parent="tree_model/tree_001" index="0"]
 surface_material_override/0 = ExtResource("2_vplca")
 
+[node name="tree" parent="tree_model" index="1"]
+visible = false
+
 [editable path="tree_model"]
