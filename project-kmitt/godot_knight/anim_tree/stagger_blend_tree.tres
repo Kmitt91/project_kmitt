@@ -1,0 +1,23 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=5 format=3 uid="uid://m125pwim3gv1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ip4kf"]
+animation = &"STAGGER_L"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7i557"]
+animation = &"STAGGER_R"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_vv671"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dclar"]
+
+[resource]
+graph_offset = Vector2(-623, -125)
+nodes/STG_L/node = SubResource("AnimationNodeAnimation_ip4kf")
+nodes/STG_L/position = Vector2(-280, 320)
+nodes/STG_R/node = SubResource("AnimationNodeAnimation_7i557")
+nodes/STG_R/position = Vector2(-280, 160)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vv671")
+nodes/TimeScale/position = Vector2(120, 200)
+nodes/stagger_LR/node = SubResource("AnimationNodeBlend2_dclar")
+nodes/stagger_LR/position = Vector2(-80, 200)
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"stagger_LR", &"stagger_LR", 0, &"STG_R", &"stagger_LR", 1, &"STG_L"]

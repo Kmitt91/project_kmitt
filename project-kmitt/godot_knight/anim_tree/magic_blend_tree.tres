@@ -1,0 +1,83 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://caoebdm6dwxl4"]
+
+[sub_resource type="AnimationNodeAnimation" id="350"]
+animation = &"BLOOD"
+
+[sub_resource type="AnimationNodeAnimation" id="351"]
+animation = &"DARK"
+
+[sub_resource type="AnimationNodeAnimation" id="352"]
+animation = &"EARTH"
+
+[sub_resource type="AnimationNodeAnimation" id="353"]
+animation = &"FIRE"
+
+[sub_resource type="AnimationNodeAnimation" id="354"]
+animation = &"HEAL"
+
+[sub_resource type="AnimationNodeAnimation" id="355"]
+animation = &"ICE"
+
+[sub_resource type="AnimationNodeAnimation" id="356"]
+animation = &"LIGHT"
+
+[sub_resource type="AnimationNodeAnimation" id="357"]
+animation = &"LIGHTNING"
+
+[sub_resource type="AnimationNodeTransition" id="358"]
+xfade_time = 0.1
+input_0/name = "state 0"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "state 1"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "state 2"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+input_3/name = "state 3"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+input_4/name = "state 4"
+input_4/auto_advance = false
+input_4/break_loop_at_end = false
+input_4/reset = true
+input_5/name = "state 5"
+input_5/auto_advance = false
+input_5/break_loop_at_end = false
+input_5/reset = true
+input_6/name = "state 6"
+input_6/auto_advance = false
+input_6/break_loop_at_end = false
+input_6/reset = true
+input_7/name = "state 7"
+input_7/auto_advance = false
+input_7/break_loop_at_end = false
+input_7/reset = true
+
+[resource]
+graph_offset = Vector2(-477.995, 140.105)
+nodes/output/position = Vector2(200, 300)
+nodes/BLOOD/node = SubResource("350")
+nodes/BLOOD/position = Vector2(-520, -40)
+nodes/DARK/node = SubResource("351")
+nodes/DARK/position = Vector2(-520, 80)
+nodes/EARTH/node = SubResource("352")
+nodes/EARTH/position = Vector2(-520, 200)
+nodes/FIRE/node = SubResource("353")
+nodes/FIRE/position = Vector2(-520, 320)
+nodes/HEAL/node = SubResource("354")
+nodes/HEAL/position = Vector2(-520, 440)
+nodes/ICE/node = SubResource("355")
+nodes/ICE/position = Vector2(-520, 560)
+nodes/LIGHT/node = SubResource("356")
+nodes/LIGHT/position = Vector2(-520, 680)
+nodes/LIGHTNING/node = SubResource("357")
+nodes/LIGHTNING/position = Vector2(-520, 800)
+nodes/magic_trans/node = SubResource("358")
+nodes/magic_trans/position = Vector2(-120, 300)
+node_connections = [&"output", 0, &"magic_trans", &"magic_trans", 0, &"BLOOD", &"magic_trans", 1, &"DARK", &"magic_trans", 2, &"EARTH", &"magic_trans", 3, &"FIRE", &"magic_trans", 4, &"HEAL", &"magic_trans", 5, &"ICE", &"magic_trans", 6, &"LIGHT", &"magic_trans", 7, &"LIGHTNING"]

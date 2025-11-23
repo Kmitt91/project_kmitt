@@ -4,3 +4,4 @@
 
 [resource]
 albedo_texture = ExtResource("1_8yck6")
+metallic_specular = 0.0

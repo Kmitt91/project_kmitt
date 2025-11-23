@@ -1,0 +1,81 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://b6uxcnhnctspt"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as2yf"]
+animation = &"CHEST_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_at801"]
+animation = &"DOOR_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s6xnt"]
+animation = &"FogWall_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_twrr0"]
+animation = &"GATE_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ie24p"]
+animation = &"HEAL_Item"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i0mih"]
+animation = &"ITEM_get"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jr03b"]
+animation = &"KNEEL_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ekp3t"]
+animation = &"LEVER"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_i0kve"]
+input_0/name = "ITEM_get"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "CHEST_open"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "DOOR_open"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+input_3/name = "GATE_open"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+input_4/name = "LEVER"
+input_4/auto_advance = false
+input_4/break_loop_at_end = false
+input_4/reset = true
+input_5/name = "FogWall_open"
+input_5/auto_advance = false
+input_5/break_loop_at_end = false
+input_5/reset = true
+input_6/name = "KNEEL_down"
+input_6/auto_advance = false
+input_6/break_loop_at_end = false
+input_6/reset = true
+input_7/name = "HEAL"
+input_7/auto_advance = false
+input_7/break_loop_at_end = false
+input_7/reset = true
+
+[resource]
+graph_offset = Vector2(-817.105, 271.037)
+nodes/CHEST/node = SubResource("AnimationNodeAnimation_as2yf")
+nodes/CHEST/position = Vector2(-480, 80)
+nodes/DOOR/node = SubResource("AnimationNodeAnimation_at801")
+nodes/DOOR/position = Vector2(-480, 200)
+nodes/FOG/node = SubResource("AnimationNodeAnimation_s6xnt")
+nodes/FOG/position = Vector2(-500, 560)
+nodes/GATE/node = SubResource("AnimationNodeAnimation_twrr0")
+nodes/GATE/position = Vector2(-480, 320)
+nodes/HEAL/node = SubResource("AnimationNodeAnimation_ie24p")
+nodes/HEAL/position = Vector2(-480, 800)
+nodes/ITEM/node = SubResource("AnimationNodeAnimation_i0mih")
+nodes/ITEM/position = Vector2(-460, -40)
+nodes/KNEEL/node = SubResource("AnimationNodeAnimation_jr03b")
+nodes/KNEEL/position = Vector2(-500, 680)
+nodes/LEVER/node = SubResource("AnimationNodeAnimation_ekp3t")
+nodes/LEVER/position = Vector2(-480, 440)
+nodes/action_trans/node = SubResource("AnimationNodeTransition_i0kve")
+nodes/action_trans/position = Vector2(40, 160)
+node_connections = [&"output", 0, &"action_trans", &"action_trans", 0, &"ITEM", &"action_trans", 1, &"CHEST", &"action_trans", 2, &"DOOR", &"action_trans", 3, &"GATE", &"action_trans", 4, &"LEVER", &"action_trans", 5, &"FOG", &"action_trans", 6, &"KNEEL", &"action_trans", 7, &"HEAL"]

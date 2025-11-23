@@ -1,0 +1,154 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=30 format=3 uid="uid://besmjtk7myemu"]
+
+[ext_resource type="AnimationNodeBlendTree" path="res://The_One_Reborn/TOR_Scenes/TOR_Anim/anim_tree/JUMP_blend_tree.tres" id="1_1obue"]
+[ext_resource type="AnimationNodeBlendSpace2D" uid="uid://dvshr80ti5y7l" path="res://godot_knight/anim_tree/strafe_blendspace2d.tres" id="1_m4hhh"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://caoebdm6dwxl4" path="res://godot_knight/anim_tree/magic_blend_tree.tres" id="2_ru3f1"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="2_wjwwt"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://m125pwim3gv1" path="res://godot_knight/anim_tree/stagger_blend_tree.tres" id="5_ep8mm"]
+
+[sub_resource type="AnimationNodeAnimation" id="46"]
+animation = &"Greatsword_ATTACK1"
+
+[sub_resource type="AnimationNodeTimeScale" id="47"]
+
+[sub_resource type="AnimationNodeAnimation" id="48"]
+animation = &"Greatsword_ATTACK2"
+
+[sub_resource type="AnimationNodeAnimation" id="49"]
+animation = &"Greatsword_ATTACK3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k4tyy"]
+animation = &"Knife_ATTACK2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vv71m"]
+animation = &"BLOCK"
+
+[sub_resource type="AnimationNodeOneShot" id="59"]
+fadein_time = 0.2
+fadeout_time = 0.12
+
+[sub_resource type="AnimationNodeOneShot" id="60"]
+fadeout_time = 0.3
+
+[sub_resource type="AnimationNodeOneShot" id="61"]
+fadein_time = 0.3
+fadeout_time = 0.3
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_n7b55"]
+filter_enabled = true
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001"]
+fadein_time = 0.1
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_msntc"]
+
+[sub_resource type="AnimationNodeAnimation" id="72"]
+animation = &"ROLL"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ojuef"]
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001"]
+fadein_time = 0.1
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_djqmh"]
+filter_enabled = true
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyebrow.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyebrow.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyelid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyelid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyelid.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eyelid.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hand.R.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001"]
+
+[sub_resource type="AnimationNodeAnimation" id="76"]
+animation = &"Greatsword_IDLE"
+
+[sub_resource type="AnimationNodeBlend3" id="79"]
+
+[sub_resource type="AnimationNodeOneShot" id="71"]
+filter_enabled = true
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001", "The_One_Reborn_Armature/Skeleton:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyebrow.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyebrow.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.R.002", "The_One_Reborn_Armature/Skeleton:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Head.001", "The_One_Reborn_Armature/Skeleton:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Jaw.001", "The_One_Reborn_Armature/Skeleton:DEF_Jaw.002", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton:IK_Elbow.L.001", "The_One_Reborn_Armature/Skeleton:IK_Elbow.R.001", "The_One_Reborn_Armature/Skeleton:IK_Eye.L.001", "The_One_Reborn_Armature/Skeleton:IK_Eye.R.001", "The_One_Reborn_Armature/Skeleton:IK_Eyes_Controller.001", "The_One_Reborn_Armature/Skeleton:IK_Foot.L.001", "The_One_Reborn_Armature/Skeleton:IK_Foot.R.001", "The_One_Reborn_Armature/Skeleton:IK_Foot_Roll_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Foot_Roll_Control.R.001", "The_One_Reborn_Armature/Skeleton:IK_Foot_roll.L.001", "The_One_Reborn_Armature/Skeleton:IK_Foot_roll.R.001", "The_One_Reborn_Armature/Skeleton:IK_Hand.L.001", "The_One_Reborn_Armature/Skeleton:IK_Hand.R.001", "The_One_Reborn_Armature/Skeleton:IK_Heel_roll.L.001", "The_One_Reborn_Armature/Skeleton:IK_Heel_roll.R.001", "The_One_Reborn_Armature/Skeleton:IK_Hip.001", "The_One_Reborn_Armature/Skeleton:IK_Index_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Jaw.001", "The_One_Reborn_Armature/Skeleton:IK_Jaw.002", "The_One_Reborn_Armature/Skeleton:IK_Knee.L.001", "The_One_Reborn_Armature/Skeleton:IK_Knee.R.001", "The_One_Reborn_Armature/Skeleton:IK_Mid_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Pinky_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Ring_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Root.001", "The_One_Reborn_Armature/Skeleton:IK_Thumb_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Toe_roll.L.001", "The_One_Reborn_Armature/Skeleton:IK_Toe_roll.R.001", "The_One_Reborn_Armature/Skeleton:IK_lowerip.001", "The_One_Reborn_Armature/Skeleton:IK_lowerip.L.002", "The_One_Reborn_Armature/Skeleton:IK_lowerip.R.002", "The_One_Reborn_Armature/Skeleton:IK_upperlip.001", "The_One_Reborn_Armature/Skeleton:IK_upperlip.L.002", "The_One_Reborn_Armature/Skeleton:IK_upperlip.L.003", "The_One_Reborn_Armature/Skeleton:IK_upperlip.R.002", "The_One_Reborn_Armature/Skeleton:IK_upperlip.R.003", "The_One_Reborn_Armature/Skeleton:def_bicep_l_1", "The_One_Reborn_Armature/Skeleton:def_calf_l_1", "The_One_Reborn_Armature/Skeleton:def_calf_r_1", "The_One_Reborn_Armature/Skeleton:def_eye_l_1", "The_One_Reborn_Armature/Skeleton:def_eye_r_1", "The_One_Reborn_Armature/Skeleton:def_eyebrow_l_1", "The_One_Reborn_Armature/Skeleton:def_eyebrow_r_1", "The_One_Reborn_Armature/Skeleton:def_eyelid_l_1", "The_One_Reborn_Armature/Skeleton:def_eyelid_l_2", "The_One_Reborn_Armature/Skeleton:def_eyelid_r_1", "The_One_Reborn_Armature/Skeleton:def_eyelid_r_2", "The_One_Reborn_Armature/Skeleton:def_foot_l_1", "The_One_Reborn_Armature/Skeleton:def_foot_r_1", "The_One_Reborn_Armature/Skeleton:def_forearm_l_1", "The_One_Reborn_Armature/Skeleton:def_hand_l_1", "The_One_Reborn_Armature/Skeleton:def_head_1", "The_One_Reborn_Armature/Skeleton:def_hip_1", "The_One_Reborn_Armature/Skeleton:def_index_l_1", "The_One_Reborn_Armature/Skeleton:def_index_l_2", "The_One_Reborn_Armature/Skeleton:def_index_l_3", "The_One_Reborn_Armature/Skeleton:def_jaw_1", "The_One_Reborn_Armature/Skeleton:def_jaw_2", "The_One_Reborn_Armature/Skeleton:def_lowerlip_l_1", "The_One_Reborn_Armature/Skeleton:def_lowerlip_l_2", "The_One_Reborn_Armature/Skeleton:def_lowerlip_r_1", "The_One_Reborn_Armature/Skeleton:def_lowerlip_r_2", "The_One_Reborn_Armature/Skeleton:def_mid_l_1", "The_One_Reborn_Armature/Skeleton:def_mid_l_2", "The_One_Reborn_Armature/Skeleton:def_mid_l_3", "The_One_Reborn_Armature/Skeleton:def_neck_1", "The_One_Reborn_Armature/Skeleton:def_pinky_l_1", "The_One_Reborn_Armature/Skeleton:def_pinky_l_2", "The_One_Reborn_Armature/Skeleton:def_pinky_l_3", "The_One_Reborn_Armature/Skeleton:def_ring_l_1", "The_One_Reborn_Armature/Skeleton:def_ring_l_2", "The_One_Reborn_Armature/Skeleton:def_ring_l_3", "The_One_Reborn_Armature/Skeleton:def_shoulder_l_1", "The_One_Reborn_Armature/Skeleton:def_spine_1", "The_One_Reborn_Armature/Skeleton:def_spine_2", "The_One_Reborn_Armature/Skeleton:def_spine_3", "The_One_Reborn_Armature/Skeleton:def_spine_4", "The_One_Reborn_Armature/Skeleton:def_thigh_l_1", "The_One_Reborn_Armature/Skeleton:def_thigh_r_1", "The_One_Reborn_Armature/Skeleton:def_thumb_l_1", "The_One_Reborn_Armature/Skeleton:def_thumb_l_2", "The_One_Reborn_Armature/Skeleton:def_thumb_l_3", "The_One_Reborn_Armature/Skeleton:def_toe_l_1", "The_One_Reborn_Armature/Skeleton:def_toe_r_1", "The_One_Reborn_Armature/Skeleton:def_upperlip_l_1", "The_One_Reborn_Armature/Skeleton:def_upperlip_l_2", "The_One_Reborn_Armature/Skeleton:def_upperlip_r_1", "The_One_Reborn_Armature/Skeleton:def_upperlip_r_2", "The_One_Reborn_Armature/Skeleton:ik_foot_roll_control_l_1", "The_One_Reborn_Armature/Skeleton:ik_foot_roll_control_r_1", "The_One_Reborn_Armature/Skeleton:ik_heel_roll_l_1", "The_One_Reborn_Armature/Skeleton:ik_heel_roll_r_1", "The_One_Reborn_Armature/Skeleton:ik_hip_1", "The_One_Reborn_Armature/Skeleton:ik_lowerip_1", "The_One_Reborn_Armature/Skeleton:ik_lowerip_l_2", "The_One_Reborn_Armature/Skeleton:ik_lowerip_r_2", "The_One_Reborn_Armature/Skeleton:ik_root_1", "The_One_Reborn_Armature/Skeleton:ik_upperlip_1", "The_One_Reborn_Armature/Skeleton:ik_upperlip_l_2", "The_One_Reborn_Armature/Skeleton:ik_upperlip_r_2"]
+fadein_time = 0.15
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeOneShot" id="77"]
+fadein_time = 0.1
+fadeout_time = 0.1
+
+[sub_resource type="AnimationNodeAnimation" id="78"]
+animation = &"Greatsword_RUN"
+
+[sub_resource type="AnimationNodeAnimation" id="80"]
+animation = &"Greatsword_SPRINT"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_ml08p"]
+filter_enabled = true
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeBlend2" id="292"]
+filter_enabled = true
+filters = ["The_One_Reborn_Armature/Skeleton3D:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Head.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_Toe.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_lowerlip.R.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.L.002", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.001", "The_One_Reborn_Armature/Skeleton3D:DEF_upperlip.R.002", "The_One_Reborn_Armature/Skeleton3D:IK_Hip.001", "The_One_Reborn_Armature/Skeleton3D:IK_Root.001", "The_One_Reborn_Armature/Skeleton:DEF_Bicep.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Calf.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Calf.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eye.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eye.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyebrow.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyebrow.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Eyelid.R.002", "The_One_Reborn_Armature/Skeleton:DEF_Foot.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Foot.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Forearm.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Hand.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Head.001", "The_One_Reborn_Armature/Skeleton:DEF_Hip.001", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Index.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Mid.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Neck.001", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Pinky.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Ring.L.003", "The_One_Reborn_Armature/Skeleton:DEF_Shoulder.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Spine.001", "The_One_Reborn_Armature/Skeleton:DEF_Spine.002", "The_One_Reborn_Armature/Skeleton:DEF_Spine.003", "The_One_Reborn_Armature/Skeleton:DEF_Spine.004", "The_One_Reborn_Armature/Skeleton:DEF_Thigh.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Thigh.R.001", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.001", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.002", "The_One_Reborn_Armature/Skeleton:DEF_Thumb.L.003", "The_One_Reborn_Armature/Skeleton:IK_Foot_Roll_Control.L.001", "The_One_Reborn_Armature/Skeleton:IK_Foot_Roll_Control.R.001", "The_One_Reborn_Armature/Skeleton:IK_Heel_roll.L.001", "The_One_Reborn_Armature/Skeleton:IK_Heel_roll.R.001", "The_One_Reborn_Armature/Skeleton:IK_Hip.001", "The_One_Reborn_Armature/Skeleton:IK_Root.001", "The_One_Reborn_Armature/Skeleton:IK_lowerip.001", "The_One_Reborn_Armature/Skeleton:IK_lowerip.L.002", "The_One_Reborn_Armature/Skeleton:IK_lowerip.R.002", "The_One_Reborn_Armature/Skeleton:IK_upperlip.001", "The_One_Reborn_Armature/Skeleton:IK_upperlip.L.002", "The_One_Reborn_Armature/Skeleton:IK_upperlip.R.002"]
+
+[sub_resource type="AnimationNodeAnimation" id="251"]
+animation = &"Greatsword_WALK"
+
+[sub_resource type="AnimationNodeBlend2" id="252"]
+
+[resource]
+graph_offset = Vector2(531, -4)
+nodes/output/position = Vector2(1660, 120)
+nodes/1/node = SubResource("46")
+nodes/1/position = Vector2(-280, 340)
+nodes/11/node = SubResource("47")
+nodes/11/position = Vector2(-1340, -260)
+nodes/2/node = SubResource("48")
+nodes/2/position = Vector2(-520, 340)
+nodes/3/node = SubResource("49")
+nodes/3/position = Vector2(-40, 340)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_k4tyy")
+nodes/Animation/position = Vector2(820, 340)
+nodes/BLOCK/node = SubResource("AnimationNodeAnimation_vv71m")
+nodes/BLOCK/position = Vector2(-800, 280)
+nodes/BlendTree/node = ExtResource("1_1obue")
+nodes/BlendTree/position = Vector2(1815, 430)
+nodes/Greatsword_atk1/node = SubResource("59")
+nodes/Greatsword_atk1/position = Vector2(-60, 140)
+nodes/Greatsword_atk2/node = SubResource("60")
+nodes/Greatsword_atk2/position = Vector2(-260, 140)
+nodes/Greatsword_atk3/node = SubResource("61")
+nodes/Greatsword_atk3/position = Vector2(140, 140)
+nodes/Knife_atk/node = SubResource("AnimationNodeOneShot_n7b55")
+nodes/Knife_atk/position = Vector2(980, 140)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_msntc")
+nodes/OneShot/position = Vector2(2060, 240)
+nodes/ROLL/node = SubResource("72")
+nodes/ROLL/position = Vector2(1360, 320)
+nodes/STRAFE/node = ExtResource("1_m4hhh")
+nodes/STRAFE/position = Vector2(-1160, 240)
+nodes/action/node = SubResource("AnimationNodeOneShot_ojuef")
+nodes/action/position = Vector2(700, 140)
+nodes/action_anim/node = ExtResource("2_wjwwt")
+nodes/action_anim/position = Vector2(540, 340)
+nodes/block/node = SubResource("AnimationNodeBlend2_djqmh")
+nodes/block/position = Vector2(-640, 140)
+nodes/idle/node = SubResource("76")
+nodes/idle/position = Vector2(-1400, 100)
+nodes/idle_move/node = SubResource("79")
+nodes/idle_move/position = Vector2(-1140, -120)
+nodes/magic/node = SubResource("71")
+nodes/magic/position = Vector2(460, 140)
+nodes/magic_anim/node = ExtResource("2_ru3f1")
+nodes/magic_anim/position = Vector2(300, 340)
+nodes/roll/node = SubResource("77")
+nodes/roll/position = Vector2(1500, 120)
+nodes/run/node = SubResource("78")
+nodes/run/position = Vector2(-1620, -20)
+nodes/sprint/node = SubResource("80")
+nodes/sprint/position = Vector2(-1620, -280)
+nodes/stagger/node = SubResource("AnimationNodeOneShot_ml08p")
+nodes/stagger/position = Vector2(1300, 120)
+nodes/stagger_blend/node = ExtResource("5_ep8mm")
+nodes/stagger_blend/position = Vector2(1100, 380)
+nodes/strafe_blend/node = SubResource("292")
+nodes/strafe_blend/position = Vector2(-920, 40)
+nodes/walk/node = SubResource("251")
+nodes/walk/position = Vector2(-1620, -160)
+nodes/walk_run/node = SubResource("252")
+nodes/walk_run/position = Vector2(-1360, -120)
+node_connections = [&"output", 0, &"roll", &"11", 0, &"sprint", &"Greatsword_atk1", 0, &"Greatsword_atk2", &"Greatsword_atk1", 1, &"1", &"Greatsword_atk2", 0, &"block", &"Greatsword_atk2", 1, &"2", &"Greatsword_atk3", 0, &"Greatsword_atk1", &"Greatsword_atk3", 1, &"3", &"Knife_atk", 0, &"action", &"Knife_atk", 1, &"Animation", &"action", 0, &"magic", &"action", 1, &"action_anim", &"block", 0, &"strafe_blend", &"block", 1, &"BLOCK", &"idle_move", 0, &"11", &"idle_move", 1, &"walk_run", &"idle_move", 2, &"idle", &"magic", 0, &"Greatsword_atk3", &"magic", 1, &"magic_anim", &"roll", 0, &"stagger", &"roll", 1, &"ROLL", &"stagger", 0, &"Knife_atk", &"stagger", 1, &"stagger_blend", &"strafe_blend", 0, &"idle_move", &"strafe_blend", 1, &"STRAFE", &"walk_run", 0, &"walk", &"walk_run", 1, &"run"]
