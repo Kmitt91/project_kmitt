@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://4h3nhifg0h8b"]
+
+[ext_resource type="Texture2D" uid="uid://drkq0effr8ked" path="res://materials/textures/cliff_material/cliff_material_albedo.png" id="1_um1cr"]
+[ext_resource type="Texture2D" uid="uid://daalwpnrglfqc" path="res://materials/textures/cliff_material/cliff_material_normal.png" id="2_s1qar"]
+[ext_resource type="Material" uid="uid://dkrhry7slrjay" path="res://materials/shader_materials/moss_overlay_shader.tres" id="2_y5ktj"]
+[ext_resource type="Texture2D" uid="uid://y3bdoxsqen4j" path="res://materials/textures/cliff_material/cliff_material_orm.png" id="3_y5ktj"]
+
+[resource]
+next_pass = ExtResource("2_y5ktj")
+albedo_texture = ExtResource("1_um1cr")
+metallic_specular = 0.0
+roughness_texture = ExtResource("3_y5ktj")
+normal_enabled = true
+normal_texture = ExtResource("2_s1qar")

@@ -9,7 +9,8 @@ offsets = PackedFloat32Array(0.25748503, 0.35928145)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_13sx3"]
-offset = Vector3(64.45, 141.05, 0)
+frequency = 0.02
+offset = Vector3(-9.2, -104.75, 0)
 fractal_octaves = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ms07t"]

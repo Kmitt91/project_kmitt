@@ -44,6 +44,11 @@ _subresources={
 "use_external/fallback_path": "res://materials/base_materials/brick_material.tres",
 "use_external/path": "uid://1wv0k8msasr8"
 },
+"cliff": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://materials/base_materials/cliff_material.tres",
+"use_external/path": "uid://4h3nhifg0h8b"
+},
 "concrete": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://materials/base_materials/concrete_material.tres",
@@ -61,55 +66,7 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:Cube_079": {
-"physics/shape_type": 1
-},
-"PATH:Cube_084": {
-"physics/shape_type": 1
-},
-"PATH:Cube_085": {
-"physics/shape_type": 1
-},
-"PATH:Cube_086": {
-"physics/shape_type": 1
-},
-"PATH:Cube_087": {
-"physics/shape_type": 1
-},
-"PATH:Cube_095": {
-"physics/shape_type": 1
-},
-"PATH:Cube_103": {
-"physics/shape_type": 1
-},
-"PATH:Cube_109": {
-"physics/shape_type": 1
-},
-"PATH:Cube_110": {
-"physics/shape_type": 1
-},
-"PATH:Cube_111": {
-"physics/shape_type": 1
-},
 "PATH:Cube_125": {
-"physics/shape_type": 1
-},
-"PATH:Cube_134": {
-"physics/shape_type": 0
-},
-"PATH:Cube_140": {
-"physics/shape_type": 1
-},
-"PATH:Cube_141": {
-"physics/shape_type": 1
-},
-"PATH:Cube_142": {
-"physics/shape_type": 1
-},
-"PATH:Cube_143": {
-"physics/shape_type": 1
-},
-"PATH:Cube_160": {
 "physics/shape_type": 1
 },
 "PATH:Cube_176": {
@@ -148,19 +105,7 @@ _subresources={
 "PATH:Cube_198": {
 "physics/shape_type": 1
 },
-"PATH:bridge_003": {
-"physics/shape_type": 0
-},
-"PATH:bridge_col_b": {
-"mesh_instance/layers": 2
-},
-"PATH:bridge_col_b_001": {
-"mesh_instance/layers": 2
-},
 "PATH:od": {
-"physics/shape_type": 1
-},
-"PATH:od_002": {
 "physics/shape_type": 1
 },
 "PATH:path": {
@@ -172,17 +117,8 @@ _subresources={
 "PATH:path_010/path_011": {
 "physics/shape_type": 0
 },
-"PATH:shrine_Cube_001": {
-"physics/shape_type": 0
-},
 "PATH:shrine_Cube_002": {
 "physics/shape_type": 1
-},
-"PATH:stairs_001": {
-"physics/shape_type": 0
-},
-"PATH:stairs_002": {
-"physics/shape_type": 0
 },
 "PATH:tower1": {
 "physics/shape_type": 1
