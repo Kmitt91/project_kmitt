@@ -93,7 +93,6 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021,
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="world_collision" parent="project_kmitt" instance=ExtResource("13_o8fc1")]
-visible = false
 
 [node name="PLANTS" type="Node3D" parent="project_kmitt"]
 
