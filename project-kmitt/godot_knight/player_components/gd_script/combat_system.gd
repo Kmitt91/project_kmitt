@@ -2,6 +2,8 @@ extends Node
 
 @export var player : CharacterBody3D
 var atk_tap : int = 0
+const TIME_DIFF : float = 0.15
+
 
 ### READY ###
 func _ready():
@@ -35,9 +37,9 @@ func initialize_timers():
 		var _weapon_local : String = player.state
 				
 		#set wait time
-		$TimerAttack1.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK1").get_length() - 0.15)
-		$TimerAttack2.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK2").get_length() - 0.15)
-		$TimerAttack3.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK3").get_length() - 0.15)
+		$TimerAttack1.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK1").get_length() - TIME_DIFF - 0.01)
+		$TimerAttack2.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK2").get_length() - TIME_DIFF - 0.01)
+		$TimerAttack3.wait_time = (player.anim_tree.get_parent().get_animation(_weapon_local + "_ATTACK3").get_length() - TIME_DIFF - 0.01)
 
 #starts timer to swapn and despawn weapon collider, rest in magic_sword_trail.gd
 #func weapon_col_instance(atk_number):
@@ -81,7 +83,7 @@ func fast_sword_attack():
 			if !player.anim_tree.get("parameters/" + player.state + "/" + player.state + "_atk1/active"):
 				player.anim_tree.set("parameters/" + player.state + "/" + player.state + "_atk1/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 				
-				one_shot.fadeout_time = 0.15
+				one_shot.fadeout_time = TIME_DIFF
 				player.attack = true
 				player.disabled_movement = true
 			
@@ -145,7 +147,7 @@ func slow_sword_atack():
 
 func _on_timer_attack_1_timeout():
 	if atk_tap >= 1:
-		await get_tree().create_timer(0.15,false).timeout
+		await get_tree().create_timer(TIME_DIFF,false).timeout
 		$TimerAttack2.start(0)
 		atk_tap = 0
 	else:
@@ -157,7 +159,7 @@ func _on_timer_attack_1_timeout():
 
 func _on_timer_attack_2_timeout():
 	if atk_tap >= 1:
-		await get_tree().create_timer(0.15,false).timeout
+		await get_tree().create_timer(TIME_DIFF,false).timeout
 		$TimerAttack1.start(0)
 		atk_tap = 0
 	else:
