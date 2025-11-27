@@ -93,6 +93,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021,
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="world_collision" parent="project_kmitt" instance=ExtResource("13_o8fc1")]
+visible = false
 
 [node name="PLANTS" type="Node3D" parent="project_kmitt"]
 
@@ -527,7 +528,6 @@ transform = Transform3D(-0.60823816, -1.3106312, 1.3828571, 1.3566166, 0.7213231
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="project_kmitt"]
 transform = Transform3D(0.93311685, 0, 0.35957342, 0, 1, 0, -0.35957342, 0, 0.93311685, -6.0143437, 1.0034208, -19.70807)
-update_mode = 1
 size = Vector3(6.716, 22.45996, 19.405)
 box_projection = true
 interior = true
