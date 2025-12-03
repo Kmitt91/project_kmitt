@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cap1a5jvp3vyp"]
+[gd_scene load_steps=12 format=3 uid="uid://cap1a5jvp3vyp"]
 
 [ext_resource type="Script" uid="uid://4rvc8hgxod7a" path="res://godot_knight/godot_knight.gd" id="1_2iy4h"]
 [ext_resource type="PackedScene" uid="uid://b5u7sg7j8sm76" path="res://godot_knight/godot_knight.glb" id="1_36j3m"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bwa2e04f2vg4m" path="res://godot_knight/player_components/scenes/dodge_roll_system.tscn" id="7_d6pjo"]
 [ext_resource type="PackedScene" uid="uid://d1itihlyf4cdt" path="res://godot_knight/player_components/scenes/combat_system.tscn" id="8_rybp4"]
 [ext_resource type="PackedScene" uid="uid://sp2p2vc8c04" path="res://godot_knight/player_components/scenes/blocking_system.tscn" id="9_ri5ut"]
+[ext_resource type="PackedScene" uid="uid://chdxyvisdiwgv" path="res://godot_knight/player_components/scenes/strafe_and_aim_system.tscn" id="10_xb1ib"]
 [ext_resource type="PackedScene" uid="uid://dkxtxh7qia43g" path="res://godot_knight/player_components/scenes/basic_movement_system.tscn" id="12_8snvx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_36j3m"]
@@ -22,34 +23,28 @@ state = "Sword"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_36j3m")
 
-[node name="HurtboxArea3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxArea3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
-shape = SubResource("CapsuleShape3D_36j3m")
-
 [node name="godot_knight" parent="." instance=ExtResource("1_36j3m")]
 
 [node name="Skeleton3D" parent="godot_knight/Godot_Knight_Armature" index="1"]
-bones/1/position = Vector3(0.024457857, 0.0005308159, 0.9390932)
+bones/1/position = Vector3(0.0055293706, -0.005959722, 0.90224856)
 bones/2/rotation = Quaternion(-0.7071068, 8.42937e-08, -8.42937e-08, 0.7071068)
-bones/3/rotation = Quaternion(-0.0031425336, 0.99797803, 0.009185381, 0.0628148)
-bones/4/rotation = Quaternion(-0.27409476, 0.0040255636, 0.018067488, 0.9615246)
-bones/5/rotation = Quaternion(0.6927434, 0.05015644, -0.023518493, 0.7190535)
-bones/6/rotation = Quaternion(0.012518592, 0.93516713, -0.33645114, -0.11002967)
-bones/7/rotation = Quaternion(-0.24300826, -0.004060553, -0.016018404, 0.9698835)
-bones/8/rotation = Quaternion(0.6420932, -0.006109327, 0.019672075, 0.76635)
-bones/9/rotation = Quaternion(0.7490907, 8.2574296e-08, 8.5696534e-08, 0.6624675)
-bones/10/rotation = Quaternion(2.441275e-10, -0.005805734, -3.6211808e-12, 0.9999832)
-bones/11/rotation = Quaternion(0.0007665344, -0.0058053806, 0.013180158, 0.99989605)
-bones/12/rotation = Quaternion(-0.081240654, -0.0069329008, 0.013465425, 0.99657947)
+bones/3/rotation = Quaternion(-0.01693445, 0.93429947, -0.33865863, 0.110037416)
+bones/4/rotation = Quaternion(-0.24540532, 0.0040580174, 0.016176375, 0.9692771)
+bones/5/rotation = Quaternion(0.53910035, 0.08108755, -0.05038924, 0.83681345)
+bones/6/rotation = Quaternion(-0.013924505, 0.99446887, 0.08853583, -0.054766443)
+bones/7/rotation = Quaternion(-0.31299397, -0.003975313, -0.020631664, 0.9495227)
+bones/8/rotation = Quaternion(0.57183534, -0.028685573, 0.02943877, 0.8193381)
+bones/9/rotation = Quaternion(0.7527034, 8.069435e-08, 8.751748e-08, 0.65835977)
+bones/10/rotation = Quaternion(-7.7269496e-11, 0.016935553, 1.1154028e-10, 0.9998566)
+bones/11/rotation = Quaternion(0.0014067515, 0.017213212, -0.015954217, 0.99972355)
+bones/12/rotation = Quaternion(-0.08164862, 0.017127365, -0.0016369747, 0.9965127)
 bones/13/rotation = Quaternion(0.2412201, -0.0007185887, -0.00017910573, 0.9704702)
 bones/14/rotation = Quaternion(-0.16080688, -1.4246189e-08, 0.0002383688, 0.98698586)
 bones/27/position = Vector3(0.044419274, 0.16916774, 0.033273924)
 bones/27/rotation = Quaternion(-0.032026805, 0.16746332, -0.76434517, 0.6218575)
-bones/28/rotation = Quaternion(-0.015903348, -0.2058846, -0.488556, 0.84774506)
-bones/29/rotation = Quaternion(0.29829684, -8.962118e-06, -0.2641269, 0.9172001)
-bones/30/rotation = Quaternion(-0.059972703, 0.37405872, 0.06527414, 0.9231591)
+bones/28/rotation = Quaternion(-0.20253882, -0.004517188, -0.4104344, 0.88910145)
+bones/29/rotation = Quaternion(0.27737066, -9.0757385e-06, -0.24559762, 0.928842)
+bones/30/rotation = Quaternion(0.009877032, 0.34690455, 0.15853886, 0.9243513)
 bones/31/rotation = Quaternion(-0.27175733, -0.65715843, -0.27995872, 0.64491385)
 bones/32/rotation = Quaternion(-0.36837667, -9.770606e-08, -6.853951e-08, 0.92967665)
 bones/33/rotation = Quaternion(-0.36837777, -1.02029134e-07, -1.4672548e-09, 0.92967623)
@@ -66,9 +61,9 @@ bones/43/rotation = Quaternion(0.22070089, 0.02425878, -0.28156382, 0.93350124)
 bones/44/rotation = Quaternion(0.04053048, 0.06955791, 0.052572593, 0.9953669)
 bones/45/rotation = Quaternion(-0.15056635, 0.0061880234, 0.1279274, 0.98026836)
 bones/46/rotation = Quaternion(-0.032027118, -0.16746348, 0.7643448, 0.62185794)
-bones/47/rotation = Quaternion(-0.19909501, 0.014733051, 0.40605843, 0.8917739)
-bones/48/rotation = Quaternion(0.17271163, 9.5251025e-06, 0.15292738, 0.9730283)
-bones/49/rotation = Quaternion(0.12338728, -0.27185312, -0.0348003, 0.9537612)
+bones/47/rotation = Quaternion(0.0774737, 0.2752342, 0.50421804, 0.81486696)
+bones/48/rotation = Quaternion(0.279985, 9.087846e-06, 0.24791257, 0.9274416)
+bones/49/rotation = Quaternion(-0.04664192, -0.25583974, -0.006445536, 0.9655719)
 bones/50/rotation = Quaternion(-0.2215444, 0.67667735, 0.22878356, 0.6638404)
 bones/51/rotation = Quaternion(-0.29606077, 1.3984727e-07, 7.020651e-08, 0.95516914)
 bones/52/rotation = Quaternion(-0.2960619, 6.557797e-08, 4.1202943e-09, 0.95516884)
@@ -84,26 +79,27 @@ bones/61/rotation = Quaternion(-0.29606244, 1.8213048e-07, -4.85231e-07, 0.95516
 bones/62/rotation = Quaternion(0.22070077, -0.024258753, 0.28156376, 0.93350124)
 bones/63/rotation = Quaternion(0.040530555, -0.06955789, -0.052572466, 0.9953668)
 bones/64/rotation = Quaternion(-0.15056647, -0.0061880527, -0.12792744, 0.98026836)
-bones/65/position = Vector3(-0.28244662, -0.24559402, -0.20008807)
-bones/65/rotation = Quaternion(0.064823896, -0.0034583965, 0.9834315, 0.16925846)
-bones/66/position = Vector3(0.080788486, 0.17236926, 0.01436837)
-bones/67/position = Vector3(-0.08228851, -0.4554069, 0.11747273)
-bones/67/rotation = Quaternion(-0.020662282, 0.22138925, 0.97077286, 0.0903321)
+bones/65/position = Vector3(-0.2847576, -0.21624392, 0.20172818)
+bones/65/rotation = Quaternion(0.05129406, 0.37556246, 0.91894615, 0.1089029)
+bones/66/position = Vector3(0.084330894, -0.4622543, 0.05050205)
+bones/66/rotation = Quaternion(0.016013823, 0.09887345, 0.9949278, -0.009292244)
+bones/67/position = Vector3(-0.07501452, 0.371059, 0.011840619)
+bones/67/rotation = Quaternion(6.0086064e-10, 1.5059783e-08, 0.9998378, 0.018012729)
 
 [node name="DEF_Head_001" parent="godot_knight/Godot_Knight_Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.99786425, -0.05436792, -0.03620984, 0.049413044, 0.9908056, -0.12594724, 0.042724397, 0.12388894, 0.9913759, 0.0060137743, 1.4679066, 0.06587681)
+transform = Transform3D(0.99421394, 0.03811546, 0.100428015, -0.02406056, 0.9901938, -0.13761443, -0.104688406, 0.1344018, 0.9853814, 0.01955755, 1.4305313, 0.07805619)
 
 [node name="DEF_Shoulder_L_001" parent="godot_knight/Godot_Knight_Armature/Skeleton3D" index="1"]
-transform = Transform3D(-0.17108725, 0.9588862, 0.22642234, -0.9766435, -0.13473268, -0.16737723, -0.1299892, -0.24976993, 0.95954055, 0.057186425, 1.3418978, 0.056257937)
+transform = Transform3D(-0.26034418, 0.8991683, 0.35173547, -0.95955384, -0.20053321, -0.19759487, -0.10713636, -0.38895166, 0.9150075, 0.059266314, 1.3012849, 0.060507186)
 
 [node name="DEF_Shoulder_R_001" parent="godot_knight/Godot_Knight_Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.27704647, -0.917, -0.28697813, 0.9543697, -0.22796965, -0.19289473, 0.111462146, -0.32732406, 0.9383151, -0.031466894, 1.3374915, 0.05259276)
+transform = Transform3D(-0.1860595, -0.9694758, -0.15968296, 0.970267, -0.15568694, -0.18532117, 0.15480381, -0.18941587, 0.9696172, -0.029044753, 1.3034043, 0.069937125)
 
 [node name="DEF_Spine_004" parent="godot_knight/Godot_Knight_Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.9979167, -0.047958497, -0.043153506, 0.04960004, 0.99805325, 0.037808605, 0.041256253, -0.039870247, 0.99835277, 0.02240861, 1.1695982, 0.02795101)
+transform = Transform3D(0.99406415, 0.020942198, 0.106760636, -0.023856204, 0.999375, 0.02609101, -0.1061475, -0.028483033, 0.9939424, 0.00801562, 1.1324145, 0.036968227)
 
 [node name="DEF_Spine_001" parent="godot_knight/Godot_Knight_Armature/Skeleton3D" index="4"]
-transform = Transform3D(1, 1.01689395e-08, 2.3779452e-07, 1.8983378e-08, 0.99249643, -0.12227368, -2.372536e-07, 0.12227368, 0.99249643, 0.024457857, 0.9390932, -0.0005308159)
+transform = Transform3D(1, 6.241855e-09, 2.3800123e-07, 2.5497592e-08, 0.9910993, -0.13312495, -2.3671379e-07, 0.13312495, 0.9910993, 0.0055293706, 0.90224856, 0.005959722)
 
 [node name="AnimationTree" type="AnimationTree" parent="godot_knight/AnimationPlayer" index="0"]
 root_node = NodePath("../..")
@@ -310,6 +306,7 @@ player = NodePath("..")
 [node name="blocking_system" parent="." node_paths=PackedStringArray("player") instance=ExtResource("9_ri5ut")]
 player = NodePath("..")
 
-[node name="Node" type="Node" parent="."]
+[node name="strafe_and_aim_system" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_xb1ib")]
+player = NodePath("..")
 
 [editable path="godot_knight"]

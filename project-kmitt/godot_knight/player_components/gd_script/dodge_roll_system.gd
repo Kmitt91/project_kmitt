@@ -3,6 +3,7 @@ extends Node
 @export var player : CharacterBody3D
 @export var basic_movement_system : Node
 
+@onready var hurtbox_collision : CollisionShape3D = $HurtboxArea3D/CollisionShape3D
 const ROLL_MAGNITUDE : float = 6.0
 
 
@@ -57,4 +58,4 @@ func _on_roll_timer_timeout():
 	player.disabled_movement = false
 	player.roll = false
 	#I-frames off
-	player.hurtbox_collision.disabled = false
+	hurtbox_collision.disabled = false

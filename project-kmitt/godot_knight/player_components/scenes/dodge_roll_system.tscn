@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwa2e04f2vg4m"]
+[gd_scene load_steps=3 format=3 uid="uid://bwa2e04f2vg4m"]
 
 [ext_resource type="Script" uid="uid://b38ecf2b76c0i" path="res://godot_knight/player_components/gd_script/dodge_roll_system.gd" id="1_6k3a4"]
 
-[node name="dodge_roll_system" type="Node"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6k3a4"]
+radius = 0.25
+height = 1.7
+
+[node name="dodge_roll_system" type="Node3D"]
 script = ExtResource("1_6k3a4")
 
 [node name="RollTimer" type="Timer" parent="."]
 wait_time = 0.66
 one_shot = true
+
+[node name="HurtboxArea3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtboxArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_6k3a4")
 
 [connection signal="timeout" from="RollTimer" to="." method="_on_roll_timer_timeout"]
