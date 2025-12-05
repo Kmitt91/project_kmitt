@@ -38,7 +38,7 @@ func rolling():
 				$RollTimer.start(0)
 				player.roll = true
 				#I-frames while rolling
-				player.hurtbox_collision.disabled = true
+				hurtbox_collision.disabled = true
 				return
 			
 		

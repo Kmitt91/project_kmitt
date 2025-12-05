@@ -23,7 +23,6 @@ var disabled_movement : bool = false
 var player_root_motion : Vector3 = Vector3.ZERO #!
 var player_movement_velocity : Vector3 = Vector3.ZERO #!
 
-
 # required for camera system
 var player_cam_rot : float = 0.0 #!
 #var cam_h_global_pos : Vector3 = Vector3.ZERO #!
@@ -38,12 +37,8 @@ var roll_magic_magnitude : float = 1.0
 
 #targeting
 var target = null
-var targets_arr = []
 var targeting : bool = false
 
 var blocking : bool = false
 var magic : bool = false
 var attack : bool = false
-
-func _physics_process(_delta):
-	move_and_slide()

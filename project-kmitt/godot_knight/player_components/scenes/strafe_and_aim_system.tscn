@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://chdxyvisdiwgv"]
+[gd_scene load_steps=3 format=3 uid="uid://chdxyvisdiwgv"]
 
 [ext_resource type="Script" uid="uid://cacxi6pvg58jc" path="res://godot_knight/player_components/gd_script/strafe_and_aim_system.gd" id="1_rwa16"]
 
-[node name="strafe_and_aim_system" type="Node"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_rwa16"]
+radius = 5.0
+
+[node name="strafe_and_aim_system" type="Node3D"]
 script = ExtResource("1_rwa16")
+
+[node name="TargetArea3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea3D"]
+shape = SubResource("SphereShape3D_rwa16")
+
+[connection signal="body_entered" from="TargetArea3D" to="." method="_on_target_area_3d_body_entered"]
+[connection signal="body_exited" from="TargetArea3D" to="." method="_on_target_area_3d_body_exited"]

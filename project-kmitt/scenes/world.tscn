@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=22 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
@@ -69,6 +69,11 @@ size = Vector2(512, 512)
 subdivide_width = 32
 subdivide_depth = 16
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_o8fc1"]
+radius = 0.57711333
+
+[sub_resource type="SphereMesh" id="SphereMesh_xo05s"]
+
 [node name="world" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -88,6 +93,7 @@ directional_shadow_max_distance = 128.0
 
 [node name="godot_knight" parent="." instance=ExtResource("14_o8fc1")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021, 0, -18.74066)
+state = "state_explore"
 
 [node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -673,3 +679,12 @@ draw_pass_1 = SubResource("QuadMesh_qfnet")
 transform = Transform3D(0.2566013, 0.13063002, 0.95764905, -0.03380955, 0.99143106, -0.1261789, -0.9659258, -1.4984566e-08, 0.25881904, 36.652004, -37.335873, 59.352997)
 mesh = SubResource("PlaneMesh_4wyf3")
 surface_material_override/0 = ExtResource("2_rwgxs")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["ENEMY"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.144906, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_o8fc1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("SphereMesh_xo05s")
