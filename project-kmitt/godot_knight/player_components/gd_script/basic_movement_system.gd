@@ -20,7 +20,8 @@ func _ready():
 func _physics_process(delta):
 	if !player.LADDER:
 		basic_movement(delta)
-		
+		strafe_movement(delta)
+		player.move_and_slide()
 	
 
 #region ### HORIZONTAL MOVEMENT ###
@@ -34,57 +35,104 @@ func basic_movement(delta):
 		direction = Vector3(Input.get_action_strength("LEFT") - Input.get_action_strength("RIGHT"),
 					0,
 					Input.get_action_strength("UP") - Input.get_action_strength("DOWN")).rotated(Vector3.UP, player.player_cam_rot)#.normalized()
-		
-		if sprint_toggle:# and player.staminabar.value > 0.1:# and !jump: #SPRINT faster in explore_state
-			player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), -1.0, delta * ACCELERATION))
-			
-			#stamina decreasing when runniung
-			#player.decrease_stamina(0.1, 0.3)
-			
-			if player.state == player.EXPLORE:
-				movement_speed = SPRINT_SPEED * 1.04
-			else:
-				movement_speed = SPRINT_SPEED
-#				sound_footstep(0.31) #wait time for each step
-			#roll_magnitude = 9.0
-			
-		else: #MOVE
-			player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), 0.0, delta * ACCELERATION))
-			
-			#WALK OR RUN
-			
-			if direction.length() < 0.5:
-				player.anim_tree.set("parameters/" + player.state + "/walk_run/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/walk_run/blend_amount")), 0.0, delta * ACCELERATION))
-				movement_speed = WALK_SPEED
-#					sound_footstep(0.5) #wait time for each step
-				#roll_magnitude = 5.0
-			else:
-				player.anim_tree.set("parameters/" + player.state + "/walk_run/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/walk_run/blend_amount")), 1.0, delta * ACCELERATION))
+		if !player.targeting:
+			if sprint_toggle and player.staminabar.value > 0.1:# and !jump: #SPRINT faster in explore_state
+				player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), -1.0, delta * ACCELERATION))
+				
+				#stamina decreasing when runniung
+				player.decrease_stamina(0.1, 0.3)
 				
 				if player.state == player.EXPLORE:
-					movement_speed = RUN_SPEED * 1.02
+					movement_speed = SPRINT_SPEED * 1.04
 				else:
-					movement_speed = RUN_SPEED
+					movement_speed = SPRINT_SPEED
+#				sound_footstep(0.31) #wait time for each step
+				#roll_magnitude = 9.0
+				
+			else: #MOVE
+				player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), 0.0, delta * ACCELERATION))
+				
+				#WALK OR RUN
+				
+				if direction.length() < 0.5:
+					player.anim_tree.set("parameters/" + player.state + "/walk_run/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/walk_run/blend_amount")), 0.0, delta * ACCELERATION))
+					movement_speed = WALK_SPEED
+#					sound_footstep(0.5) #wait time for each step
+					#roll_magnitude = 5.0
+				else:
+					player.anim_tree.set("parameters/" + player.state + "/walk_run/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/walk_run/blend_amount")), 1.0, delta * ACCELERATION))
+					
+					if player.state == player.EXPLORE:
+						movement_speed = RUN_SPEED * 1.02
+					else:
+						movement_speed = RUN_SPEED
 #					sound_footstep(0.32) #wait time for each step
-				#roll_magnitude = 6.5
+					#roll_magnitude = 6.5
 			
 	else:
 		sprint_toggle = false
-		#IDLE
-		player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), 1.0, delta * ACCELERATION))
-		movement_speed = 0.0
+		if !player.targeting: #IDLE
+			player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), +1.0, delta * ACCELERATION))
+			movement_speed = 0.0
 		
 	player.player_movement_velocity.x = lerp(player.player_movement_velocity.x, direction.normalized().x * movement_speed, delta * ACCELERATION)
 	player.player_movement_velocity.z = lerp(player.player_movement_velocity.z, direction.normalized().z * movement_speed, delta * ACCELERATION)
 	player.velocity.x = (player.player_movement_velocity + root_motion_velocity()).x
 	player.velocity.z = (player.player_movement_velocity + root_motion_velocity()).z
-	player.move_and_slide()
 	
 	### Player Rotation ###
 	var angle = atan2(direction.x, direction.z)
 	player.player_armature.rotation.y = lerp_angle(player.player_armature.rotation.y, angle, delta * ANGULAR_ACCELERATION)
 	
+
+func strafe_movement(delta):
 	
+	if player.targeting and player.target != null:
+		# switch to bland_space2D "STARFE"
+		player.anim_tree.set("parameters/" + player.state + "/strafe_blend/blend_amount", 1.0)
+		#when not Rolling and targeting
+		if !player.roll:# and !jump: 
+			player.player_armature.rotate_object_local(Vector3.UP, PI)
+			player.player_armature.look_at(Vector3(player.target.global_transform.origin.x, 
+												player.player_armature.global_transform.origin.y, 
+												player.target.global_transform.origin.z), 
+											Vector3.UP)
+			player.player_armature.rotate_object_local(Vector3.UP, PI)
+			
+			
+		
+		if (Input.is_action_pressed("UP") || Input.is_action_pressed("DOWN") || Input.is_action_pressed("LEFT") || Input.is_action_pressed("RIGHT")) and !player.disabled_movement:
+			# get strafe as vector2
+			var strafe_dir = Vector2(Input.get_action_strength("RIGHT") - Input.get_action_strength("LEFT"),
+									Input.get_action_strength("UP") - Input.get_action_strength("DOWN"))
+			#clamp val between -1 to 1
+			strafe_dir.x = clamp(strafe_dir.x, -1.0, 1.0)
+			strafe_dir.y = clamp(strafe_dir.y, -1.0, 1.0)
+			
+			if strafe_dir.length() > 0.5:
+				movement_speed = STRAFE_SPEED
+				strafe_dir.normalized()
+#				sound_footstep(0.32)
+			else:
+				movement_speed = STRAFE_SPEED * 0.5
+				strafe_dir = strafe_dir.normalized() * 0.5
+#				sound_footstep(0.55)
+				
+			#strafe movement animation
+			player.anim_tree.set("parameters/" + player.state + "/STRAFE/blend_position", 
+								lerp(player.anim_tree.get("parameters/" + player.state + "/STRAFE/blend_position"), 
+								Vector2(strafe_dir.x, strafe_dir.y), delta * ACCELERATION))
+		else:
+			#idle animation and speed
+			movement_speed = 0.0
+			player.anim_tree.set("parameters/" + player.state + "/STRAFE/blend_position", 
+								lerp(player.anim_tree.get("parameters/" + player.state + "/STRAFE/blend_position"), 
+								Vector2.ZERO, delta * ACCELERATION))
+	else:
+		#return from blend_space2D to blend_tree 
+		player.anim_tree.set("parameters/" + player.state + "/strafe_blend/blend_amount", 0)
+
+
 func root_motion_velocity():
 	
 	var fps : float = float(Performance.get_monitor(Performance.TIME_FPS))

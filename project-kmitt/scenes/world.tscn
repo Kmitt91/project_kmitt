@@ -93,7 +93,6 @@ directional_shadow_max_distance = 128.0
 
 [node name="godot_knight" parent="." instance=ExtResource("14_o8fc1")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021, 0, -18.74066)
-state = "state_explore"
 
 [node name="project_kmitt" parent="." instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -681,7 +680,7 @@ mesh = SubResource("PlaneMesh_4wyf3")
 surface_material_override/0 = ExtResource("2_rwgxs")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." groups=["ENEMY"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.144906, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0902352, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("SphereShape3D_o8fc1")

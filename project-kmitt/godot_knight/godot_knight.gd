@@ -9,7 +9,7 @@ extends CharacterBody3D
 
 #define current state
 @export var intro : bool = false
-@export var state : String = SWORD
+@export var state : String = "state_explore"
 #states
 var EXPLORE : String = "state_explore"
 var GREATSWORD : String = "Greatsword"

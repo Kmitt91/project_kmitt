@@ -173,8 +173,8 @@ func camera_strafe_movement(delta):
 			camera.position.x = lerp(camera.position.x, -0.5, delta * CAMERA_ACCELERATION * 0.5)
 	else:
 		#return to normal state
-		camera.position.z = lerp(camera.position.z, -2.5, CAMERA_ACCELERATION * delta)
-		camera.position.x = lerp(camera.position.x, 0.0, CAMERA_ACCELERATION * delta)
+		camera.position.z = -2.5#lerp(camera.position.z, -2.5, CAMERA_ACCELERATION * delta)
+		camera.position.x = 0#lerp(camera.position.x, 0.0, CAMERA_ACCELERATION * delta)
 
 #endregion
 
