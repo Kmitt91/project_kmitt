@@ -19,11 +19,15 @@ func _physics_process(_delta: float) -> void:
 
 ### TARGETING ###
 func check_targets():
-	if player.target != null:
-		print("unaim")
+	if targets_arr.size() < 1:
 		unaim_target()
+		return
 	else:
-		aim_target()
+		if !player.targeting:
+			aim_target()
+		else:
+			unaim_target()
+		return
 	
 
 func aim_target():

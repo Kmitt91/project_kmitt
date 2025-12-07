@@ -95,19 +95,18 @@ func camera_controller(delta):
 		
 		var cam_vec : Vector3 = (player.target.global_transform.origin - $h.global_transform.origin)
 		$h.rotation = Vector3(0.0, $h.rotation.y, 0.0)
+		$h.look_at(player.target.global_position, Vector3.UP)
+		$h.rotate_object_local(Vector3.UP, PI)
 		
 		if player.target.is_in_group("ENEMY"):
-			$h.rotate_object_local(Vector3.UP, PI)
-			$h.global_transform.basis = $h.global_transform.basis.slerp($h.global_transform.looking_at(player.target.global_transform.origin, Vector3.UP).basis, delta * 5.0)
-			$h.rotate_object_local(Vector3.UP, PI)
-		
-			$h/v.orthonormalize()
+			#$h.rotate_object_local(Vector3.UP, PI)
+			#$h.global_transform.basis = $h.global_transform.basis.slerp($h.global_transform.looking_at(player.target.global_transform.origin, Vector3.UP).basis, delta * 5.0)
+			#$h.rotate_object_local(Vector3.UP, PI)
+			#$h/v.orthonormalize()
 			camera_x_rot = (0.8 - cam_vec.length() * 0.1)
 			camera_x_rot = clamp(camera_x_rot, 0.0, (CAM_X_MAX * PI) / 180)
 			$h/v.rotation.x = lerp($h/v.rotation.x, camera_x_rot, delta * 4.0)
-		else:
-			$h.look_at(player.target.global_position, Vector3.UP)
-			$h.rotate_object_local(Vector3.UP, PI)
+			
 	else: 
 		#Input 
 		var camera_move : Vector2 = Vector2(
