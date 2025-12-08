@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnblwgp06efmv"]
+[gd_scene load_steps=23 format=3 uid="uid://bnblwgp06efmv"]
 
 [ext_resource type="Material" uid="uid://cebrd0yqpntpr" path="res://materials/shader_materials/sky_material.tres" id="1_4wyf3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ohcj0p4k8o8w" path="res://scenes/tree.tscn" id="11_jhx03"]
 [ext_resource type="PackedScene" uid="uid://blfaopgx7da5d" path="res://blender_files/world_collision.glb" id="13_o8fc1"]
 [ext_resource type="PackedScene" uid="uid://cap1a5jvp3vyp" path="res://godot_knight/godot_knight.tscn" id="14_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://uxjkkgindwoh" path="res://scenes/gate.tscn" id="15_xo05s"]
 
 [sub_resource type="Sky" id="Sky_i7141"]
 sky_material = ExtResource("1_4wyf3")
@@ -690,3 +691,6 @@ shape = SubResource("SphereShape3D_o8fc1")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4848459, 0)
 mesh = SubResource("SphereMesh_xo05s")
+
+[node name="gate" parent="." instance=ExtResource("15_xo05s")]
+transform = Transform3D(0.7559774, 0, 0.26172155, 0, 0.8, 0, -0.26172155, 0, 0.7559774, 2.881821, 0, 11.5340185)

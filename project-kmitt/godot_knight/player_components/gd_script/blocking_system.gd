@@ -14,7 +14,7 @@ func _physics_process(delta):
 	block(delta)
 
 func block(delta):
-	if !player.roll and !player.jump and !player.magic and !player.attack:
+	if !player.roll and !player.jump and !player.attack:
 		var timer_block : Timer = $TimerBlock
 			
 		if Input.is_action_pressed("L1") or Input.is_action_pressed("LEFT_MOUSE"):

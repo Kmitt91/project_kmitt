@@ -36,11 +36,11 @@ func basic_movement(delta):
 					0,
 					Input.get_action_strength("UP") - Input.get_action_strength("DOWN")).rotated(Vector3.UP, player.player_cam_rot)#.normalized()
 		if !player.targeting:
-			if sprint_toggle and player.staminabar.value > 0.1:# and !jump: #SPRINT faster in explore_state
+			if sprint_toggle:# and player.staminabar.value > 0.1:# and !jump: #SPRINT faster in explore_state
 				player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), -1.0, delta * ACCELERATION))
 				
 				#stamina decreasing when runniung
-				player.decrease_stamina(0.1, 0.3)
+				#player.decrease_stamina(0.1, 0.3)
 				
 				if player.state == player.EXPLORE:
 					movement_speed = SPRINT_SPEED * 1.04

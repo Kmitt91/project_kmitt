@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2hx3wsp3f3lg"]
+
+[ext_resource type="Script" uid="uid://cdxtdmfnde8pk" path="res://godot_knight/player_components/gd_script/gate_system.gd" id="1_k1j6o"]
+
+[node name="gate_system" type="Node"]
+script = ExtResource("1_k1j6o")
