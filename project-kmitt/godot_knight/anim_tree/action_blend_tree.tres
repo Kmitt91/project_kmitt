@@ -59,7 +59,7 @@ input_7/break_loop_at_end = false
 input_7/reset = true
 
 [resource]
-graph_offset = Vector2(-817.105, 271.037)
+graph_offset = Vector2(-905.11176, 80.07214)
 nodes/CHEST/node = SubResource("AnimationNodeAnimation_as2yf")
 nodes/CHEST/position = Vector2(-480, 80)
 nodes/DOOR/node = SubResource("AnimationNodeAnimation_at801")

@@ -15,18 +15,6 @@ var in_front_area : bool = false
 
 
 
-func _on_AnimationPlayerR_animation_finished(anim_name):
-	if anim_name == "gate_R":
-		$gate_area.queue_free()
-		if player != null:
-			player.root_motion = Vector3.ZERO
-			player.current_gate_path(null)
-			player.disabled_movement = false
-			player = null
-			
-			#_change_scene() #called in anim "gate_L"
-		
-	
 
 
 func _on_gate_area_body_entered(body: Node3D) -> void:
@@ -51,3 +39,16 @@ func _on_gate_area_body_exited(body: Node3D) -> void:
 			player.get_node("gate_system").current_gate_path(false)
 			player.disabled_movement = false
 			player = null
+
+
+func _on_animation_player_r_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "gate_R":
+		$gate_area.queue_free()
+		if player != null:
+			player.player_root_motion = Vector3.ZERO
+			player.get_node("gate_system").set_physics_process(false)
+			player.get_node("gate_system").current_gate_path(false)
+			player.disabled_movement = false
+			player = null
+			
+			#_change_scene() #called in anim "gate_L"

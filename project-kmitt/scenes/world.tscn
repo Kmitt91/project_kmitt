@@ -693,4 +693,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4848459, 0)
 mesh = SubResource("SphereMesh_xo05s")
 
 [node name="gate" parent="." instance=ExtResource("15_xo05s")]
-transform = Transform3D(0.7559774, 0, 0.26172155, 0, 0.8, 0, -0.26172155, 0, 0.7559774, 2.881821, 0, 11.5340185)
+transform = Transform3D(0.93532676, 0, 0.35378504, 0, 1, 0, -0.35378504, 0, 0.93532676, 0.57708526, 0, 5.353572)

@@ -2,6 +2,7 @@ extends Node
 
 @export var player : CharacterBody3D
 var gate_path = null
+var gate_scale = 0.75
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -19,7 +20,6 @@ func gate_interaction(delta):
 	if gate_path != null:
 		if !player.anim_tree.get("parameters/" + player.state + "/action/active") and !player.jump and !player.disabled_movement:
 			if Input.is_action_just_pressed("TRIANGLE") or Input.is_action_just_pressed("E"):
-				print("gate_entered")
 				if gate_path.key: # door requires key?
 					pass
 					#if Globals.global_equipped_keyitems_item_name == gate_path.key_name:# player has key?
@@ -51,15 +51,14 @@ func gate_interaction(delta):
 											Vector3.UP)
 				player.player_armature.rotate_object_local(Vector3.UP, PI)
 				
-				player.player_root_motion = player.anim_tree.get_root_motion_position()
+				player.player_root_motion = player.anim_tree.get_root_motion_position() * 0.75
 	
 func gate_animation():
-	var blend_tree = player.anim_tree.tree_root.get_node(player.state)
-	var one_shot = blend_tree.get_node("action")
-	one_shot.set_filter_enabled(true)
+	#var blend_tree = player.anim_tree.tree_root.get_node(player.state)
+	#var one_shot = blend_tree.get_node("action")
+	#one_shot.set_filter_enabled(true)
 	
 	player.disabled_movement = true
-	
 	player.anim_tree.set("parameters/" + player.state + "/action/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 	player.anim_tree.set("parameters/" + player.state + "/action_anim/action_trans/transition_request", "GATE_open")
 	gate_path.animR.play("gate_R")

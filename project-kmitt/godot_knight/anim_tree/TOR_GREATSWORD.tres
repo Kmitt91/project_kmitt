@@ -135,7 +135,7 @@ animation = &"Greatsword_WALK"
 [sub_resource type="AnimationNodeBlend2" id="252"]
 
 [resource]
-graph_offset = Vector2(-267.35587, -103.391815)
+graph_offset = Vector2(-263.09894, -12.045494)
 nodes/output/position = Vector2(1660, 120)
 nodes/1/node = SubResource("46")
 nodes/1/position = Vector2(-280, 340)
@@ -168,7 +168,7 @@ nodes/walk_run/position = Vector2(-1380, -100)
 nodes/action/node = SubResource("AnimationNodeOneShot_ojuef")
 nodes/action/position = Vector2(700, 140)
 nodes/action_anim/node = ExtResource("1_f3pgx")
-nodes/action_anim/position = Vector2(540, 340)
+nodes/action_anim/position = Vector2(540, 420)
 nodes/block/node = SubResource("AnimationNodeBlend2_djqmh")
 nodes/block/position = Vector2(-640, 140)
 nodes/idle/node = SubResource("76")
