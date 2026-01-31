@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=25 format=3 uid="uid://8yfvitwmwyib"]
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://8yfvitwmwyib"]
 
 [ext_resource type="AnimationNodeBlendTree" uid="uid://b6uxcnhnctspt" path="res://godot_knight/anim_tree/action_blend_tree.tres" id="1_4bf7l"]
 [ext_resource type="AnimationNodeBlendSpace2D" uid="uid://dvshr80ti5y7l" path="res://godot_knight/anim_tree/strafe_blendspace2d.tres" id="1_wlpu2"]

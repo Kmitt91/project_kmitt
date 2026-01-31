@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://np478h7xd3a3"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://np478h7xd3a3"]
 
 [ext_resource type="Shader" uid="uid://scsadnoaf8rw" path="res://materials/shader_materials/shader_scripts/fabric_shader.gdshader" id="1_p6yg0"]
 [ext_resource type="Texture2D" uid="uid://0uvgng5a6eje" path="res://materials/textures/fabric_material/fabric_material_albedo.png" id="2_k2aqn"]

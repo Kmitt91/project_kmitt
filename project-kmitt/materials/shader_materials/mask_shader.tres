@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://dunmxi2lxrtqg"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dunmxi2lxrtqg"]
 
 [ext_resource type="Shader" uid="uid://7eblbn7tsif1" path="res://materials/shader_materials/shader_scripts/mask_shader.gdshader" id="1_bvj7y"]
 [ext_resource type="Texture2D" uid="uid://cm8ony8iax4ce" path="res://materials/textures/mask.png" id="2_6554b"]

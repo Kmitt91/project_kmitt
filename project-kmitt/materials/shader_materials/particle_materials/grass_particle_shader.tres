@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bqxy30110hsps"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bqxy30110hsps"]
 
 [ext_resource type="Shader" uid="uid://6n5y1af6lo5g" path="res://materials/shader_materials/shader_scripts/grass_particle_shader.gdshader" id="1_r0tvk"]
 

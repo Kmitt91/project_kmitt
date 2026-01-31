@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://uknn7xnu6jvp"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://uknn7xnu6jvp"]
 
 [ext_resource type="Shader" uid="uid://blleaa8c378ve" path="res://materials/shader_materials/shader_scripts/steel_shader.gdshader" id="1_1hqdh"]
 [ext_resource type="Texture2D" uid="uid://bm5npy03shorx" path="res://materials/textures/metal_material/steel_material_albedo.png" id="2_6kxr1"]

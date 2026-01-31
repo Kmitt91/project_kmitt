@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://caoebdm6dwxl4"]
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://caoebdm6dwxl4"]
 
 [sub_resource type="AnimationNodeAnimation" id="350"]
 animation = &"BLOOD"

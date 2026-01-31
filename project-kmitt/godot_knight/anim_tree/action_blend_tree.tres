@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://b6uxcnhnctspt"]
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://b6uxcnhnctspt"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_as2yf"]
 animation = &"CHEST_open"

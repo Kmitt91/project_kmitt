@@ -39,7 +39,7 @@ func _on_gate_area_body_exited(body: Node3D) -> void:
 			player.get_node("gate_system").current_gate_path(false)
 			player.disabled_movement = false
 			player = null
-
+		
 
 func _on_animation_player_r_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "gate_R":
@@ -50,5 +50,9 @@ func _on_animation_player_r_animation_finished(anim_name: StringName) -> void:
 			player.get_node("gate_system").current_gate_path(false)
 			player.disabled_movement = false
 			player = null
-			
+		
+		
+		
 			#_change_scene() #called in anim "gate_L"
+		
+	

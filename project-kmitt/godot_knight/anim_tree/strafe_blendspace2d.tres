@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendSpace2D" load_steps=10 format=3 uid="uid://dvshr80ti5y7l"]
+[gd_resource type="AnimationNodeBlendSpace2D" format=3 uid="uid://dvshr80ti5y7l"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3c7j"]
 animation = &"Doubleblade_IDLE"
