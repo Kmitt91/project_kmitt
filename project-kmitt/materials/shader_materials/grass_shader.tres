@@ -17,7 +17,7 @@ seamless = true
 [resource]
 render_priority = 0
 shader = ExtResource("1_hie8n")
-shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color = Color(0.92941177, 1, 0.7254902, 1)
 shader_parameter/color_ramp = ExtResource("2_dpx7a")
 shader_parameter/mask_texture = ExtResource("2_qa1q6")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_x2h7l")
