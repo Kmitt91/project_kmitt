@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cun4qebk0hcjl"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cun4qebk0hcjl"]
 
 [ext_resource type="Shader" uid="uid://ehacgxslikbm" path="res://materials/shader_materials/shader_scripts/particle_scroll_shader.gdshader" id="1_2bc8b"]
 [ext_resource type="Texture2D" uid="uid://beadjk5ak3ngd" path="res://materials/textures/circle.png" id="2_ltl44"]

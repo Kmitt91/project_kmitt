@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=5 format=3 uid="uid://m125pwim3gv1"]
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://m125pwim3gv1"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ip4kf"]
 animation = &"STAGGER_L"

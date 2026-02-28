@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeStateMachine" load_steps=69 format=3 uid="uid://c1bxrkne2oojd"]
+[gd_resource type="AnimationNodeStateMachine" format=3 uid="uid://c1bxrkne2oojd"]
 
 [ext_resource type="AnimationNodeBlendTree" uid="uid://8yfvitwmwyib" path="res://godot_knight/anim_tree/TOR_SWORD.tres" id="1_1tvfd"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://ydad3of6vyra" path="res://godot_knight/anim_tree/TOR_DOUBLEBLADE.tres" id="2_sqkde"]

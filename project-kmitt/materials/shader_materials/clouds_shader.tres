@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b62jxtfweik0d"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b62jxtfweik0d"]
 
 [ext_resource type="Shader" uid="uid://cv7c44erl3khr" path="res://materials/shader_materials/shader_scripts/clouds_shader.gdshader" id="1_g5oxs"]
 

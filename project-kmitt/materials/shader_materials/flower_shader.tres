@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://c74hxkbic02fw"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c74hxkbic02fw"]
 
 [ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_dv1my"]
 [ext_resource type="Texture2D" uid="uid://dajtamoplaco1" path="res://materials/textures/flowers_low.png" id="2_u7mqu"]

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bkuy3r1ocqeq6"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bkuy3r1ocqeq6"]
 
 [ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_hie8n"]
 [ext_resource type="Texture2D" uid="uid://c73rfnyu4xkys" path="res://materials/textures/gradients/grass_gradient.tres" id="2_dpx7a"]

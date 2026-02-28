@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=4 format=3 uid="uid://rrk268gf4c14"]
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://rrk268gf4c14"]
 
 [ext_resource type="Texture2D" uid="uid://dep4i8iom6xx6" path="res://materials/textures/gradients/fire_gradient.tres" id="1_71bfn"]
 
