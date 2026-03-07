@@ -39,6 +39,7 @@ sdfgi_use_occlusion = true
 glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.1
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.5425756, 0.6315804, 0.7697038, 1)
 fog_sun_scatter = 0.5
@@ -141,7 +142,6 @@ transform = Transform3D(-0.92718387, 0.04054178, -0.37240642, 0, 0.99412644, 0.1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047640314]
 transform = Transform3D(-0.720565, 0.3242752, 0.612888, 0.64899325, 0.62660277, 0.43148202, -0.24411836, 0.70867103, -0.6619605, 0.017189788, 5.5175576, 0.5412545)
-visible = false
 light_color = Color(0.8392157, 0.7529412, 0.52156866, 1)
 light_energy = 0.75
 shadow_enabled = true
