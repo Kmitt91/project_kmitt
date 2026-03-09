@@ -41,7 +41,7 @@ void fragment() {
 	vec3 noise2 = texture(noise_texture2, UV * scale - time).rgb;
 	vec3 noise_mix = mix(noise1, noise2, mix_value);
 
-	ALBEDO = color + (noise_mix.rgb * 0.7);
+	ALBEDO = color + color*(noise_mix.rgb * 0.7);
 	ALPHA = noise_mix.r * vec3(circle(UV, 0.4, 0.33)).r;
 
 //proximity fade code from Standartmaterial

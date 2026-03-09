@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://drkq0effr8ked" path="res://materials/textures/cliff_material/cliff_material_albedo.png" id="1_um1cr"]
 [ext_resource type="Texture2D" uid="uid://daalwpnrglfqc" path="res://materials/textures/cliff_material/cliff_material_normal.png" id="2_s1qar"]
+[ext_resource type="Material" uid="uid://dkrhry7slrjay" path="res://materials/shader_materials/moss_overlay_shader.tres" id="2_y5ktj"]
 [ext_resource type="Texture2D" uid="uid://y3bdoxsqen4j" path="res://materials/textures/cliff_material/cliff_material_orm.png" id="3_y5ktj"]
 
 [resource]
-albedo_color = Color(0.7548252, 0.7548252, 0.7548251, 1)
+next_pass = ExtResource("2_y5ktj")
+albedo_color = Color(0.7706097, 0.67655766, 0.6496765, 1)
 albedo_texture = ExtResource("1_um1cr")
 metallic_specular = 0.0
 roughness_texture = ExtResource("3_y5ktj")

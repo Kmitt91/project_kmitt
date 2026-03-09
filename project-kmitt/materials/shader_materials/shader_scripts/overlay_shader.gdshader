@@ -16,7 +16,7 @@ uniform float value = 1.0;
 varying vec3 uv1_triplanar_pos;
 uniform float uv1_blend_sharpness = 4.0;
 varying vec3 uv1_power_normal;
-uniform float uv1_scale = 0.01;
+uniform float uv1_scale = 0.005;//0.01
 
 
 //uniform float min_dist = 0.0;
@@ -43,7 +43,7 @@ void vertex(){
 vec4 triplanar_texture(sampler2D p_sampler,vec3 p_weights,vec3 p_triplanar_pos) {
 	vec4 samp=vec4(0.0);
 	// I commented this out, since the level layout is mostly facing to the x-axis, meaning its going alnong the z-axis
-	//samp+= texture(p_sampler,p_triplanar_pos.xy) * p_weights.z;
+	samp+= texture(p_sampler,p_triplanar_pos.xy) * p_weights.z;
 	samp+= texture(p_sampler,p_triplanar_pos.xz) * p_weights.y;
 	samp+= texture(p_sampler,p_triplanar_pos.zy * vec2(-1.0,1.0)) * p_weights.x;
 	return samp;
