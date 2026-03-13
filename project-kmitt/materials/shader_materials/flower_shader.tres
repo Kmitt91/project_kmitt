@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_dv1my")
-shader_parameter/color = Color(0.7529412, 0.3647059, 0.11764706, 1)
+shader_parameter/color = Color(0.46229023, 0.46229076, 0.4622904, 1)
 shader_parameter/mask_texture = ExtResource("2_u7mqu")
 shader_parameter/roughness_value = 1.0
 shader_parameter/value = 3.0

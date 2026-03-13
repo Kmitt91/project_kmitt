@@ -29,22 +29,24 @@ ambient_light_color = Color(0.50980395, 0.43137255, 0.34901962, 1)
 reflected_light_source = 2
 tonemap_mode = 4
 tonemap_exposure = 0.95
-ssao_radius = 1.5
+ssao_enabled = true
+ssao_radius = 4.0
+ssao_power = 2.0
+ssao_detail = 5.0
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 1.0
 ssil_radius = 8.0
 ssil_intensity = 1.5
 sdfgi_use_occlusion = true
-glow_enabled = true
 glow_normalized = true
 glow_bloom = 0.1
 fog_enabled = true
 fog_light_color = Color(0.39215687, 0.39215687, 0, 1)
 fog_light_energy = 0.33
-fog_sun_scatter = 0.1
+fog_sun_scatter = 0.05
 fog_density = 0.015
-fog_aerial_perspective = 0.75
-fog_sky_affect = 0.5
+fog_aerial_perspective = 0.516
+fog_sky_affect = 0.646
 fog_height = -35.0
 fog_height_density = 0.08
 fog_depth_curve = 8.0
@@ -56,7 +58,7 @@ volumetric_fog_ambient_inject = 1.0
 volumetric_fog_sky_affect = 0.5
 adjustment_enabled = true
 adjustment_brightness = 1.2
-adjustment_contrast = 1.2
+adjustment_contrast = 1.1
 adjustment_saturation = 1.2
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
@@ -144,7 +146,8 @@ environment = SubResource("Environment_nnsk1")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1032771647]
-transform = Transform3D(-0.92718387, 0.04054178, -0.37240642, 0, 0.99412644, 0.10822493, 0.3746067, 0.1003444, -0.92173797, -0.470002, 3, -22.79)
+transform = Transform3D(-0.6087614, -0.011076942, -0.793276, 0, 0.99990255, -0.01396218, 0.7933533, -0.008499637, -0.6087021, -1.785, 2.15, -22.945)
+fov = 80.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047640314]
 transform = Transform3D(-0.7365071, 0.6596161, 0.14988053, 0.6489932, 0.6266028, 0.4314821, 0.19069675, 0.41506106, -0.8895837, 0.017189788, 5.5175576, 0.5412545)
@@ -154,11 +157,20 @@ shadow_enabled = true
 shadow_blur = 2.0
 directional_shadow_max_distance = 128.0
 
+[node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D" unique_id=1269427295]
+transform = Transform3D(1, 2.9802322e-08, 2.9802322e-08, -7.450581e-09, 1, -5.9604645e-08, 0, 1.4901161e-07, 0.99999994, -103.32426, 103.08615, 118.25895)
+light_color = Color(0.83359796, 0.66715723, 0.036255933, 1)
+light_energy = 64.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+omni_range = 59.0
+
 [node name="godot_knight" parent="." unique_id=1153408494 instance=ExtResource("14_o8fc1")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.04286021, 0, -18.74066)
 state = "Greatsword"
 
-[node name="project_kmitt" parent="." unique_id=79352496 instance=ExtResource("3_4wyf3")]
+[node name="project_kmitt" parent="." unique_id=1192505292 instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="world_collision" parent="project_kmitt" unique_id=1580632455 instance=ExtResource("13_o8fc1")]
@@ -200,20 +212,6 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("10_lakw3")
 
-[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D_GRASS" unique_id=1150142819]
-transform = Transform3D(0.99999994, 0, 3.7252903e-09, 0, 1.5, 0, -3.7252903e-09, 0, 0.99999994, 0, 0, 0)
-material_override = ExtResource("7_jhx03")
-cast_shadow = 0
-visibility_range_end = 28.0
-amount = 32
-fixed_fps = 1
-interpolate = false
-fract_delta = false
-visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
-local_coords = true
-process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
-
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R" unique_id=1901346803]
 transform = Transform3D(0.9839006, 0, 0.17871633, 0, 1, 0, -0.17871633, 0, 0.9839006, -1.3446338, 0, 0.29031134)
 material_override = ExtResource("4_qfnet")
@@ -230,7 +228,7 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
 
-[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D2" unique_id=1321329277]
+[node name="GPUParticles3D_FLOWER2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D2" unique_id=526908799]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("7_jhx03")
 cast_shadow = 0
@@ -242,7 +240,7 @@ fract_delta = false
 visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
 local_coords = true
 process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
+draw_pass_1 = ExtResource("10_lakw3")
 
 [node name="GPUParticles3D3" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R" unique_id=915062628]
 transform = Transform3D(-0.99892086, 0, 0.046444032, 0, 1, 0, -0.046444032, 0, -0.99892086, -10.876146, 0, -54.644684)
@@ -260,7 +258,7 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
 
-[node name="GPUParticles3D_FLOWER3" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D3" unique_id=782249974]
+[node name="GPUParticles3D_FLOWER3" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D3" unique_id=1911932747]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("7_jhx03")
 cast_shadow = 0
@@ -272,7 +270,7 @@ fract_delta = false
 visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
 local_coords = true
 process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
+draw_pass_1 = ExtResource("10_lakw3")
 
 [node name="GPUParticles3D4" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R" unique_id=1382526608]
 transform = Transform3D(-0.9839006, 0, -0.17871624, 0, 1, 0, 0.17871624, 0, -0.9839006, -10.542896, 0, -38.053677)
@@ -289,11 +287,11 @@ local_coords = true
 process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("6_i7141")
 
-[node name="GPUParticles3D_FLOWER4" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D4" unique_id=654915154]
+[node name="GPUParticles3D_FLOWER4" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R/GPUParticles3D4" unique_id=1544725954]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("7_jhx03")
 cast_shadow = 0
-visibility_range_end = 32.0
+visibility_range_end = 28.0
 amount = 32
 fixed_fps = 1
 interpolate = false
@@ -301,9 +299,10 @@ fract_delta = false
 visibility_aabb = AABB(-4, -4, -8, 8, 8, 16)
 local_coords = true
 process_material = ExtResource("5_qfnet")
-draw_pass_1 = ExtResource("9_jhx03")
+draw_pass_1 = ExtResource("10_lakw3")
 
 [node name="L" type="Node3D" parent="project_kmitt/PLANTS/GRASS(particles)" unique_id=1772102104]
+visible = false
 
 [node name="GPUParticles3D_GRASS2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/L" unique_id=1653303482]
 transform = Transform3D(0.7719907, 0, -0.6356337, 0, 1, 0, 0.6356337, 0, 0.7719907, -72.04447, -13.993841, -50.473015)
@@ -425,7 +424,6 @@ process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("9_jhx03")
 
 [node name="MOSS(decals)" type="Node3D" parent="project_kmitt/PLANTS" unique_id=1724709573]
-visible = false
 
 [node name="R" type="Node3D" parent="project_kmitt/PLANTS/MOSS(decals)" unique_id=550494511]
 
@@ -433,7 +431,7 @@ visible = false
 transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.99888116, -0.4949146, 0, 21.72578)
 size = Vector3(5, 0.4, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -442,7 +440,7 @@ distance_fade_length = 8.0
 transform = Transform3D(0.99888116, 0, -0.046441615, 0, 1, 0, 0.046441615, 0, 0.99888116, 0.09550461, 0, 14.957092)
 size = Vector3(5, 0.4, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -451,7 +449,7 @@ distance_fade_length = 8.0
 transform = Transform3D(0.9992138, 0, 0.03863093, 0, 1, 0, -0.03863093, 0, 0.9992138, 0.061250407, 0, 6.727292)
 size = Vector3(5, 0.4, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -460,7 +458,7 @@ distance_fade_length = 8.0
 transform = Transform3D(0.9917728, 0, 0.12770054, 0, 1, 0, -0.12770054, 0, 0.9917728, -1.3110087, 0, -3.3847148)
 size = Vector3(5, 0.4, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -469,7 +467,7 @@ distance_fade_length = 8.0
 transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0.9988813, -11.517392, 0, -59.370377)
 size = Vector3(5, 0.4, 12.466064)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -478,7 +476,7 @@ distance_fade_length = 8.0
 transform = Transform3D(-0.9988813, 0, 0.046441704, 0, 1, 0, -0.046441704, 0, -0.9988813, -12.107813, 0, -52.60169)
 size = Vector3(5, 0.4, 7.608963)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -487,7 +485,7 @@ distance_fade_length = 8.0
 transform = Transform3D(-0.99921393, 0, -0.038630843, 0, 1, 0, 0.038630843, 0, -0.99921393, -12.073559, 0, -44.371887)
 size = Vector3(5, 0.4, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
@@ -496,12 +494,13 @@ distance_fade_length = 8.0
 transform = Transform3D(-0.9917728, 0, -0.12770046, 0, 1, 0, 0.12770046, 0, -0.9917728, -10.701301, 0, -34.25988)
 size = Vector3(5, 0.4, 15.869202)
 texture_albedo = ExtResource("10_q5onr")
-modulate = Color(0.7529412, 0.3647059, 0.11764706, 1)
+modulate = Color(0.52809, 0.24433506, 0.059675977, 1)
 distance_fade_enabled = true
 distance_fade_begin = 32.0
 distance_fade_length = 8.0
 
 [node name="L" type="Node3D" parent="project_kmitt/PLANTS/MOSS(decals)" unique_id=1383048092]
+visible = false
 
 [node name="Decal9" type="Decal" parent="project_kmitt/PLANTS/MOSS(decals)/L" unique_id=736591705]
 transform = Transform3D(-0.7744395, 0, 0.6325853, 0, 1, 0, -0.6325853, 0, -0.7744395, -34.664513, -14.106839, -117.522026)
@@ -771,3 +770,4 @@ mesh = SubResource("SphereMesh_xo05s")
 
 [node name="gate" parent="." unique_id=1392470405 instance=ExtResource("15_xo05s")]
 transform = Transform3D(0.93532676, 0, 0.35378504, 0, 1, 0, -0.35378504, 0, 0.93532676, 0.57708526, 0, 5.353572)
+visible = false

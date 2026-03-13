@@ -3,6 +3,7 @@ extends Node3D
 @export var player : CharacterBody3D
 @export var drag_camera : bool = true
 @export var camera_speed : float = 80.0
+@export var camera_distance_from_player : float = 2.2 
 
 @onready var camera : Camera3D = $h/v/ClippedCamera
 
@@ -20,7 +21,7 @@ func _ready():
 	ready_error()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#camera.fov = Globals.fov
-	camera.position = Vector3(0.0, 0.0, -2.5)
+	camera.position = Vector3(0.0, 0.0, -camera_distance_from_player)
 	
 	initial_cam_rotation.x = rad_to_deg(camera.rotation.x)
 	initial_cam_rotation.y = rad_to_deg(camera.rotation.y)
@@ -172,7 +173,7 @@ func camera_strafe_movement(delta):
 			camera.position.x = lerp(camera.position.x, -0.5, delta * CAMERA_ACCELERATION * 0.5)
 	else:
 		#return to normal state
-		camera.position.z = -2.5#lerp(camera.position.z, -2.5, CAMERA_ACCELERATION * delta)
+		camera.position.z = -camera_distance_from_player #lerp(camera.position.z, -2.5, CAMERA_ACCELERATION * delta)
 		camera.position.x = 0#lerp(camera.position.x, 0.0, CAMERA_ACCELERATION * delta)
 
 #endregion
