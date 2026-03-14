@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://ohcj0p4k8o8w"]
 
-[ext_resource type="PackedScene" uid="uid://x1mxi2pgtrab" path="res://blender_files/tree.glb" id="1_avsvi"]
 [ext_resource type="Material" uid="uid://bpo0dbtulj180" path="res://materials/shader_materials/leaves_shader.tres" id="2_vplca"]
+[ext_resource type="PackedScene" uid="uid://dsx3lgoj8sp7f" path="res://blender_files/bush.glb" id="3_viusy"]
+[ext_resource type="Material" uid="uid://dma442007twst" path="res://materials/base_materials/collision_material.tres" id="4_qd6xs"]
 
 [node name="tree" type="Node3D" unique_id=332793119]
 
-[node name="tree_model" parent="." unique_id=999999088 instance=ExtResource("1_avsvi")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+[node name="bush" parent="." unique_id=711505901 instance=ExtResource("3_viusy")]
 
-[node name="tree_leaves" parent="tree_model/tree_001" parent_id_path=PackedInt32Array(999999088, 629458482) index="0" unique_id=789001884]
+[node name="leaves_model" parent="bush" index="0" unique_id=1087183612]
 surface_material_override/0 = ExtResource("2_vplca")
 
-[node name="tree" parent="tree_model" index="1" unique_id=1466687963]
+[node name="COL_bush" parent="bush" index="2" unique_id=1767750270]
 visible = false
+surface_material_override/0 = ExtResource("4_qd6xs")
 
-[editable path="tree_model"]
+[editable path="bush"]

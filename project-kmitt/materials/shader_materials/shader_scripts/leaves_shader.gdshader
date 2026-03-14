@@ -17,7 +17,7 @@ uniform float value = 1.0;
 void vertex(){
 	float texture_based_offset = texture(noise_tex, UV * frequency + TIME * time_factor).x * 2.0 - 1.0;
 	VERTEX += texture_based_offset * strengh * (1.0 - UV.y);
-}
+	}
 
 void fragment(){
 	vec4 albedo_tex = texture(leaves_tex, UV);
