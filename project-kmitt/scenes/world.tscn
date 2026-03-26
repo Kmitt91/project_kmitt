@@ -25,7 +25,7 @@ sky_material = ExtResource("1_4wyf3")
 background_mode = 2
 sky = SubResource("Sky_i7141")
 tonemap_mode = 4
-tonemap_exposure = 0.95
+tonemap_exposure = 1.2
 ssao_enabled = true
 ssao_radius = 4.0
 ssao_power = 2.0
@@ -35,13 +35,13 @@ ssao_ao_channel_affect = 1.0
 ssil_enabled = true
 ssil_radius = 8.0
 ssil_intensity = 1.5
+glow_enabled = true
 fog_enabled = true
-fog_light_color = Color(0.2875259, 0.28752583, 0, 1)
+fog_light_color = Color(0.25706515, 0.2809523, 4.813075e-08, 1)
 fog_light_energy = 0.33
 fog_sun_scatter = 0.05
-fog_density = 0.011
-fog_aerial_perspective = 0.516
-fog_sky_affect = 0.646
+fog_aerial_perspective = 0.5
+fog_sky_affect = 0.5
 fog_height = -35.0
 fog_height_density = 0.1
 fog_depth_curve = 8.0
@@ -53,7 +53,7 @@ volumetric_fog_ambient_inject = 1.0
 volumetric_fog_sky_affect = 0.5
 adjustment_enabled = true
 adjustment_brightness = 1.2
-adjustment_contrast = 1.1
+adjustment_contrast = 1.25
 adjustment_saturation = 1.2
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nnsk1"]
@@ -129,10 +129,9 @@ size = Vector2(512, 512)
 subdivide_width = 32
 subdivide_depth = 16
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_o8fc1"]
-radius = 0.57711333
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7t5mc"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_xo05s"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lakw3"]
 
 [node name="world" type="Node3D" unique_id=1074412521]
 
@@ -141,11 +140,11 @@ environment = SubResource("Environment_nnsk1")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1032771647]
-transform = Transform3D(-0.6087614, -0.011076942, -0.793276, 0, 0.99990255, -0.01396218, 0.7933533, -0.008499637, -0.6087021, -1.635, 2.965, -23.35)
-fov = 80.0
+transform = Transform3D(-0.47715873, -0.012270204, -0.8787315, 0, 0.99990255, -0.01396218, 0.87881714, -0.006662176, -0.47711223, -2.135, 2.065, -20.385)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047640314]
-transform = Transform3D(-0.7365071, 0.6596161, 0.14988053, 0.6489932, 0.6266028, 0.4314821, 0.19069675, 0.41506106, -0.8895837, 0.017189788, 5.5175576, 0.5412545)
+transform = Transform3D(-0.74826694, 0.62859195, 0.21205872, 0.648724, 0.6264656, 0.43208575, 0.13875811, 0.4608831, -0.8765461, 0.017189788, 5.5175576, 0.5412545)
 light_color = Color(0.9647059, 0.7490196, 0.49019608, 1)
 light_specular = 2.5
 shadow_enabled = true
@@ -161,11 +160,14 @@ light_volumetric_fog_energy = 0.0
 light_specular = 0.0
 omni_range = 59.0
 
+[node name="Node3D" type="Node3D" parent="." unique_id=391109336]
+transform = Transform3D(-0.35819545, -3.1314443e-08, 1.65672, -1.4818161e-07, 1.695, 0, 1.65672, 1.4483507e-07, 0.35819545, -0.618, -0.025, -15.619)
+
 [node name="godot_knight" parent="." unique_id=1153408494 instance=ExtResource("14_o8fc1")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, -21.45088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.425175)
 state = "Greatsword"
 
-[node name="project_kmitt" parent="." unique_id=901528148 instance=ExtResource("3_4wyf3")]
+[node name="project_kmitt" parent="." unique_id=1395382735 instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 
 [node name="world_collision" parent="project_kmitt" unique_id=584088601 instance=ExtResource("13_o8fc1")]
@@ -198,7 +200,7 @@ transform = Transform3D(0.99999994, 0, 3.7252903e-09, 0, 1.5, 0, -3.7252903e-09,
 material_override = ExtResource("7_jhx03")
 cast_shadow = 0
 visibility_range_end = 28.0
-amount = 32
+amount = 64
 fixed_fps = 1
 interpolate = false
 fract_delta = false
@@ -817,15 +819,14 @@ surface_material_override/0 = ExtResource("2_rwgxs")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=405195164 groups=["ENEMY"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.031662226, 0)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1268998783]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4848459, 0)
-shape = SubResource("SphereShape3D_o8fc1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0184327, 0)
+shape = SubResource("CapsuleShape3D_7t5mc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1598995777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4848459, 0)
-mesh = SubResource("SphereMesh_xo05s")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0184327, 0)
+mesh = SubResource("CapsuleMesh_lakw3")
 
 [node name="gate" parent="." unique_id=1392470405 instance=ExtResource("15_xo05s")]
 transform = Transform3D(-0.40550253, 0, 0.37157464, 0, 0.55, 0, -0.37157464, 0, -0.40550253, 176.82152, -13.845471, -66.45782)

@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnjfv23j2874x"
-path.s3tc="res://.godot/imported/weapons_mortuary_sword_texture.png-dcd15a6115208fedd75931d19de29147.s3tc.ctex"
+uid="uid://d2y8ywu0pmmwq"
+path.s3tc="res://.godot/imported/moss_material_albedo_mask.png-3872d557f845a2a732e1b64465bbc68f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "ddac5f9a7803ba4a1ccbc4f1d58efe35"
-}
 
 [deps]
 
-source_file="res://blender_files/weapons_mortuary_sword_texture.png"
-dest_files=["res://.godot/imported/weapons_mortuary_sword_texture.png-dcd15a6115208fedd75931d19de29147.s3tc.ctex"]
+source_file="res://materials/textures/moss_material/moss_material_albedo_mask.png"
+dest_files=["res://.godot/imported/moss_material_albedo_mask.png-3872d557f845a2a732e1b64465bbc68f.s3tc.ctex"]
 
 [params]
 

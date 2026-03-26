@@ -7,7 +7,7 @@ uniform float strengh = 0.1;
 uniform float frequency = 0.2;
 uniform float time_factor = 0.1;
 
-uniform vec4 color : source_color;
+global uniform vec4 color_vegitation : source_color;
 uniform sampler2D gradient : hint_default_black;
 uniform sampler2D leaves_tex : hint_default_white;
 uniform sampler2D noise_tex : hint_default_black, repeat_enable;
@@ -20,6 +20,7 @@ void vertex(){
 	}
 
 void fragment(){
+	vec4 color = color_vegitation;
 	vec4 albedo_tex = texture(leaves_tex, UV);
 	vec4 grad_col = texture(gradient, UV);
 	vec4 noise = texture(noise_tex, UV2 * frequency  * 2.0 + TIME * time_factor);

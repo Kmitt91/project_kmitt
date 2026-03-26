@@ -23,7 +23,6 @@ shader = ExtResource("1_tmtrn")
 shader_parameter/strengh = 0.33
 shader_parameter/frequency = 0.2
 shader_parameter/time_factor = 0.1
-shader_parameter/color = Color(0.8390917, 0.41857672, 0.15909645, 1)
 shader_parameter/gradient = SubResource("NoiseTexture2D_tmtrn")
 shader_parameter/leaves_tex = ExtResource("3_262hx")
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_0kwps")

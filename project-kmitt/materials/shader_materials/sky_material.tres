@@ -10,9 +10,9 @@ seamless = true
 
 [resource]
 shader = ExtResource("1_eeo0d")
-shader_parameter/sun_color = Color(0.9764706, 0.6, 0, 1)
+shader_parameter/sun_color = Color(0.9827685, 0.6039992, 1.1551381e-06, 1)
 shader_parameter/sun_energy = 15.0
-shader_parameter/cloud_color = Color(0.39215687, 0.39215687, 0, 1)
+shader_parameter/cloud_color = Color(0.2989589, 0.2989592, 0, 1)
 shader_parameter/cloud_density = 5.0
 shader_parameter/cloud_depth = 2.0
 shader_parameter/cloud_sag = 2.0

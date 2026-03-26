@@ -3,7 +3,7 @@ shader_type spatial;
 render_mode cull_disabled, blend_mix;
 
 uniform vec4 color : source_color;
-uniform float col_value = 1.0;
+uniform float col_value = 20.0;
 
 uniform sampler2D fabric_albedo_tex : hint_default_white;
 uniform sampler2D fabric_roughness_tex : hint_roughness_r;

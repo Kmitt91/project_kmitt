@@ -1,13 +1,12 @@
 shader_type spatial;
 render_mode blend_mix, cull_disabled, diffuse_toon;
 
-uniform vec4 color : source_color;
+global uniform vec4 color_vegitation : source_color;
 uniform sampler2D color_ramp : hint_default_white;
 uniform sampler2D mask_texture : hint_default_white;
 uniform sampler2D noise_texture : hint_default_white;
 uniform float roughness_value = 1.0;
 uniform float value = 1.0;
-
 uniform float speed = 1.0;
 uniform float minStrength : hint_range(0.0, 1.0) = 0.3;
 uniform float maxStrength : hint_range(0.0, 1.0) = 0.5;
@@ -38,12 +37,12 @@ void fragment() {
 	//if (!FRONT_FACING){
 		//NORMAL = -NORMAL;
 	//}
-
+	vec4 color = color_vegitation;
 	vec3 col = texture(color_ramp, vec2(1.0 - UV.y, 0.0)).rgb;
 	vec4 mask = texture(mask_texture, UV + vec2(0.0, 0.01));
 	float noise = texture(noise_texture, UV + TIME * speed * 0.1).r;
 
-	ALBEDO = value * col * mask.rgb * color.rgb * COLOR.rgb;
+	ALBEDO = value * col * mask.rgb * color.rgb*color.rgb;
 	//ROUGHNESS = clamp(roughness_value * col.r * noise, 0.0, 1.0);
 	ALPHA *= mask.a;
 
