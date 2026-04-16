@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwq07ue1kgqo" path="res://materials/textures/brick_material/brick_material_rough.png" id="3_d3n2b"]
 
 [resource]
-albedo_color = Color(0.57773536, 0.49317956, 0.40468365, 1)
+albedo_color = Color(0.7020559, 0.61660445, 0.5235691, 1)
 albedo_texture = ExtResource("1_261mr")
 roughness_texture = ExtResource("3_d3n2b")
 normal_enabled = true

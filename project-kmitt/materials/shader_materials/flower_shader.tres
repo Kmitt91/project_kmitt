@@ -1,12 +1,77 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://c74hxkbic02fw"]
 
-[ext_resource type="Shader" uid="uid://gq4qw35n4og7" path="res://materials/shader_materials/shader_scripts/grass_shader.gdshader" id="1_dv1my"]
 [ext_resource type="Texture2D" uid="uid://dajtamoplaco1" path="res://materials/textures/flowers_low.png" id="2_u7mqu"]
+
+[sub_resource type="Shader" id="Shader_1g5ak"]
+code = "shader_type spatial;
+render_mode blend_mix, cull_disabled, diffuse_toon;
+
+global uniform vec4 color_vegitation : source_color;
+uniform sampler2D color_ramp : hint_default_white;
+uniform sampler2D mask_texture : hint_default_white;
+uniform sampler2D noise_texture : hint_default_white;
+uniform float roughness_value = 1.0;
+uniform float value = 1.0;
+uniform float speed = 1.0;
+uniform float minStrength : hint_range(0.0, 1.0) = 0.3;
+uniform float maxStrength : hint_range(0.0, 1.0) = 0.5;
+uniform float interval = 3.5;
+uniform float detail = 2.0;
+uniform float distortion = 0.75;
+
+vec3 wind(mat4 matrix, vec3 vertex){
+	vec4 pos = matrix * mix(vec4(1.0), vec4(vertex.x, 0.0, vertex.z, 1.0), distortion);
+	float time = TIME * speed + pos.x + pos.z;
+	float diff = (maxStrength - minStrength) * (maxStrength - minStrength);
+	float strength = clamp(minStrength + diff + sin(time / interval) * diff, minStrength, maxStrength);
+	float wind = (sin(time) + cos(time * detail)) * strength * max(0.0, vertex.y);
+
+	return vec3(wind * normalize(vec2(1.0)).x, 0.0, wind * normalize(vec2(1.0)).y);
+}
+
+
+void vertex() {
+	VERTEX += wind(MODEL_MATRIX, VERTEX);
+	
+}
+
+void fragment() {
+	//float side = FRONT_FACING ? 1.0 : -1.0;
+	//NORMAL = NORMAL * side;
+	NORMAL = vec3(1.0);
+	//if (!FRONT_FACING){
+		//NORMAL = -NORMAL;
+	//}
+	vec4 color = color_vegitation;
+	vec3 col = texture(color_ramp, vec2(1.0 - UV.y, 0.0)).rgb;
+	vec4 mask = texture(mask_texture, UV + vec2(0.0, 0.01));
+	float noise = texture(noise_texture, UV + TIME * speed * 0.1).r;
+
+	ALBEDO = value * mask.rgb * col;
+	//ROUGHNESS = clamp(roughness_value * col.r * noise, 0.0, 1.0);
+	ALPHA *= mask.a;
+
+	//get distance to camera
+	vec3 world_camera = (INV_VIEW_MATRIX * vec4(vec3(0.0), 1.0)).xyz;
+	vec4 a = INV_VIEW_MATRIX * vec4(VERTEX, 1.0);
+	float world_distance = distance(a.xyz, world_camera);
+
+	ALPHA_SCISSOR_THRESHOLD = mix(0.5, 0.3, smoothstep(1.0, 30.0, world_distance));
+	//EMISSION = ALBEDO * 0.04;
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_dv1my"]
+offsets = PackedFloat32Array(0.54444444, 0.6111111)
+colors = PackedColorArray(0.2065543, 0.20655426, 0.20655435, 1, 0.35006377, 0.35006398, 0.35006392, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u7mqu"]
+gradient = SubResource("Gradient_dv1my")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_dv1my")
-shader_parameter/color = Color(0.46229023, 0.46229076, 0.4622904, 1)
+shader = SubResource("Shader_1g5ak")
+shader_parameter/color_ramp = SubResource("GradientTexture1D_u7mqu")
 shader_parameter/mask_texture = ExtResource("2_u7mqu")
 shader_parameter/roughness_value = 1.0
 shader_parameter/value = 3.0

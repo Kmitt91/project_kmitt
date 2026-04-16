@@ -24,20 +24,17 @@ sky_material = ExtResource("1_4wyf3")
 [sub_resource type="Environment" id="Environment_nnsk1"]
 background_mode = 2
 sky = SubResource("Sky_i7141")
+ambient_light_sky_contribution = 0.8
 tonemap_mode = 4
-tonemap_exposure = 1.2
 ssao_enabled = true
 ssao_radius = 4.0
 ssao_power = 2.0
 ssao_detail = 5.0
 ssao_light_affect = 1.0
 ssao_ao_channel_affect = 1.0
-ssil_enabled = true
 ssil_radius = 8.0
 ssil_intensity = 1.5
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.25706515, 0.2809523, 4.813075e-08, 1)
+fog_light_color = Color(0.2852, 0.6872401, 0.92, 1)
 fog_light_energy = 0.33
 fog_sun_scatter = 0.05
 fog_aerial_perspective = 0.5
@@ -46,8 +43,9 @@ fog_height = -35.0
 fog_height_density = 0.1
 fog_depth_curve = 8.0
 fog_depth_end = 120.0
-volumetric_fog_density = 0.025
-volumetric_fog_albedo = Color(0.57254905, 0.6627451, 0.58431375, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.3019608, 0.6627451, 0.9254902, 1)
 volumetric_fog_length = 512.0
 volumetric_fog_ambient_inject = 1.0
 volumetric_fog_sky_affect = 0.5
@@ -420,6 +418,7 @@ process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("9_jhx03")
 
 [node name="MOSS(decals)" type="Node3D" parent="project_kmitt/PLANTS" unique_id=1724709573]
+visible = false
 
 [node name="R" type="Node3D" parent="project_kmitt/PLANTS/MOSS(decals)" unique_id=550494511]
 

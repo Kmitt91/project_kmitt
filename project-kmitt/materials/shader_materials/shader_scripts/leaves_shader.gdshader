@@ -22,10 +22,10 @@ void vertex(){
 void fragment(){
 	vec4 color = color_vegitation;
 	vec4 albedo_tex = texture(leaves_tex, UV);
-	vec4 grad_col = texture(gradient, UV);
+	float grad_col = clamp(texture(gradient, UV).r, 0.5, 1.0);
 	vec4 noise = texture(noise_tex, UV2 * frequency  * 2.0 + TIME * time_factor);
 
-	ALBEDO = value * grad_col.rgb * albedo_tex.rgb * color.rgb;
+	ALBEDO = value * grad_col * albedo_tex.rgb * color.rgb;
 
 	ALPHA *= albedo_tex.a;
 

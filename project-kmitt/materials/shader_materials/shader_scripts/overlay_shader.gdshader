@@ -8,6 +8,7 @@ uniform sampler2D noise_texture_overlay : hint_default_black;
 uniform sampler2D albedo_texture : hint_default_white;
 uniform sampler2D texture_normal : hint_default_white;
 
+global uniform vec4 color_vegitation : source_color;
 uniform vec4 color_modulate : source_color;
 uniform float normal_strength = 1.0;
 uniform float value = 1.0;
@@ -56,7 +57,7 @@ void fragment(){
 	vec4 a = INV_VIEW_MATRIX * vec4(VERTEX, 1.0);
 	float world_distance = distance(a.xyz, world_camera);
 
-	ALBEDO = value * color_modulate.rgb * albedo_tex.rgb;//mix(color_a.rgb, color_b.rgb, albedo_tex.r);
+	ALBEDO = value * color_vegitation.rgb * color_modulate.rgb * albedo_tex.rgb;//mix(color_a.rgb, color_b.rgb, albedo_tex.r);
 	ALPHA = triplanar_texture(noise_texture_overlay, uv1_power_normal, uv1_triplanar_pos).r;
 	//for more realism it's useful to unpack normal and recalc, but not needed here
 	NORMAL_MAP = triplanar_texture(texture_normal, uv1_power_normal, uv1_triplanar_pos * 16.0).rgb;

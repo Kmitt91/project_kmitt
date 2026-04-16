@@ -42,7 +42,7 @@ void fragment() {
 	vec4 mask = texture(mask_texture, UV + vec2(0.0, 0.01));
 	float noise = texture(noise_texture, UV + TIME * speed * 0.1).r;
 
-	ALBEDO = value * col * mask.rgb * color.rgb*color.rgb;
+	ALBEDO = value * col * mask.rgb * color.rgb;
 	//ROUGHNESS = clamp(roughness_value * col.r * noise, 0.0, 1.0);
 	ALPHA *= mask.a;
 
