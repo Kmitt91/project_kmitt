@@ -52,12 +52,13 @@ vec4 triplanar_texture(sampler2D p_sampler,vec3 p_weights,vec3 p_triplanar_pos) 
 
 void fragment(){
 	vec4 albedo_tex = triplanar_texture(albedo_texture, uv1_power_normal, uv1_triplanar_pos * 16.0);
+	vec4 color = color_vegitation*color_vegitation;
 	//get distance to camera
 	vec3 world_camera = (INV_VIEW_MATRIX * vec4(vec3(0.0), 1.0)).xyz;
 	vec4 a = INV_VIEW_MATRIX * vec4(VERTEX, 1.0);
 	float world_distance = distance(a.xyz, world_camera);
 
-	ALBEDO = value * color_vegitation.rgb * color_modulate.rgb * albedo_tex.rgb;//mix(color_a.rgb, color_b.rgb, albedo_tex.r);
+	ALBEDO = value * color.rgb * color_modulate.rgb * albedo_tex.rgb;//mix(color_a.rgb, color_b.rgb, albedo_tex.r);
 	ALPHA = triplanar_texture(noise_texture_overlay, uv1_power_normal, uv1_triplanar_pos).r;
 	//for more realism it's useful to unpack normal and recalc, but not needed here
 	NORMAL_MAP = triplanar_texture(texture_normal, uv1_power_normal, uv1_triplanar_pos * 16.0).rgb;

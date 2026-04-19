@@ -37,7 +37,7 @@ void fragment() {
 	//if (!FRONT_FACING){
 		//NORMAL = -NORMAL;
 	//}
-	vec4 color = color_vegitation;
+	vec4 color = color_vegitation*color_vegitation;
 	vec3 col = texture(color_ramp, vec2(1.0 - UV.y, 0.0)).rgb;
 	vec4 mask = texture(mask_texture, UV + vec2(0.0, 0.01));
 	float noise = texture(noise_texture, UV + TIME * speed * 0.1).r;

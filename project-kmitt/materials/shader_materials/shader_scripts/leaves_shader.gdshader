@@ -20,7 +20,7 @@ void vertex(){
 	}
 
 void fragment(){
-	vec4 color = color_vegitation;
+	vec4 color = color_vegitation*color_vegitation;
 	vec4 albedo_tex = texture(leaves_tex, UV);
 	float grad_col = clamp(texture(gradient, UV).r, 0.5, 1.0);
 	vec4 noise = texture(noise_tex, UV2 * frequency  * 2.0 + TIME * time_factor);

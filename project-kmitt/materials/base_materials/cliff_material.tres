@@ -7,7 +7,6 @@
 
 [resource]
 next_pass = ExtResource("2_y5ktj")
-albedo_color = Color(0.63165486, 0.59807944, 0.58357656, 1)
 albedo_texture = ExtResource("1_um1cr")
 metallic_specular = 0.0
 roughness_texture = ExtResource("3_y5ktj")

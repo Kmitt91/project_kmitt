@@ -162,5 +162,5 @@ anti_aliasing/quality/msaa_3d=1
 
 color_vegitation={
 "type": "color",
-"value": Color(0.34924078, 0.6357208, 0, 1)
+"value": Color(1, 0.83060086, 0.1931151, 1)
 }
