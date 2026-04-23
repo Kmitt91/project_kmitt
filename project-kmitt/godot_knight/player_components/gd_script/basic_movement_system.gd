@@ -62,7 +62,7 @@ func basic_movement(delta):
 				else:
 					player.anim_tree.set("parameters/" + player.state + "/walk_run/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/walk_run/blend_amount")), 1.0, delta * ACCELERATION))
 					
-					if player.state == player.EXPLORE:
+					if player.state == "state_explore":
 						movement_speed = RUN_SPEED * 1.02
 					else:
 						movement_speed = RUN_SPEED
@@ -72,7 +72,7 @@ func basic_movement(delta):
 	else:
 		sprint_toggle = false
 		if !player.targeting: #IDLE
-			player.anim_tree.set("parameters/" + player.state + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/idle_move/blend_amount")), +1.0, delta * ACCELERATION))
+			player.anim_tree.set("parameters/" + str(player.state) + "/idle_move/blend_amount", lerp(float(player.anim_tree.get("parameters/" + str(player.state) + "/idle_move/blend_amount")), +1.0, delta * ACCELERATION))
 			movement_speed = 0.0
 		
 	player.player_movement_velocity.x = lerp(player.player_movement_velocity.x, direction.normalized().x * movement_speed, delta * ACCELERATION)

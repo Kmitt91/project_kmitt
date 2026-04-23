@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dkvxjsxmclrxd"]
+
+[ext_resource type="Script" uid="uid://cj1p0ushgqgju" path="res://godot_knight/player_components/gd_script/lever_system.gd" id="1_5qfbc"]
+
+[node name="lever_system" type="Node" unique_id=696581768]
+script = ExtResource("1_5qfbc")

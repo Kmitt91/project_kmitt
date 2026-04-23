@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6cktb0bs460h"]
+
+[ext_resource type="Script" uid="uid://ohrd3sqa8fxc" path="res://godot_knight/player_components/gd_script/weapon_switch_system.gd" id="1_s4j02"]
+
+[node name="weapon_switch_system" type="Node" unique_id=1993714050]
+script = ExtResource("1_s4j02")

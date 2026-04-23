@@ -11,7 +11,7 @@ func _ready():
 	
 ### PROCESS ###
 func _physics_process(_delta):
-	if player.state != player.EXPLORE and !player.LADDER:
+	if player.state != "state_explore" and !player.LADDER:
 		initialize_timers()
 		readjust_attack_when_falling()
 		if !player.LADDER:
@@ -33,7 +33,7 @@ func ready_error():
 #set the timer nodes to the time of the attack animation
 func initialize_timers():
 	#for a particular weapon type (player.state)
-	if player.state != player.EXPLORE:
+	if player.state != "state_explore":
 		var _weapon_local : String = player.state
 				
 		#set wait time
@@ -68,6 +68,7 @@ func readjust_attack_when_falling():
 func fast_sword_attack():
 	
 	if (Input.is_action_just_pressed("R1") or Input.is_action_just_pressed("RIGHT_MOUSE")) and !player.jump:
+		print("attack")
 		if $TimerAttack1.is_stopped() and $TimerAttack2.is_stopped() and $TimerAttack3.is_stopped() and !player.disabled_movement:
 			$TimerAttack1.start()
 		
@@ -80,7 +81,7 @@ func fast_sword_attack():
 			var blend_tree = player.anim_tree.tree_root.get_node(player.state)
 			var one_shot = blend_tree.get_node(player.state + "_atk1")
 			
-			if !player.anim_tree.get("parameters/" + player.state + "/" + player.state + "_atk1/active"):
+			if !player.anim_tree.get("parameters/" + str(player.state) + "/" + str(player.state) + "_atk1/active"):
 				player.anim_tree.set("parameters/" + player.state + "/" + player.state + "_atk1/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 				
 				one_shot.fadeout_time = TIME_DIFF

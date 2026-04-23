@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cw5266ykouc7q"]
+
+[ext_resource type="PackedScene" uid="uid://q0e325um76jm" path="res://godot_knight/blades/Greatsword_blade.glb" id="1_lfhhq"]
+[ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_blue.tres" id="2_k7xri"]
+
+[node name="Greatsword_blade" type="Node3D" unique_id=742802918]
+
+[node name="Greatsword_blade_model" parent="." unique_id=1810535444 instance=ExtResource("1_lfhhq")]
+
+[node name="Greatsword_blade" parent="Greatsword_blade_model" index="0" unique_id=695082046]
+surface_material_override/0 = ExtResource("2_k7xri")
+
+[editable path="Greatsword_blade_model"]

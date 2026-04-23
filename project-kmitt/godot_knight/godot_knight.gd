@@ -8,9 +8,12 @@ extends CharacterBody3D
 
 #define current state
 @export var intro : bool = false
-@export var state : String = "state_explore"
+@export var state : String = "state_explore" 
 #states
-var EXPLORE : String = "state_explore"
+#@export_enum("state_explore", "Greatsword", "Sword", "Scythe", "Doubleblade") var state : String = "state_explore"
+
+
+var EXPLORE : String = "state_explore" #should rename this to "Explore"
 var GREATSWORD : String = "Greatsword"
 var SWORD : String = "Sword"
 var SCYTHE : String = "Scythe"

@@ -9,13 +9,13 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	gate_interaction(delta)
-	
+
 func current_gate_path(path):
 	if path != null:
 		gate_path = path
 	else: 
 		gate_path = null
-
+	
 func gate_interaction(delta):
 	if gate_path != null:
 		if !player.anim_tree.get("parameters/" + player.state + "/action/active") and !player.jump and !player.disabled_movement:

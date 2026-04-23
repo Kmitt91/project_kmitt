@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://yly81an7d2od"]
+
+[ext_resource type="Script" uid="uid://b5cwmoameytvq" path="res://lever.gd" id="1_ncfea"]
+[ext_resource type="PackedScene" uid="uid://blwbkd0stgkvq" path="res://blender_files/lever.blend" id="2_qxmkn"]
+[ext_resource type="Material" uid="uid://uknn7xnu6jvp" path="res://materials/shader_materials/steel_shader.tres" id="3_qxmkn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8di2w"]
+points = PackedVector3Array(0.27786142, 0.07133471, 0.48841304, 0.2639357, 0.086078376, 0.47596055, -0.27786142, 0.07133471, 0.48852044, 0.27786142, 0, 0.48841304, 0.277807, 0.07133471, -0.48857084, 0.2639357, 0.086078376, -0.47601098, 0.16890362, 0.13680409, 0.37365693, -0.2639901, 0.086078376, 0.47596055, -0.27786142, 0, 0.48852044, -0.27786142, 0.07133471, -0.48857084, 0.277807, 0, -0.48857084, 0.09258419, 0.07133471, -0.6081577, 0.08796042, 0.086078376, -0.5957052, 0.1833733, 0.12492613, -0.44230336, 0.16890362, 0.13680409, -0.42437607, -0.16901243, 0.13680409, 0.37365693, -0.2639901, 0.086078376, -0.47601098, -0.27786142, 0, -0.48857084, -0.08801484, 0.086078376, -0.5957052, -0.09263861, 0.07133471, -0.6081577, 0.09258419, 0, -0.6081577, 0.056301206, 0.13680409, -0.49340153, -0.16901243, 0.13680409, -0.42437607, -0.18348211, 0.12492613, -0.44230336, -0.09263861, 0, -0.6081577, -0.05635561, 0.13680409, -0.49340153)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dkrws"]
+height = 0.5
+radius = 0.75
+
+[node name="lever" type="Node3D" unique_id=54850580]
+script = ExtResource("1_ncfea")
+
+[node name="attach_point" type="Node3D" parent="." unique_id=1407459676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
+
+[node name="lever_mesh" parent="." unique_id=1121428466 instance=ExtResource("2_qxmkn")]
+
+[node name="lever_base" parent="lever_mesh" index="0" unique_id=1563884164]
+surface_material_override/0 = ExtResource("3_qxmkn")
+
+[node name="lever" parent="lever_mesh/lever_base" index="0" unique_id=1820948268]
+transform = Transform3D(1, -1.4803468e-14, 1.2421584e-14, 1.9324555e-14, 0.76604444, -0.64278764, 1.6940659e-21, 0.64278764, 0.76604444, 0, 0.07789459, -0.11380488)
+surface_material_override/0 = ExtResource("3_qxmkn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lever_mesh/lever_base" index="1" unique_id=1929181165]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lever_mesh/lever_base/StaticBody3D" unique_id=1402855199]
+shape = SubResource("ConvexPolygonShape3D_8di2w")
+
+[node name="lever_area" type="Area3D" parent="." unique_id=1334010663]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lever_area" unique_id=1647764288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -0.6)
+shape = SubResource("CylinderShape3D_dkrws")
+
+[connection signal="animation_finished" from="lever_mesh/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="lever_area" to="." method="_on_lever_area_body_entered"]
+[connection signal="body_exited" from="lever_area" to="." method="_on_lever_area_body_exited"]
+
+[editable path="lever_mesh"]

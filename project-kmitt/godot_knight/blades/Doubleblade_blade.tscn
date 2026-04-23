@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://1oq6tuca4oiv"]
+
+[ext_resource type="PackedScene" uid="uid://co0ws0cq6nfxj" path="res://godot_knight/blades/Doubleblade_blade.glb" id="1_bgses"]
+[ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_blue.tres" id="2_8baxo"]
+
+[node name="Doubleblade_blade" type="Node3D" unique_id=304423685]
+
+[node name="Doubleblade_blade_mesh" parent="." unique_id=2107510713 instance=ExtResource("1_bgses")]
+
+[node name="Doubleblade_blade" parent="Doubleblade_blade_mesh" index="0" unique_id=929305950]
+surface_material_override/0 = ExtResource("2_8baxo")
+
+[editable path="Doubleblade_blade_mesh"]

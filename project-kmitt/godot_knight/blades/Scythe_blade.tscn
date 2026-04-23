@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4m5utnt2a0d4"]
+
+[ext_resource type="PackedScene" uid="uid://dbfb10d0jivat" path="res://godot_knight/blades/Scythe_blade.glb" id="1_75n3x"]
+[ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_blue.tres" id="2_camxh"]
+
+[node name="Scythe_blade" type="Node3D" unique_id=1449969224]
+
+[node name="Scythe_blade_mesh" parent="." unique_id=670347913 instance=ExtResource("1_75n3x")]
+
+[node name="Scynthe_blade" parent="Scythe_blade_mesh" index="0" unique_id=1756468669]
+surface_material_override/0 = ExtResource("2_camxh")
+
+[editable path="Scythe_blade_mesh"]

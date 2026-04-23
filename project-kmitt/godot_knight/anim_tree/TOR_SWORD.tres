@@ -68,7 +68,7 @@ animation = &"Sword_WALK"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_b1xko"]
 
 [resource]
-graph_offset = Vector2(-1312, 227)
+graph_offset = Vector2(-688, 915.8)
 nodes/output/position = Vector2(1320, 1160)
 nodes/sprint/node = SubResource("AnimationNodeAnimation_8muy1")
 nodes/sprint/position = Vector2(-1580, 40)
