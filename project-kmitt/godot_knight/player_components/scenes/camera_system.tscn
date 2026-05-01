@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bwti2dbcskuoi" path="res://godot_knight/player_components/gd_script/camera_system.gd" id="1_130cg"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_mikxs"]
+radius = 0.05
+
 [node name="camera_system" type="Node3D" unique_id=1664151715]
 script = ExtResource("1_130cg")
 
@@ -10,14 +13,19 @@ script = ExtResource("1_130cg")
 [node name="v" type="Node3D" parent="h" unique_id=1755712932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
-[node name="ClippedCamera" type="Camera3D" parent="h/v" unique_id=701892880]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -2.5)
+[node name="SpringArm3D" type="SpringArm3D" parent="h/v" unique_id=464823820]
+shape = SubResource("SphereShape3D_mikxs")
+spring_length = -2.5
+
+[node name="ClippedCamera" type="Camera3D" parent="h/v/SpringArm3D" unique_id=701892880]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -2.5)
 cull_mask = 1048573
 current = true
 fov = 60.0
 far = 999.0
 
-[node name="CameraCollider" type="RayCast3D" parent="h/v" unique_id=816414716]
+[node name="CameraCollider" type="RayCast3D" parent="h/v/SpringArm3D" unique_id=816414716]
+enabled = false
 target_position = Vector3(0, 0, -2.5)
 
 [node name="CameraTimer" type="Timer" parent="." unique_id=1709585924]

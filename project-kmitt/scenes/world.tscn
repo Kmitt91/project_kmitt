@@ -103,6 +103,7 @@ environment = ExtResource("1_lakw3")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
 [node name="godot_knight" parent="." unique_id=769471199 instance=ExtResource("14_o8fc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.7521963)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1032771647]
 transform = Transform3D(-0.47715873, -0.012270204, -0.8787315, 0, 0.99990255, -0.01396218, 0.87881714, -0.006662176, -0.47711223, -2.135, 2.065, -20.385)

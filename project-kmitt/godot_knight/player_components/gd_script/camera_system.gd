@@ -5,7 +5,7 @@ extends Node3D
 @export var camera_speed : float = 80.0
 @export var camera_distance_from_player : float = 2.2 
 
-@onready var camera : Camera3D = $h/v/ClippedCamera
+@onready var camera : Camera3D = $h/v/SpringArm3D/ClippedCamera
 
 ### camera variables ###
 var initial_cam_rotation : Vector3 = Vector3.ZERO
@@ -27,7 +27,7 @@ func _ready():
 	initial_cam_rotation.y = rad_to_deg(camera.rotation.y)
 	initial_cam_rotation.z = rad_to_deg(camera.rotation.z)
 	
-	$h/v/CameraCollider.add_exception(player)
+	$h/v/SpringArm3D/CameraCollider.add_exception(player)
 	
 ### PROCESS ###
 func _physics_process(delta):
@@ -38,7 +38,7 @@ func _physics_process(delta):
 	camera_controller(delta)
 	camera_strafe_movement(delta)
 	#handling
-	camera_collider()
+#	camera_collider(false)
 	camera_drag(delta)
 	
 ### INPUT ###
@@ -69,12 +69,12 @@ func camera_drag(delta):
 		self.global_position = lerp(self.global_position, player.global_position, delta * CAMERA_ACCELERATION)
 		cam_h_global_pos = self.global_position
 
-func camera_collider(activated : bool = true):
-	if activated:
-		if $h/v/CameraCollider.is_colliding():
-			camera.global_transform.origin = $h/v/CameraCollider.get_collision_point()
-		elif !player.targeting:
-			camera.position = $h/v/CameraCollider.target_position
+#func camera_collider(activated : bool = true):
+	#if activated:
+		#if $h/v/SpringArm3D/CameraCollider.is_colliding():
+			#camera.global_transform.origin = $h/v/SpringArm3D/CameraCollider.get_collision_point()
+		#elif !player.targeting:
+			#camera.position = $h/v/SpringArm3D/CameraCollider.target_position
 
 func ready_error():
 	set_physics_process(false)
