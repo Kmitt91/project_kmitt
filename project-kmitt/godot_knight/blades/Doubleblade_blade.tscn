@@ -3,11 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://co0ws0cq6nfxj" path="res://godot_knight/blades/Doubleblade_blade.glb" id="1_bgses"]
 [ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_blue.tres" id="2_8baxo"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgses"]
+size = Vector3(0.18554688, 0.9030762, 0.051757813)
+
 [node name="Doubleblade_blade" type="Node3D" unique_id=304423685]
 
 [node name="Doubleblade_blade_mesh" parent="." unique_id=2107510713 instance=ExtResource("1_bgses")]
 
 [node name="Doubleblade_blade" parent="Doubleblade_blade_mesh" index="0" unique_id=929305950]
 surface_material_override/0 = ExtResource("2_8baxo")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1455139679]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1292670250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5780029, 0)
+shape = SubResource("BoxShape3D_bgses")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=538464642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8480697, 0)
+shape = SubResource("BoxShape3D_bgses")
 
 [editable path="Doubleblade_blade_mesh"]

@@ -41,7 +41,7 @@ func gate_interaction(delta):
 					#weapon_visibility_collecting(false, 4.67)
 					gate_animation()
 		else: 
-			if !player.roll and !player.jump:# and ($TimerAttack1.is_stopped() and $TimerAttack2.is_stopped() and $TimerAttack3.is_stopped()):
+			if !player.roll and !player.jump and !player.blocking:# and ($TimerAttack1.is_stopped() and $TimerAttack2.is_stopped() and $TimerAttack3.is_stopped()):
 				if player.player_root_motion.length() == 0.0:
 					player.global_transform.origin = lerp(player.global_transform.origin, gate_path.gate_attach_point.global_transform.origin, delta * 5.0)
 					

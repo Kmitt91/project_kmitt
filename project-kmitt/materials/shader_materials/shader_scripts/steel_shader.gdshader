@@ -16,9 +16,9 @@ void fragment(){
 	
 	ALBEDO = texture(albedo_tex, UV).rgb * noise * color.rgb;
 	ROUGHNESS = texture(roughness_tex, UV).r * 1.25;
-
+	EMISSION = ALBEDO * 0.08;
 	METALLIC = reflection_value;
-	SPECULAR = reflection_value * 0.5;
+	//SPECULAR = reflection_value * 0.5;
 
 	NORMAL_MAP = texture(normal_tex, UV).rgb;
 	NORMAL_MAP_DEPTH = normal_scale * round(noise);

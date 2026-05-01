@@ -5,7 +5,7 @@
 
 [resource]
 cull_mode = 2
-albedo_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+albedo_color = Color(0.4932192, 0.4932258, 0.50490314, 1)
 albedo_texture = ExtResource("1_x51gh")
 metallic_specular = 0.0
 normal_enabled = true

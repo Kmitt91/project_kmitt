@@ -33,7 +33,7 @@ func lever_interaction(delta):
 #					InputPrompt.prompt_visible(false)
 #					InputPrompt.add_prompt("!", "Not operative...", 4.0)
 		else:
-			if !player.roll and !player.jump:# and ($TimerAttack1.is_stopped() and $TimerAttack2.is_stopped() and $TimerAttack3.is_stopped()):
+			if !player.roll and !player.jump and !player.blocking:# and ($TimerAttack1.is_stopped() and $TimerAttack2.is_stopped() and $TimerAttack3.is_stopped()):
 				var tween = get_tree().create_tween()
 				player.global_position = lever_path.lever_attach_point.global_position
 				#tween.tween_property(player, "global_position", lever_path.lever_attach_point.global_position, 0.5)

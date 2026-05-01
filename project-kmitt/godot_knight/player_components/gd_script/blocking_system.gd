@@ -20,10 +20,10 @@ func block(delta):
 		if Input.is_action_pressed("L1") or Input.is_action_pressed("LEFT_MOUSE"):
 			player.anim_tree.set("parameters/" + player.state + "/block/blend_amount", lerp(float(player.anim_tree.get("parameters/" + player.state + "/block/blend_amount")), 1.0, delta * ACCELERATION * 2.0))
 			player.disabled_movement = true
+			player.blocking = true
 			#shield.set_scale(lerp(shield.get_scale(), Vector3(1.2,1.2,1.2), delta * 10.0))
 			#block
 			if player.anim_tree.get("parameters/" + player.state + "/block/blend_amount") > 0.92 and !player.anim_tree.get("parameters/" + player.state + "/stagger/active"):
-				player.blocking = true
 				if timer_block.is_stopped() and !timer_block_one_shot:
 					timer_block.start(0)
 					#shield_area.disabled = false
@@ -46,6 +46,7 @@ func block(delta):
 	if Input.is_action_just_released("L1") or Input.is_action_just_released("LEFT_MOUSE"):
 		player.disabled_movement = false
 		block_pos_sound = false
+		player.blocking = false
 		#back_area.disabled = true
 		
 	

@@ -2,6 +2,13 @@
 
 [ext_resource type="Shader" uid="uid://djtmak386nldu" path="res://materials/shader_materials/shader_scripts/glow_shader.gdshader" id="1_m8yr8"]
 
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0, 0.11440678, 0.24152543, 0.48728815, 0.7076271, 0.91101694, 1)
+colors = PackedColorArray(0.972549, 0.909804, 0.431373, 1, 0.815686, 0.396078, 0.176471, 1, 0.564706, 0.145098, 0.211765, 1, 0.30588236, 0.14117648, 0.53333336, 1, 0.18431373, 0.07450981, 0.33333334, 1, 0.12941177, 0.043137256, 0.24705882, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m8yr8"]
+gradient = SubResource("1")
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m8yr8"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m8yr8"]
@@ -13,8 +20,10 @@ seamless = true
 [resource]
 render_priority = 0
 shader = ExtResource("1_m8yr8")
-shader_parameter/color = Color(0, 0.5529412, 1, 1)
-shader_parameter/emission_strength = 16.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_gradient_texture = SubResource("GradientTexture1D_m8yr8")
+shader_parameter/emission_strength = 9.0
+shader_parameter/alpha_multiply = 1.4
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_m8yr8")
 shader_parameter/strengh = 0.05
 shader_parameter/frequency = 0.2

@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("4"):
 		player.state = "Scythe"
 		
-	if weapon.get_child(1) != null: # if this state == explore
+	if weapon.get_child_count() >= 2: # if this state == explore
 		weapon.get_child(1).queue_free()
 	if state_old == player.state and player.state != "state_explore":
 		var blade : PackedScene = load("res://godot_knight/blades/" + str(player.state) + "_blade.tscn")

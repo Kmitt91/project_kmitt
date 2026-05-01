@@ -187,11 +187,12 @@ CTRL={
 
 environment/ssao/quality=1
 environment/ssao/half_size=false
+environment/ssil/quality=0
 anti_aliasing/quality/msaa_3d=1
 
 [shader_globals]
 
 color_vegitation={
 "type": "color",
-"value": Color(1, 0.83060086, 0.1931151, 1)
+"value": Color(0.9607843, 0.8509804, 0.09019608, 1)
 }

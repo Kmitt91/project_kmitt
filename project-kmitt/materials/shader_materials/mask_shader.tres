@@ -4,17 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cm8ony8iax4ce" path="res://materials/textures/mask.png" id="2_6554b"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0p8gc"]
-noise_type = 3
+frequency = 0.0323
+fractal_weighted_strength = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mxq27"]
+width = 128
+height = 128
 noise = SubResource("FastNoiseLite_0p8gc")
 seamless = true
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_bvj7y")
-shader_parameter/mask_color = Color(0.90359825, 0.90359825, 0.9035982, 1)
-shader_parameter/emission_color = Color(0, 0.57669896, 0.9428735, 1)
+shader_parameter/mask_color = Color(0.5132325, 0.513233, 0.5132329, 1)
+shader_parameter/emission_color = Color(0.21559997, 0.3911601, 0.77, 1)
 shader_parameter/mask = ExtResource("2_6554b")
 shader_parameter/noise = SubResource("NoiseTexture2D_mxq27")
 shader_parameter/emission_strength = 24.0

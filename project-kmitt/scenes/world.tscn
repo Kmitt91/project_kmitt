@@ -102,21 +102,22 @@ subdivide_depth = 16
 environment = ExtResource("1_lakw3")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
+[node name="godot_knight" parent="." unique_id=769471199 instance=ExtResource("14_o8fc1")]
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1032771647]
 transform = Transform3D(-0.47715873, -0.012270204, -0.8787315, 0, 0.99990255, -0.01396218, 0.87881714, -0.006662176, -0.47711223, -2.135, 2.065, -20.385)
-current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047640314]
 transform = Transform3D(-0.74826694, 0.62859195, 0.21205872, 0.648724, 0.6264656, 0.43208575, 0.13875811, 0.4608831, -0.8765461, 0.017189788, 5.5175576, 0.5412545)
 light_color = Color(0.9647059, 0.7490196, 0.49019608, 1)
 light_energy = 1.8
-light_specular = 2.5
 shadow_enabled = true
 shadow_blur = 2.0
 directional_shadow_max_distance = 128.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D" unique_id=1269427295]
 transform = Transform3D(1, 2.9802322e-08, 2.9802322e-08, -7.450581e-09, 1, -5.9604645e-08, 0, 1.4901161e-07, 0.99999994, -103.32426, 103.08615, 118.25895)
+visible = false
 light_color = Color(0.83359796, 0.66715723, 0.036255933, 1)
 light_energy = 64.0
 light_indirect_energy = 0.0
@@ -125,10 +126,7 @@ light_specular = 0.0
 omni_range = 59.0
 
 [node name="Node3D" type="Node3D" parent="." unique_id=391109336]
-transform = Transform3D(-0.35819545, -3.1314443e-08, 1.65672, -1.4818161e-07, 1.695, 0, 1.65672, 1.4483507e-07, 0.35819545, -0.618, -0.025, -15.619)
-
-[node name="godot_knight" parent="." unique_id=769471199 instance=ExtResource("14_o8fc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.425175)
+transform = Transform3D(-0.035497356, 3.1032774e-09, 1.6946284, 1.4818163e-07, 1.695, 0, 1.6946284, -1.481491e-07, 0.035497356, 0.702, -0.025, -15.506)
 
 [node name="project_kmitt" parent="." unique_id=1395382735 instance=ExtResource("3_4wyf3")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
