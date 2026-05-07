@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3ul1wcpu8ynp"]
 
 [ext_resource type="PackedScene" uid="uid://bpiybh2y0u14u" path="res://godot_knight/blades/Sword_blade.glb" id="1_7ol1a"]
-[ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_blue.tres" id="2_e3geq"]
+[ext_resource type="Material" uid="uid://bkr1njnqf0c8b" path="res://materials/shader_materials/glow_gradient_weapon.tres" id="2_e3geq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ol1a"]
 size = Vector3(0.35131836, 0.755249, 0.14550781)

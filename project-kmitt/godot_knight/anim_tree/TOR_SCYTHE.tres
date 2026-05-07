@@ -79,7 +79,7 @@ animation = &"Scythe_WALK"
 [sub_resource type="AnimationNodeBlend2" id="257"]
 
 [resource]
-graph_offset = Vector2(-576.2064, 7.8240232)
+graph_offset = Vector2(-540.376, 119.47721)
 nodes/output/position = Vector2(1160, 140)
 nodes/1/node = SubResource("95")
 nodes/1/position = Vector2(-320, 340)

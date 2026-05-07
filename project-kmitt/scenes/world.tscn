@@ -3,6 +3,7 @@
 [ext_resource type="Environment" uid="uid://dvvfffpnptu4p" path="res://scenes/wold_environment.tres" id="1_lakw3"]
 [ext_resource type="Material" uid="uid://b62jxtfweik0d" path="res://materials/shader_materials/clouds_shader.tres" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://bbr51mbefbh5g" path="res://blender_files/project_kmitt.blend" id="3_4wyf3"]
+[ext_resource type="Shader" uid="uid://djtmak386nldu" path="res://materials/shader_materials/shader_scripts/glow_shader.gdshader" id="3_pm21f"]
 [ext_resource type="Material" uid="uid://bkuy3r1ocqeq6" path="res://materials/shader_materials/grass_shader.tres" id="4_qfnet"]
 [ext_resource type="Material" uid="uid://bqxy30110hsps" path="res://materials/shader_materials/particle_materials/grass_particle_shader.tres" id="5_qfnet"]
 [ext_resource type="Shader" uid="uid://6n5y1af6lo5g" path="res://materials/shader_materials/shader_scripts/grass_particle_shader.gdshader" id="6_7t5mc"]
@@ -24,9 +25,24 @@ auto_exposure_scale = 0.33
 auto_exposure_speed = 3.0
 dof_blur_far_enabled = true
 dof_blur_far_distance = 100.0
-dof_blur_far_transition = 32.0
-dof_blur_amount = 0.02
+dof_blur_far_transition = 64.0
+dof_blur_amount = 0.04
 auto_exposure_min_sensitivity = 60.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2lf6f"]
+top_radius = 4.0
+bottom_radius = 4.0
+height = 15.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7iits"]
+render_priority = 0
+shader = ExtResource("3_pm21f")
+shader_parameter/color = Color(0.44560093, 0.16502354, 0.9999828, 1)
+shader_parameter/emission_strength = 64.0
+shader_parameter/alpha_multiply = 1.0
+shader_parameter/strengh = 0.0
+shader_parameter/frequency = 0.2
+shader_parameter/time_factor = 0.1
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_r0tvk"]
 frequency = 0.167
@@ -102,11 +118,10 @@ subdivide_depth = 16
 environment = ExtResource("1_lakw3")
 camera_attributes = SubResource("CameraAttributesPractical_nnsk1")
 
-[node name="godot_knight" parent="." unique_id=769471199 instance=ExtResource("14_o8fc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.7521963)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1032771647]
-transform = Transform3D(-0.47715873, -0.012270204, -0.8787315, 0, 0.99990255, -0.01396218, 0.87881714, -0.006662176, -0.47711223, -2.135, 2.065, -20.385)
+transform = Transform3D(-0.43837112, 0.1591627, -0.88458914, 0, 0.9841956, 0.17708473, 0.89879405, 0.07762883, -0.43144292, -0.89, 2.77, -18.365)
+current = true
+fov = 84.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2047640314]
 transform = Transform3D(-0.74826694, 0.62859195, 0.21205872, 0.648724, 0.6264656, 0.43208575, 0.13875811, 0.4608831, -0.8765461, 0.017189788, 5.5175576, 0.5412545)
@@ -116,21 +131,25 @@ shadow_enabled = true
 shadow_blur = 2.0
 directional_shadow_max_distance = 128.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D" unique_id=1269427295]
-transform = Transform3D(1, 2.9802322e-08, 2.9802322e-08, -7.450581e-09, 1, -5.9604645e-08, 0, 1.4901161e-07, 0.99999994, -103.32426, 103.08615, 118.25895)
-visible = false
-light_color = Color(0.83359796, 0.66715723, 0.036255933, 1)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=435839494]
+transform = Transform3D(-0.035497345, 3.1032767e-09, 1.6946284, 1.4818163e-07, 1.6950004, -1.204395e-15, 1.6946284, -1.4814907e-07, 0.035497345, 212.20459, 32.4262, -109.40873)
+mesh = SubResource("CylinderMesh_2lf6f")
+skeleton = NodePath("../img_pos")
+surface_material_override/0 = SubResource("ShaderMaterial_7iits")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D" unique_id=698893062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.26, 0, -8.935)
+light_color = Color(0.7533521, 0.48783767, 1, 1)
 light_energy = 64.0
-light_indirect_energy = 0.0
-light_volumetric_fog_energy = 0.0
-light_specular = 0.0
-omni_range = 59.0
+omni_range = 64.0
 
-[node name="Node3D" type="Node3D" parent="." unique_id=391109336]
-transform = Transform3D(-0.035497356, 3.1032774e-09, 1.6946284, 1.4818163e-07, 1.695, 0, 1.6946284, -1.481491e-07, 0.035497356, 0.702, -0.025, -15.506)
+[node name="img_pos" type="Node3D" parent="." unique_id=391109336]
+transform = Transform3D(-0.039790545, 6.008205e-09, 1.8995832, 2.8689203e-07, 1.9, 1.928646e-16, 1.8995832, -2.8682908e-07, 0.039790545, 0.877, -0.025, -14.566)
 
-[node name="project_kmitt" parent="." unique_id=1395382735 instance=ExtResource("3_4wyf3")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
+[node name="godot_knight" parent="img_pos" unique_id=769471199 instance=ExtResource("14_o8fc1")]
+
+[node name="project_kmitt" parent="." unique_id=695699641 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="world_collision" parent="project_kmitt" unique_id=584088601 instance=ExtResource("13_o8fc1")]
 visible = false
@@ -140,6 +159,7 @@ visible = false
 [node name="GRASS(particles)" type="Node3D" parent="project_kmitt/PLANTS" unique_id=1811774340]
 
 [node name="R" type="Node3D" parent="project_kmitt/PLANTS/GRASS(particles)" unique_id=1486221430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="GPUParticles3D_GRASS" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/R" unique_id=150057955]
 transform = Transform3D(0.9989209, 0, -0.046443954, 0, 1, 0, 0.046443954, 0, 0.9989209, -1.0113819, 0, 16.881317)
@@ -261,6 +281,7 @@ process_material = ExtResource("5_qfnet")
 draw_pass_1 = ExtResource("10_lakw3")
 
 [node name="L" type="Node3D" parent="project_kmitt/PLANTS/GRASS(particles)" unique_id=1772102104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="GPUParticles3D_GRASS2" type="GPUParticles3D" parent="project_kmitt/PLANTS/GRASS(particles)/L" unique_id=1653303482]
 transform = Transform3D(0.7719907, 0, -0.6356337, 0, 1, 0, 0.6356337, 0, 0.7719907, -72.04447, -13.993841, -50.473015)
@@ -794,4 +815,4 @@ mesh = SubResource("CapsuleMesh_lakw3")
 transform = Transform3D(0.8786664, 0, -0.19479564, 0, 0.9, 0, 0.19479564, 0, 0.8786664, 10.232804, 0.07822299, 34.896614)
 
 [node name="lever" parent="." unique_id=54850580 instance=ExtResource("18_lakw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13907164, 0.24513203, -15.050057)
+transform = Transform3D(0.9983569, 0, -0.057302658, 0, 1, 0, 0.057302658, 0, 0.9983569, 11.565986, 0.047793627, 62.26568)

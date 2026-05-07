@@ -20,7 +20,6 @@ spring_length = -2.5
 [node name="ClippedCamera" type="Camera3D" parent="h/v/SpringArm3D" unique_id=701892880]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -2.5)
 cull_mask = 1048573
-current = true
 fov = 60.0
 far = 999.0
 

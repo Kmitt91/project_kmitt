@@ -5,7 +5,7 @@ shader_type spatial;
 render_mode unshaded, shadows_disabled;
 
 uniform vec4 color : source_color = vec4(1.0);
-uniform sampler2D color_gradient_texture : hint_default_black;
+uniform sampler2D color_gradient_texture : hint_default_white;
 uniform float emission_strength = 16.0;
 uniform float alpha_multiply = 1.0;
 
